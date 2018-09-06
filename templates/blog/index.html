@@ -1,0 +1,12 @@
+{% extends "_layout.html" %}
+{% set title = "Blog" %}
+
+{% block content %}
+    {% for entry in craft.entries.section('blog').find() %}
+        <article>
+            <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+            {{ entry.posttext }}
+            <p>Written by {{ entry.author }} on {{ entry.postDate|date('M d, Y') }}</p>
+        </article>
+        {% endfor %}
+{% endblock %}

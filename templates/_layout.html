@@ -1,0 +1,28 @@
+{# Basic Structure #}
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Needs to go into snippet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    {% include 'header.html' %}
+  </header>
+  
+  <nav>
+    {% include 'nav.html' %}
+  </nav>
+
+  {% block content %} 
+    <p>If you see this, contact your administrator. The template inheritance doesn’t work properly on this page.</p>
+  {% endblock %}
+
+  <footer>
+    {% include 'footer.html' %}
+  </footer>
+</body>
+</html>

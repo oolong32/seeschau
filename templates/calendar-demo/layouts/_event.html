@@ -1,0 +1,45 @@
+{# Einzelner Event in der Monatsansicht #}
+{% set classes = "" %}
+{% set classes = classes ~ (event.allDay ? " all_day") %}
+{% if event.multiDay %}
+    {% set classes = classes ~ " multi_day" %}
+    {% set classes = classes ~ (day.containsDate(event.startDate) ? " first_day") %}
+    {% set classes = classes ~ (day.containsDate(event.endDate) ? " last_day") %}
+{% endif %}
+
+{% set style = "" %}
+{% if event.multiDay or event.allDay %}
+    {% set style %}
+        style="background-color: {{ event.calendar.lighterColor }} !important;
+               border-color: {{ event.calendar.color }} !important;"
+    {% endset %}
+{% endif %}
+
+<div class="event tips{{ classes }}"{{ style }} data-toggle="popover">
+    {% if event.multiDay %}
+        <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}"
+           style="color: {{ event.calendar.contrastColor }} !important;">
+            {% autoescape false %}
+                {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}
+            {% endautoescape %}
+        </a>
+    {% else %}
+        {% if not event.allDay %}
+            <span class="calendar-color" style="background-color: {{ event.calendar.color }};"></span>
+        {% endif %}
+        <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}"
+           {% if event.allDay %}style="color: {{ event.calendar.contrastColor }};"{% endif %}>
+            {{ event.title }}
+        </a>
+    {% endif %}
+    {% if event.teacherselection %}
+    {% for teacher in event.teacherselection %}
+      <br>
+      {# hier natürlich zählen ob eins oder mehr, oder braucht es immer nur einen Lehrer? #}
+      Teacher: {{ teacher }}
+      {% endfor %}
+    {% endif %}
+
+    {% include "calendar-demo/layouts/_event_popover.html" %}
+<p style="display:inline-block;">{{event.teacher}}</p>
+</div>

@@ -1,0 +1,10 @@
+{% extends "../_layout.html" %}
+{% set title = "{{ entry.title }}" %}
+
+{% block content %}
+    <article>
+        <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+        {{ entry.body }}
+        <p>Written by {{ entry.author }} on {{ entry.postDate|date('M d, Y') }}</p>
+    </article>
+{% endblock %}
