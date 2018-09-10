@@ -1,0 +1,13 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+/config
+composer.json
+composer.lock
+/config
+/craft
+/craft.bat
+/modules
+/storage
+/web
