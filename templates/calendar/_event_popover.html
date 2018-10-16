@@ -4,9 +4,8 @@
 	<p>Fällt aus.</p>
 	{% else %}
 		{% if event.angebot|length %}
-			{% set angebot = event.angebot[0] %} {# Mit Kalendereintrag verbundenes Angebot #}
-			{% set parent = craft.entries.ancestorOf(event.angebot[0]).level(0).first() %} {# Übergerodneter Knoten (Angebotskategorie) #}
-			<p><strong><a href="{{ parent.url }}#{{ angebot.slug }}">{{ angebot.title }}</a></strong></p>
+			{% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
+			<p><strong><a href="{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
 
 			{# Dauer #}
 			<p class='event_time'>

@@ -1,18 +1,21 @@
+{# Angebote "Music & Voice", Übersicht #}
 {% extends '_layout.html' %}
 
 {% block content %}
-  <h2>{{ entry.title }}</h2>
+
+  {# <h2>{{ entry.title }}</h2> #}
+  <h2>Music & Voice</h2>
     {% if entry.categoryOverview|length %}
   <section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
-    {{ entry.categoryOverview }}
+	<h3>{{ entry.untertitel }}</h3>
+	{{ entry.categoryOverview }}
   </section>
     {% endif %}
 
-  <div class="accordion">
-  {% for section in entry.children() %}
+   {% set yogaAngebote = craft.entries.section('musicAndVoiceAngebote').all() %}
 
-  {#<section class="angebote">#}
-  
+  <div class="accordion">
+  {% for section in yogaAngebote %}
 
   <section class="visible angebote">
     <a id="{{ section.slug }}" class="anchor"></a>
@@ -22,13 +25,13 @@
     {% if section.lehrpersonen|length %}
     <p class="teacher"> Mit
       {% for lehrer in section.lehrpersonen %}
-        {% if loop.first %}
-          <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-        {% elseif not loop.last %}
-          , <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-        {% else %}
-          und <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-        {% endif %}
+	{% if loop.first %}
+	  <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+	{% elseif not loop.last %}
+	  , <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+	{% else %}
+	  und <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+	{% endif %}
       {% endfor %}
     </p>
     {% endif %}
@@ -37,11 +40,18 @@
       {{ section.visibleText }}
     {% endif %}
 
+    {% if section.mailLink %}
+    <p class="upper-mail-link"><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
+    {% else %}
+    <p>Ohne Voranmeldung willkommen!</p>
+    {% endif %}
+
     <p class="accordion-trigger"><span>Weitere Informationen</span></p>
   </section>
 
   <section class="collapsed angebote">
     {{ section.beschrieb }} {# Show remaining Paragraphs of Text #}
+
     {% if section.mailLink %}
     <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
     {% else %}
@@ -56,5 +66,6 @@
 
   {% endfor %}
   </div> <!-- End Accoridon -->
-  
+
 {% endblock %}
+

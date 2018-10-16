@@ -1,12 +1,14 @@
 {% extends '_layout.html' %}
 
-{%  set workshops =  craft.entries.section('angebote').level(1).last().children() %}
+{%  set workshops =  craft.entries.section('workshopsAngebote').all() %}
 
 {% block content %}
-  <h2>{{ entry.title }}</h2>
+  {# <h2>{{ entry.title }}</h2> #}
+  <h2>Workshops</h2>
 
   {% if entry.categoryOverview|length %}
   <section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
+    <h3>{{ entry.untertitel }}</h3>
     {{ entry.categoryOverview }}
   </section>
   {% endif %}

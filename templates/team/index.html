@@ -16,31 +16,34 @@
       <p class="teacher-quote">«{{ teacher.quote }}»{% if teacher.quoteAuthor|length %} – {{ teacher.quoteAuthor }}{% endif %}</p>
       {% endif %}
       <div class="accordion">
+
       	<section class="visible">
 		{{ teacher.visibleTextTeacher }}
 		<p class="accordion-trigger" style="text-align: left;"><span>Weitere Informationen</span></p>
 	</section>
+
 	<section class="collapsed">
 	      {{ teacher.beschriebLehrperson }}
-      {% if teacher.angebote|length %}
-      <h4>{{ teacher.title }}s Kurse</h4>
-	      {% if teacher.angebote|length > 1 %}
+	      {% if teacher.angebote|length %}
+		      <h4>{{ teacher.title }}s Angebote</h4>
+		      {% if teacher.angebote|length > 1 %}
 		      <ul>
 		      {% for kurs in teacher.angebote %}
-			<li><a href="{{ craft.entries.ancestorOf(kurs).level(0).first().url }}#{{ kurs.slug }}">{{ kurs.title }}</a></li> 
-
+			{% set url = kurs.url|split('\/') %}
+			<li><a href="{{ url[3] }}#{{ url[4] }}">{{ kurs.title }}</a></li> 
 		      {% endfor %}
 		      </ul>
-	      {% else %}
-		<p><a href="{{ craft.entries.ancestorOf(teacher.angebote[0]).level(0).first().url }}#{{ teacher.angebote[0].slug }}">{{ teacher.angebote[0].title }}</a></p>
+		      {% else %}
+			{% set url = teacher.angebote[0].url|split('\/') %}
+		      <p><a href="{{ url[3] }}#{{ url[4] }}">{{ teacher.angebote[0].title }}</a></p>
+		      {% endif %}
 	      {% endif %}
-      {% endif %}
-	    <p class="accordion-collapse" style="text-align: left;"><span>Weniger Informationen</span></p>
+	      <p class="accordion-collapse" style="text-align: left;"><span>Weniger Informationen</span></p>
 	</section>
-      </div>
-    </div>
+      </div> <!-- End div.accordion -->
+    </div> <!-- End div.raster-textfeld -->
 
-  </section>
+  </section> <!-- End section.raster-->
   {% endfor %}
 
 {% endblock %}

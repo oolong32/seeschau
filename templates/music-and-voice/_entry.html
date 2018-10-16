@@ -1,0 +1,62 @@
+{# Angebote "Music & Voice", Einzeleintrag – nur für Vorschau #}
+{% extends '_layout.html' %}
+
+{% block content %}
+	<h2>Music & Voice</h2>
+  	{% set parent = craft.entries.section('musicAndVoice').first() %}
+	{% if parent.untertitel|length or parent.categoryOverview|length %}
+	<section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
+		<h3>{{ parent.untertitel }}</h3>
+		{{ parent.categoryOverview }}
+	</section>
+	{% endif %}
+
+  <div class="accordion">
+  <section class="visible angebote">
+    <a id="{{ entry.slug }}" class="anchor"></a>
+    <h3>{{ entry.title }}</h3>
+    <h4>{{ entry.untertitel }}</h4>
+
+    {% if entry.lehrpersonen|length %}
+    <p class="teacher"> Mit
+      {% for lehrer in section.lehrpersonen %}
+        {% if loop.first %}
+          <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% elseif not loop.last %}
+          , <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% else %}
+          und <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if entry.visibleText|length %} {# Show first Paragraph of Text #}
+      {{ entry.visibleText }}
+    {% endif %}
+
+    {% if entry.mailLink %}
+    <p class="upper-mail-link"><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ entry.title }}">Hier anmelden</a></p>
+    {% else %}
+    <p>Ohne Voranmeldung willkommen!</p>
+    {% endif %}
+
+    <p class="accordion-trigger"><span>Weitere Informationen</span></p>
+  </section>
+
+  <section class="collapsed angebote">
+    {{ entry.beschrieb }} {# Show remaining Paragraphs of Text #}
+
+    {% if entry.mailLink %}
+    <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ entry.title }}">Hier anmelden</a></p>
+    {% else %}
+    <p>Ohne Voranmeldung willkommen!</p>
+    {% endif %}
+
+    <p>Termine siehe <a href="/calendar" class="cal-link">Kalender</a>, Preise siehe <a href="/info">Info</a> (???).</p>
+
+    <p class="accordion-collapse"><span>Weniger Informationen</span></p>
+  </section> <!-- End collapsed part of accordion -->
+  </div> <!-- End Accoridon -->
+  
+{% endblock %}
