@@ -1,0 +1,46 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <h2>Team</h2>
+  {% for teacher in craft.entries.section('team').limit(null) %}
+  <section class="raster">
+
+    {% if teacher.portrait|length %}
+    <img src="{{ teacher.portrait.first().getUrl('cropSquare') }}" alt="{{ teacher.title }}">
+    {% endif %}
+
+    <div class="raster-textfeld">
+    <a id="{{ teacher.slug }}" class="anchor"></a>
+      <h3>{{ teacher.title }}</h3>
+      {% if teacher.quote|length %}
+      <p class="teacher-quote">«{{ teacher.quote }}»{% if teacher.quoteAuthor|length %} – {{ teacher.quoteAuthor }}{% endif %}</p>
+      {% endif %}
+      <div class="accordion">
+      	<section class="visible">
+		{{ teacher.visibleTextTeacher }}
+		<p class="accordion-trigger" style="text-align: left;"><span>Weitere Informationen</span></p>
+	</section>
+	<section class="collapsed">
+	      {{ teacher.beschriebLehrperson }}
+      {% if teacher.angebote|length %}
+      <h4>{{ teacher.title }}s Kurse</h4>
+	      {% if teacher.angebote|length > 1 %}
+		      <ul>
+		      {% for kurs in teacher.angebote %}
+			<li><a href="{{ craft.entries.ancestorOf(kurs).level(0).first().url }}#{{ kurs.slug }}">{{ kurs.title }}</a></li> 
+
+		      {% endfor %}
+		      </ul>
+	      {% else %}
+		<p><a href="{{ craft.entries.ancestorOf(teacher.angebote[0]).level(0).first().url }}#{{ teacher.angebote[0].slug }}">{{ teacher.angebote[0].title }}</a></p>
+	      {% endif %}
+      {% endif %}
+	    <p class="accordion-collapse" style="text-align: left;"><span>Weniger Informationen</span></p>
+	</section>
+      </div>
+    </div>
+
+  </section>
+  {% endfor %}
+
+{% endblock %}

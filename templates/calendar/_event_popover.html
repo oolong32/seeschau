@@ -1,0 +1,78 @@
+{# Der Einblender in der Monatsansicht #}
+<div class="qtip hidden">
+	{% if ausfall %}
+	<p>Fällt aus.</p>
+	{% else %}
+		{% if event.angebot|length %}
+			{% set angebot = event.angebot[0] %} {# Mit Kalendereintrag verbundenes Angebot #}
+			{% set parent = craft.entries.ancestorOf(event.angebot[0]).level(0).first() %} {# Übergerodneter Knoten (Angebotskategorie) #}
+			<p><strong><a href="{{ parent.url }}#{{ angebot.slug }}">{{ angebot.title }}</a></strong></p>
+
+			{# Dauer #}
+			<p class='event_time'>
+			{% if event.allDay %}
+				Ganztägig
+				{% if event.duration.days > 1 %}
+				    ({{ event.duration.days }} Tage)
+				{% endif %}
+			    {% else %}
+				{% if event.multiDay %}
+				    {% if day.containsDate(event.startDate) %}
+					Beginn {{ event.startDate.format('g:ia') }}
+				    {% elseif day.containsDate(event.endDate) %}
+					Ende {{ event.endDate.format('g:ia') }}
+				    {% else %}
+					Ganztägig
+				    {% endif %}
+				    ({{ event.duration.days }} Tage)
+				{% else %} {# von–bis #}
+				    {{ event.startDate.format('G:i') }}—{{ event.endDate.format('G:i') }} Uhr
+				    {#({{ event.duration.humanReadable }})#}
+				{% endif %}
+			    {% endif %}
+			</p>
+
+			{# Lehrer #}
+			{% if event.lehrpersonen|length %}
+				{% if event.lehrpersonen|length > 1 %}
+					<ul>
+					{% for lehrperson in event.lehrpersonen %}
+						<li><a href="{{ lehrperson.url }}">{{ lehrperson }}</a></li>
+					{% endfor %}
+					</ul>
+				{% else %}
+					<p><a href="{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
+				{% endif %}
+			{% endif %}
+
+		{% else %}
+			<p>Noch Keine Informationen zu diesem Termin.</p> {# d.h. Kalendereintrag wurde nicht mit Angebot verbdunen, sollte ev. obligatorisch sein. #}
+		{% endif %}
+	{% endif %}
+
+
+{#
+    <div class="content">
+        {% if event.allDay %}
+            {% if event.multiDay %}
+		<p>Hier Infos mehrtägige Events</p>
+                <b>Starts</b> {{ event.startDate.format('F j, Y') }}<br />
+                <b>Ends</b> {{ event.endDate.format('F j, Y') }}
+            {% else %}
+                {{ event.startDate.format('F j, Y') }} (All Day)
+            {% endif %}
+        {% else %}
+		<p class="info">Hier Infos zum Kurs.</p>
+            <b>Starts</b> {{ event.startDate.format('F j, Y \\a\\t g:ia') }}<br />
+            <b>Ends</b> {{ event.endDate.format('F j, Y \\a\\t g:ia') }}
+        {% endif %}
+
+        {% if event.repeating %}
+            <hr />
+            <span class='glyphicon glyphicon-repeat'></span>&nbsp;<b>Repeats</b>
+            {{ event.readableRepeatRule }}
+        {% endif %}
+    </div>
+#}
+
+</div>

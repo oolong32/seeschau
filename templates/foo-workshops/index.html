@@ -1,0 +1,93 @@
+{% extends '_layout.html' %}
+
+{%  set workshops =  craft.entries.section('angebote').level(1).last().children() %}
+
+{% block content %}
+  <h2>{{ entry.title }}</h2>
+
+  {% if entry.categoryOverview|length %}
+  <section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
+    {{ entry.categoryOverview }}
+  </section>
+  {% endif %}
+
+
+  {% for workshop in workshops %}
+  <section class="raster">
+
+    <div class="raster-bildfeld">
+      {% if workshop.extTeachers|length %}
+        {% for extTeacher in workshop.extTeachers %}
+        <!-- <p>{% if extTeacher.tlink|length %}<a href="{{ extTeacher.tlink }}" target="_blank">{% endif %}{{ extTeacher.tname }}{% if extTeacher.tlink|length %}</a>{% endif %}</p> -->
+        <img src="{{ extTeacher.timg[0].url }}" alt="{{ extTeacher.tname }}" width="100">
+        {% endfor %}
+      {% else %}
+        <!-- no Teacher Image -->
+      {% endif %}
+    </div>
+    
+    <div class="raster-textfeld">
+      <div class="accordion">
+        <section class="visible">
+          <a id="{{ workshop.slug }}" class="anchor"></a>
+          <h3>{{ workshop.title }}</h3>
+          <h4>{{ workshop.untertitel }}</h4>
+
+          {# Externe und interene Lehrer in Liste zusammenführen #}
+          {% if workshop.lehrpersonen|length == 0 and workshop.ExtTeachers|length == 0 %}
+            <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
+          {% else %}
+            {% set teachernames = [] %}
+            {% set teacherurls = [] %}
+            {# Externe Lehrer #}
+            {% for extTeacher in workshop.extTeachers %}
+              {% set teachernames = teachernames|merge([extTeacher.tname]) %}
+              {% set teacherurls = teacherurls|merge([extTeacher.tlink]) %}
+            {% endfor %}
+            {# Interne Lehrer #}
+            {% for teacher in workshop.lehrpersonen %}
+              {% set teachernames = teachernames|merge([teacher.title]) %}
+              {% set teacherurls = teacherurls|merge([teacher.url]) %}
+            {% endfor %}
+
+          {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
+          <p class="teacher"> Mit
+            {% for i in 0..(teachernames|length - 1) %}
+              {% if loop.first %}
+                <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+              {% elseif not loop.last %}
+                , <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+              {% else %}
+                und <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+              {% endif %}
+            {% endfor %}
+          </p>
+          {% endif %}
+
+
+
+          {% if workshop.visibleText|length %}
+            {{ workshop.visibleText }}
+          {% endif %}
+
+          <p class="accordion-trigger"><span>Weitere Informationen</span></p>
+        </section>
+        <section class="collapsed">
+          {{ workshop.beschrieb }}
+          {% if workshop.mailLink %}
+          <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ workshop.title }}">Hier anmelden</a></p>
+          {% else %}
+          <p>Ohne Voranmeldung willkommen!</p>
+          {% endif %}
+
+          <p>Termine siehe <a href="/calendar" class="cal-link">Kalender</a>, Preise siehe <a href="/info">Info</a> (???).</p> 
+
+          <p class="accordion-collapse"><span>Weniger Informationen</span></p>
+        </section> <!-- End collapsed part of accordion -->
+      </div>
+    </div>
+  
+  </section>
+  {% endfor %}
+  
+{% endblock %}

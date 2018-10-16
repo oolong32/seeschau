@@ -1,0 +1,19 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+  <h2>{{ entry.title }}</h2>
+  <section class="contact" id="tel-mail">
+    <h3>{{ entry.heading }}</h3>
+    <h4>Telefonisch</h4>
+    <p><a href="tel:{{ entry.tel|replace({' ': ''}) }}">{{ entry.tel }}</a></p>
+    <h4>Per Mail</h4>
+    <p><a href="mailto:{{ entry.mail }}">{{ entry.mail }}</a></p>
+  </section>
+  <section class="contact" id="map" style="margin-bottom: 2rem;">
+    <!-- <h3>So finden sie uns</h3> -->
+    <img src="/assets/_pic/tempAssets/googleMap.jpg" alt="">
+  </section>
+  <section class="contact" id="contact-copy">
+    {{ entry.contactbody }}
+  </section>
+{% endblock %}

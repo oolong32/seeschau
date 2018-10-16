@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'PFBagueSansPro';
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Light/PFBagueSansPro-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Light/PFBagueSansPro-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Light/PFBagueSansPro-Light.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Light/PFBagueSansPro-Light.svg#PFBagueSansPro-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'PFBagueSansPro';
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Reg/PFBagueSansPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Reg/PFBagueSansPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Reg/PFBagueSansPro-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Reg/PFBagueSansPro-Regular.svg#PFBagueSansPro-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'PFBagueSansPro';
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Medium/PFBagueSansPro-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Medium/PFBagueSansPro-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Medium/PFBagueSansPro-Medium.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Medium/PFBagueSansPro-Medium.svg#PFBagueSansPro-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+@font-face {
+  font-family: 'PFBagueSansPro';
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Bold/PFBagueSansPro-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Bold/PFBagueSansPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Bold/PFBagueSansPro-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Bold/PFBagueSansPro-Bold.svg#PFBagueSansPro-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'PFBagueSansPro';
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Black/PFBagueSansPro-Black.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/bagueSans/PFBagueSansProWeb_Black/PFBagueSansPro-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Black/PFBagueSansPro-Black.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/bagueSans/PFBagueSansProWeb_Black/PFBagueSansPro-Black.svg#PFBagueSansPro-Black') format('svg'); /* Legacy iOS */
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* Francis Gradient */
+
+@font-face
+{
+  font-family: "WF-031942-010448-002218";
+  src: url('../fonts/francisGradient/WF-031942-010448-002218.eot');
+  src: url('../fonts/francisGradient/WF-031942-010448-002218.eot?#iefix') format('embedded-opentype'), url('../fonts/francisGradient/WF-031942-010448-002218.woff') format('woff'), url('../fonts/francisGradient/WF-031942-010448-002218.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002220";
+  src: url('../fonts/francisGradient/WF-031942-010448-002220.eot');
+  src: url('../fonts/francisGradient/WF-031942-010448-002220.eot?#iefix') format('embedded-opentype'), url('../fonts/francisGradient/WF-031942-010448-002220.woff') format('woff'), url('../fonts/francisGradient/WF-031942-010448-002220.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002217";
+  src: url('../fonts/francisGradient/WF-031942-010448-002217.eot');
+  src: url('../fonts/francisGradient/WF-031942-010448-002217.eot?#iefix') format('embedded-opentype'), url('../fonts/francisGradient/WF-031942-010448-002217.woff') format('woff'), url('../fonts/francisGradient/WF-031942-010448-002217.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002219";
+  src: url('../fonts/francisGradient/WF-031942-010448-002219.eot');
+  src: url('../fonts/francisGradient/WF-031942-010448-002219.eot?#iefix') format('embedded-opentype'), url('../fonts/francisGradient/WF-031942-010448-002219.woff') format('woff'), url('../fonts/francisGradient/WF-031942-010448-002219.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

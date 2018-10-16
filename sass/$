@@ -1,0 +1,279 @@
+/* Variables */
+
+$black: rgba( 0, 0, 0, 1);
+$green_a1: rgba(80, 227, 194, .1);
+$green_a25: rgba(80, 227, 194, .25);
+$green_a5: rgba(80, 227, 194, .5);
+$green_a75: rgba(80, 227, 194, .75);
+$green: rgba(80, 227, 194, 1);
+$white: rgba(255, 255, 255, 1);
+$linegray: rgba(155, 155, 155, 1);
+
+@import url('./fonts.css');
+
+/* Typography, basic settings*/
+html, * { box-sizing: border-box; }
+body {
+  font-family: 'bague test', sans-serif; 
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  font-variant-numeric: proportional-nums;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 600;}
+
+h1 {
+  font-size: 4em;
+	font-family: 'francis gradient test', 'bague test', sans-serif;
+  text-transform: uppercase;
+}
+
+/* End Typography, basic settings*/
+
+/* Link Styles */
+
+h1 a {
+  text-decoration: none;
+  background: transparent;
+  color: black;
+  padding: 0;
+}
+h1 a:hover { background: none;}
+
+header nav ul li a { border-bottom: none; }
+header nav ul li a:hover {
+  font-weight: 900;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  border-bottom: solid $green_a25 .1875rem;
+}
+
+a:link { color:black;}
+a:visited { color: black; }
+a:hover { background: $green_a75; }
+
+/* End Link Styles */
+
+
+/* Hintergrundbild Header & Footer*/
+
+#masthead {
+  /* Background Image */
+  background-image: url(../img/foo.png);
+  background-origin: border-box;
+  background-size: cover;
+}
+
+/* Layout Header*/
+
+header {
+  background: $white;
+  margin: 0; padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  #hamburger {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    transition: all .3s ease-in;
+  }
+  #hamburger:hover {
+    transform: scale(1.1);
+  }
+  #masthead { /* background-Image and Logotype in Header */
+    /* collapse-transition */
+    transition: all 0.2s ease-in;
+    /* end collapse-transition */
+    height: 20vw;
+    padding: 1.5rem 1.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    /* Text on Footer Image */
+    h1, p {
+      color: white;
+      margin: 0;
+      line-height: 1;
+      /* collapse transition */
+      transition: all 0.3s linear;
+      /* end collapse transition */
+    }
+    h1 { font-size: 6.25rem; }
+    p {
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+  nav {
+    padding: 0 2rem;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+header.shrink { /* collapsed header */
+  #masthead {
+    min-height: 0;
+    height: 7.8rem;
+    width: 100%;
+    padding: 0 0 0 2rem;
+    overflow: hidden; /* children have no influence on height */
+  }
+  h1, p {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+/* End Layout Header */
+
+/* Layout Content/Main */
+main {
+  width: 46rem;
+  margin: 0 auto;
+  padding: 30rem 0 0; 
+  // border: solid deeppink 5px;
+  font-size: 1.25rem;
+  line-height: 1.68;
+  h2 {
+    font-family: 'francis gradient test', sans-serif;
+    text-transform: uppercase;
+    font-size: 6.25rem;
+    text-align: center;
+    margin: 0 0 2rem 0;
+  }
+  section {
+    border-bottom: solid 1px $linegray;
+    padding-bottom: 2rem;
+    margin-bottom: 4.5rem;
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+    }
+    h4 {
+    }
+    p {
+      margin-bottom: 1.75rem;
+    }
+    ul {}
+  }
+  .teacher {
+    img {
+      width: 320px;
+      height: auto;
+    }
+  }
+
+}
+/* End Layout Content/Main */
+
+/* Layout Footer */
+
+footer {
+  margin-top: 4em;
+  z-index: 9750;
+
+  /* Footer Social Media Buttons */
+  #social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    /* Footer Social Media Buttons */
+    svg { }
+  }
+
+  /* Footer Info Container */
+  #infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    /* Footer Info Items */
+    p { 
+      white-space: nowrap;
+      margin-right: 1em;
+    }
+    p:last-child {margin-right: 0; }
+  }
+
+  #masthead { /* Background-Image and Logotype in Footer */
+    height: 20vw;
+    margin-top: 1rem;
+    padding: 1.5rem 1.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: flex-start;
+    /* Text on Footer Image */
+    h1, p { color: white; margin: 0; line-height: 1;}
+    h1 { 
+      font-size: 6.25rem;
+      order: 2; /* Starts below, higher number means higher up on Y-Axis */
+    }
+    p {
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+/* End Layout Footer*/
+
+/* Nav overlay */
+#nav-overlay {
+  padding: 20rem 1rem 0 2rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  // transform: translateY(-100vh);
+  transition: all .2s ease-in;
+  background: $white;
+  z-index: 9500;
+  display: none;
+}
+#nav-overlay.visible {
+  display: block;
+  // transform: translateY(0vh);
+}
+/* End Nav Overlay */
+
+/* mobile styles */
+@media (max-width: 500px) {
+  header {
+    nav { display: none; }
+    #masthead {
+      height: 15vh;
+      padding: 1rem;
+      h1  { font-size: 2rem; }
+      p { font-size: 0.75rem; }
+      
+    }
+  }
+  header.shrink {
+    #masthead { height: 11vh; }
+  }
+  #nav-overlay {
+    font-size: 2rem;
+    padding: 12vh 1rem 1rem 2rem;
+    animation: foo .2s ease-in; // bringts nicht so, weil nur in eine Richtung möglich
+  }
+  main { padding: 10rem 1rem 2rem; }
+}
+
+@keyframes foo {
+  from { transform: translateY(3rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

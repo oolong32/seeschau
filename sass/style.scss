@@ -1,0 +1,859 @@
+/* variables */
+
+$black: rgba( 0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
+$green_a1: rgba(80, 227, 194, .1);
+$green_a2: rgba(80, 227, 194, .2);
+$green_a25: rgba(80, 227, 194, .25);
+$green_a5: rgba(80, 227, 194, .5);
+$green_a75: rgba(80, 227, 194, .75);
+$green: rgba(80, 227, 194, 1);
+$lavender: rgba(214, 186, 255, .4);
+$lavender_75: rgba(214, 186, 255, .75);
+$linegray: rgba(155, 155, 155, 1);
+$linegreen: rgba(187, 215, 209, 1);
+
+$francisGradientLeft: "WF-031942-010448-002217";
+$francisGradientRight: "WF-031942-010448-002218";
+$francisGradientInside: "WF-031942-010448-002219";
+$francisGradientOutside: "WF-031942-010448-002220";
+
+$mastheadHeight: x;
+
+@import url("./fonts.css");
+
+/* Text Formatting */
+
+html, * { box-sizing: border-box; }
+body {
+  font-family: 'PFBagueSansPro', sans-serif; 
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  font-variant-numeric: proportional-nums;
+}
+
+h2, h3, h4, h5, h6 { font-weight: 600;}
+
+h1 {
+  // font-size: 4.5em;
+	font-family: $francisGradientInside, 'PFBagueSansPro', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 6.25rem;
+  font-family: $francisGradientInside, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+#masthead {
+  h1, p {
+    line-height: 1;
+    color: white;
+  }
+  h1 {
+    font-size: 6.5rem;
+  }
+  p { // byline "Haus der Künste"
+    font-weight: 500;
+    font-size: 1.75rem;
+    letter-spacing: 0.5215rem;
+  }
+}
+
+header nav ul li {
+  font-size: 1.25rem;
+}
+
+main {
+  font-size: 1.25rem;
+  line-height: 1.68;
+}
+
+strong { font-weight: 600; }
+
+section#calendar { font-size: 0.9375rem; }
+
+/* End Text Formatting */
+
+/* List Styles*/
+
+main ul {
+  li { 
+    margin-left: 0.6rem;
+    text-indent: -0.6rem;
+  }
+  li:before { content: "· ";}
+}
+
+/* End List Styles*/
+
+/* Link Styles */
+
+h1 a {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: black;
+  padding: 0;
+}
+h1 a:hover {
+  background: none;
+  border-bottom: none;
+}
+
+header nav ul li a { border-bottom: none; }
+header nav ul li a:hover {
+  font-weight: 900;
+  background: transparent;
+  border: none;
+}
+header nav ul li.active a { font-weight: 900; }
+
+a {
+  text-decoration: none;
+  color: $black;
+  border-bottom: solid $green_a25 .1875rem;
+}
+
+a:link { color:black;}
+a:visited { color: black; }
+a:hover { border-bottom: solid $green_a75 .1875rem; }
+
+a.arrow-left-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+a.arrow-left-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+a.arrow-right-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+a.arrow-right-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.mail-link:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+/* End Link Styles */
+
+
+/* Masthead Styles Global */
+
+#masthead {
+  background-origin: border-box;
+  background-size: cover;
+  a { // Link to home
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* End Masthead Styles Global */
+
+/* Background Images per Page */
+
+#masthead {
+  background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
+  background-position: bottom ;
+}
+
+.team header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
+  background-position: center;
+}
+.team footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg"); }
+.bodywork header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
+  background-position: center ;
+}
+.bodywork footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
+.yoga #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
+  background-position: center ;
+}
+.calendar header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
+  background-position: bottom ;
+}
+.calendar footer #masthead { background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg"); }
+.contact header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
+  background-position: center;
+}
+.contact footer #masthead { background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg"); }
+
+.music-voice #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
+  background-position: center;
+}
+// .class #masthead { background-image: url(""); }
+
+/*
+../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
+../_pic/mastheadBackgrounds/tatamiRaum@1x.png
+*/
+
+
+/* Layout Header*/
+
+header {
+  background: $white;
+  margin: 0; padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  #hamburger {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    transition: all .3s ease-in;
+    display: none;
+  }
+  #hamburger:hover {
+    transform: scale(1.1);
+  }
+  #masthead {
+    height: 28rem; /* Variable wud b nice <—————————————————————————————————————————*/
+    /* collapse-transition */
+    transition: all 0.2s ease-in;
+    /* end collapse-transition */
+    padding: 1.5rem 1.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    h1, p {
+      margin: 0;
+      /* collapse transition */
+      transition: all 0.3s linear;
+      /* end collapse transition */
+    }
+  }
+  nav {
+    padding: 0.5rem 2rem;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+header.shrink { /* collapsed header */
+  #masthead {
+    min-height: 0;
+    height: 7.8rem; /* Variable wud b nice <———————————————————————————————————— */
+    width: 100%;
+    padding: 0 0 0 2rem;
+    overflow: hidden; /* children have no influence on height */
+  }
+  h1, p {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+/* End Layout Header */
+
+/* Intro Page */
+.intro h1 { display: none; }
+
+@keyframes blendy {
+  0% { opacity: 1; transform: scale(1); animation-timing-function: ease-in; }
+  7.7% { opacity: 1; animation-timing-function: ease-out; }
+  13% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 0 }
+}
+
+body.intro {
+  div.container {
+    width: 100vw;
+    height: 100vh;
+    /* center items on page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikale */
+    align-items: center;     /* Horizontale*/
+    ul.img {
+      z-index: -3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100vh; width: 100vw;
+      /* background images */
+      li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        animation: blendy 70s linear infinite 0s;
+      }
+      li:nth-child(1)  { z-index: 14; animation-delay: 0s;  background: url("../_pic/introBackgrounds/fassadeJungfernrebe@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(2)  { z-index: 13; animation-delay: 5s;  background: url("../_pic/introBackgrounds/ginko@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(3)  { z-index: 12; animation-delay: 10s;  background: url("../_pic/introBackgrounds/saal@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(4)  { z-index: 11; animation-delay: 15s;  background: url("../_pic/introBackgrounds/gebaeude@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(5)  { z-index: 10; animation-delay: 20s; background: url("../_pic/introBackgrounds/seeReflexion@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(6)  { z-index: 9; animation-delay: 25s; background: url("../_pic/introBackgrounds/tatamiRaum@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(7)  { z-index: 8; animation-delay: 30s; background: url("../_pic/introBackgrounds/laub@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(8)  { z-index: 7; animation-delay: 35s; background: url("../_pic/introBackgrounds/blumenschale@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(9)  { z-index: 6; animation-delay: 40s; background: url("../_pic/introBackgrounds/tatamiReflexion@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(10)  { z-index: 5; animation-delay: 45s; background: url("../_pic/introBackgrounds/patio@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(11) { z-index: 4; animation-delay: 50s; background: url("../_pic/introBackgrounds/schattenMauer@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(12) { z-index: 3; animation-delay: 55s; background: url("../_pic/introBackgrounds/blatt@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(13) { z-index: 2; animation-delay: 60s; background: url("../_pic/introBackgrounds/mammutbaumkrone@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+      li:nth-child(14) { z-index: 1; animation-delay: 65s; background: url("../_pic/introBackgrounds/seeReflexion@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
+    }                                                                                                            
+    #seeschau-container { transform: scale(2); }                                                                 
+    #byline-container {                                                                                          
+      margin-top: 2em;                                                                                          ;
+      color: white;
+      font-size: 2rem; 
+      font-weight: 500; 
+      letter-spacing: 0.3rem;
+    }
+    svg {
+      background: transparent;
+      fill: white;
+    }
+  }
+}
+
+/* End Intro Page */
+
+/* Layout Content/Main */
+main {
+  width: 65rem;
+  margin: 0 auto;
+  padding: 32rem 0 0; 
+  h2 {
+    text-align: center;
+    margin: 0 0 0;
+  }
+  h2:nth-child(n+2) {
+    margin-top: 4rem;
+  }
+  section {
+    background: $white;
+    outline: none;
+    border-bottom: solid 1px $linegray;
+    padding-bottom: 2rem;
+    margin-bottom: 4.5rem;
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+    }
+    h4 {
+    }
+    p {
+      margin-bottom: 1.75rem;
+    }
+    ul { margin-bottom: 1.75rem; }
+    a.anchor { /* Fix jump to anchor relative to header/masthead */
+      // https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
+      display: block;
+      position: relative;
+      top: -13rem; //  Variable wud b nice <———————————————————————————————————— ;
+      visibility: hidden;
+    }
+  }
+
+  /* so far fake styles for fake sections NEWS */
+  section.news {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2.25rem;
+    grid-row-gap: 2.5rem;
+    div.news-item {
+      h3 {
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 500;
+      }
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  section.videos {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2.25rem;
+    grid-row-gap: 2.5rem;
+    div.video-item {
+    }
+  }
+  div#more-news {
+    grid-column: 1/-1;
+    justify-self: center;
+    background: $green_a2;
+    margin: 0;
+    padding: 0 0.25rem;
+    p { 
+      line-height: 1.3;
+      margin: 0
+    }
+  }
+  div#more-news p:before {
+    content: url('/assets/_pic/plus.svg');
+    padding-right: 0.25rem;
+  }
+
+  .accordion-trigger,
+  .accordion-collapse { // better be a button
+    text-align: center;
+    span {
+      display: inline-block;
+      padding: 0 0.25rem;
+      background: $green_a2;
+      cursor: pointer;
+      user-select: none;
+    }
+    span:hover { background: $green_a5; }
+  }
+  .accordion-trigger span:before {
+   content: url("/assets/_pic/plus.svg"); 
+   padding-right: 0.25rem;
+  }
+  .accordion-collapse span:before {
+   content: url("/assets/_pic/minus.svg"); 
+   padding-right: 0.25rem;
+  }
+  section.raster {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-column-gap: 2rem;
+    img {
+      width: 320px;
+      height: auto;
+      grid-column: 1/2;
+    }
+    div.raster-textfeld { 
+      grid-column: 2/3;
+      section {
+        border: none; // wegen Akkordeon zus. Section :-(
+        margin: 0;
+        padding: 0;
+      }
+    }
+    h3 { font-weight: 400; line-height: 0.75; }
+    p.teacher-quote {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+  }
+  section.contact,
+  section.angebote {
+    width: 46rem; /* schmaler als Seiten mit Bildern */
+    margin: 0 auto 4.5rem;
+    h3 {
+      font-weight: 500; line-height: 0.75;
+      margin-bottom: 3rem;
+    }
+  }
+  section.contact {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  section.visible {
+    border: none;
+    border-top: 1px solid $linegray;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 3rem;
+  }
+  section.visible:first-child {
+    padding-top: 0;
+  }
+  section.visible:first-child {
+    border: none;
+    padding-top: none;
+  }
+  section.collapsed { // untere linie & abstand weg, wegen akkordeon-struktur
+    border: none;
+    padding-bottom: 0;
+  }
+  section.raster:nth-child(odd) {
+    grid-template-columns: 1fr 320px;
+    img { grid-column: 2/3; }
+    div.raster-textfeld {
+      grid-column: 1/2;
+      grid-row: 1;
+    }
+  }
+
+  section.contact {
+    border-bottom: none;
+  }
+
+  section#month-nav,
+  section#calendar { border: none;}
+  section#month-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    top: -4rem;
+    background: transparent;
+  }
+  section#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem ;
+    div.cal-case {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2.5rem auto;
+      border-right: 1px solid $linegreen;
+      border-bottom: 1px solid $linegreen;
+      div.weekday {
+        visibility: hidden;
+        display: none;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.9;
+      }
+      div.day_cell {
+        height: 10.625rem; // WHAT? kein einfluss
+        div.date {
+          // height: 2.5rem;
+          padding: 0.25rem 0.5rem;
+          text-align: right;
+        }
+        div.event {
+          padding: 0 0.25rem;
+          margin-bottom: 0.25rem;
+          span.calendar-color {
+            display: inline-block;
+            width: 0.875rem;
+            height: 0.875rem;
+            border-radius: 0.4375rem;
+            position: relative;
+            top: 0.1rem;
+            background: $green_a75;
+          }
+          a.trigger {
+            font-weight: 600;
+            color: $black;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+          }
+          a.ausfall { text-decoration: line-through; }
+          div.qtip {
+            width: 10.5rem;
+            border: 1px solid $green;
+            background: $white;
+            visibility: visible;
+            box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.50);
+            position: relative;
+            padding: 0.25rem 0.5rem;
+            p {
+              margin-bottom: 0.25rem;
+            }
+          }
+          div.qtip:after, div.qtip:before {
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+          }
+          div.qtip:after {
+          border-color: transparent;
+          border-bottom-color: $white;
+          border-width: 12px;
+          margin-left: -12px;
+        }
+        div.qtip:before {
+          border-color: transparent; 
+          border-bottom-color: $green;
+          border-width: 13px;
+          margin-left: -13px;
+        }
+        div.hidden { visibility: hidden; }
+        }
+        .all_day {
+          background: $lavender;
+        }
+      }
+      div.today {
+        background: $green_a25;
+        .all_day { background: $lavender_75; }
+        div.event span.calendar-color {
+          background: $green;
+        }
+      }
+    }
+    div.cal-case:nth-child(7n+1) {
+      border-left: 1px solid $linegreen; }
+    div.cal-case:nth-child(-n+7) { // die ersten 7 (oberste Zeile)
+      border-top: 1px solid $linegreen;
+      div.weekday { // in Desktop Viewport sichtbare Tagesnamen
+        visibility: visible;
+        display: block;
+        border-bottom: 1px solid $linegreen;
+      }
+    }
+  }
+}
+
+
+/* End Layout Content/Main */
+
+/* Layout Footer */
+
+footer {
+  margin-top: 4em;
+  z-index: 9750;
+
+  /* Footer Social Media Buttons */
+  #social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    /* Footer Social Media Buttons */
+    svg { }
+  }
+
+  /* Footer Info Container */
+  #infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    /* Footer Info Items */
+    p { 
+      white-space: nowrap;
+      margin-right: 1em;
+    }
+    p:last-child {margin-right: 0; }
+  }
+
+  #masthead { /* Background-Image and Logotype in Footer */
+    height: 20vw;
+    margin-top: 1rem;
+    padding: 1.5rem 1.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: flex-start;
+    /* Text on Footer Image */
+    h1, p { color: white; margin: 0; line-height: 1;}
+    h1 { 
+      font-size: 6.25rem;
+      order: 2; /* Starts below, higher number means higher up on Y-Axis */
+    }
+  }
+}
+/* End Layout Footer*/
+
+/* Nav overlay */
+#nav-overlay {
+  padding: 20rem 1rem 0 2rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  // transform: translateY(-100vh);
+  transition: all .2s ease-in;
+  background: $white;
+  z-index: 9500;
+  display: none;
+}
+#nav-overlay.visible {
+  display: block;
+  // transform: translateY(0vh);
+}
+/* End Nav Overlay */
+
+/* mobile styles */
+@media (max-width: 500px) {
+  header {
+    nav { display: none; }
+    #masthead {
+      height: 15vh;
+      padding: 1rem;
+      h1  { font-size: 2rem; }
+      p { font-size: 0.75rem; }
+      
+    }
+  }
+  #nav-overlay {
+    font-size: 2rem;
+    padding: 12vh 1rem 1rem 2rem;
+    animation: foo .2s ease-in; // bringts nicht so, weil nur in eine Richtung möglich
+  }
+  main { padding: 10rem 1rem 2rem; }
+}
+
+@keyframes foo {
+  from { transform: translateY(3rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ———————————————————————————————————————————————————— */
+/* ——————————————————— Mobile-Styles —————————————————— */
+
+@media (max-width: 600px) {
+  // Intro-Animation
+  body.intro {
+    div.container {
+      #seeschau-container {
+        transform: scale(.5);
+        white-space: nowrap;
+      }
+      #byline-container {
+        margin-top: 0; 
+        p {
+          font-size: 1rem;
+          letter-spacing: 0.2rem;
+        }
+      }
+    }
+  }
+  // Header
+  header.shrink { // keine Änderung bei Scroll
+    #masthead {
+      height: 4.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+  h1, p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  }
+  header {
+    #masthead {
+      height: 4.75rem;
+      padding: 0.25rem 0.5rem;
+      h1 {
+        font-size: 2.625rem;
+        font-family: $francisGradientOutside; 
+      }
+      p {
+        font-size: 0.8125rem;
+        letter-spacing: 0.125rem;
+      }
+    }
+    #hamburger {
+      display: block;
+      top: 0.75rem;
+      right: 1rem;
+      transform: scale(0.75);
+    }
+  }
+  nav#nav-overlay {
+    padding-top: 6rem;
+  }
+  main {
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+    h2 { // Seitenüberschriften
+      font-size: 2.625rem;
+      text-align: left;
+      margin: 0 0 0.75rem 0;
+    }
+    section.news {
+      width: 100%;
+      margin-bottom: 0;
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+      div.news-item:nth-child(n+4) { // nur 3 items einblenden
+        display: none;
+      }
+      div.news-item {
+        h3 {
+          font-size: 2rem;
+          margin-bottom: 0.25rem;
+        }
+        p {
+          margin-bottom: 0.125rem;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    section.videos {
+      border: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-column-gap: 2.25rem;
+      grid-row-gap: .5rem;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      div.video-item {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    div#more-news {
+      grid-column: 1/-1;
+      justify-self: center;
+      background: $green_a2;
+      margin: 0;
+      padding: 0 0.25rem;
+      p { 
+        font-size: 1rem;
+        line-height: 1.3;
+        margin: 0
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    div#infos {
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 2rem);
+      grid-auto-flow: column;
+    }
+    #masthead {
+      height: 4.75rem;
+      padding: 0.25rem 0.5rem;
+      h1 {
+        font-size: 2.625rem;
+        font-family: $francisGradientLeft; 
+      }
+      p {
+        font-size: 0.8125rem;
+        letter-spacing: 0.125rem;
+      }
+    }
+  }
+}

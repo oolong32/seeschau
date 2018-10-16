@@ -3,26 +3,47 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Needs to go into snippet</title>
-  <link rel="stylesheet" href="style.css">
+  {% include 'includes/head.html' %}
 </head>
 
-<body>
+{% set hausmarke = craft.request.firstSegment %}
+
+<body class="{{ hausmarke }}">
   <header>
-    {% include 'header.html' %}
+    {% include 'includes/header.html' %}
   </header>
   
-  <nav>
-    {% include 'nav.html' %}
+  <nav id="nav-overlay">
+    {% include 'includes/nav.html' %}
   </nav>
 
+  <main>
   {% block content %} 
     <p>If you see this, contact your administrator. The template inheritance doesn’t work properly on this page.</p>
   {% endblock %}
+  </main>
 
   <footer>
-    {% include 'footer.html' %}
+    {% include 'includes/footer.html' %}
   </footer>
+
+  <!-- JS -->
+  {# Hamburger und Header-Collapse #}
+  {% include 'includes/loadjs.html' %}
+  {# Popover #}
+  {# Wie ist das auf Mobile? Worst Case Szenario: deaktivieren und einblenden #}
+  {% if hausmarke == 'calendar' %}
+    <script src="/assets/js/thirdparty/popper.js"></script>
+    <script src="/assets/js/thirdparty/tooltip.js"></script>
+    <script src="/assets/js/poppers.js"></script>
+  {% elseif hausmarke == 'yoga' or hausmarke == 'music-voice' or hausmarke == 'team' or hausmarke == 'workshops' %}
+  {# Accordion #}
+    <script src="/assets/js/thirdparty/jquery.min.js"></script>
+    <script src="/assets/js/thirdparty/jquery-ui.min.js"></script>
+    <script src="/assets/js/accordion.js"></script> 
+  {% endif %}
+
+  <script>console.log('{{ hausmarke }}');</script>
+
 </body>
 </html>

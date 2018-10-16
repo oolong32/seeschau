@@ -1,0 +1,60 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+  <h2>{{ entry.title }}</h2>
+    {% if entry.categoryOverview|length %}
+  <section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
+    {{ entry.categoryOverview }}
+  </section>
+    {% endif %}
+
+  <div class="accordion">
+  {% for section in entry.children() %}
+
+  {#<section class="angebote">#}
+  
+
+  <section class="visible angebote">
+    <a id="{{ section.slug }}" class="anchor"></a>
+    <h3>{{ section.title }}</h3>
+    <h4>{{ section.untertitel }}</h4>
+
+    {% if section.lehrpersonen|length %}
+    <p class="teacher"> Mit
+      {% for lehrer in section.lehrpersonen %}
+        {% if loop.first %}
+          <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% elseif not loop.last %}
+          , <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% else %}
+          und <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if section.visibleText|length %} {# Show first Paragraph of Text #}
+      {{ section.visibleText }}
+    {% endif %}
+
+    <p class="accordion-trigger"><span>Weitere Informationen</span></p>
+  </section>
+
+  <section class="collapsed angebote">
+    {{ section.beschrieb }} {# Show remaining Paragraphs of Text #}
+    {% if section.mailLink %}
+    <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
+    {% else %}
+    <p>Ohne Voranmeldung willkommen!</p>
+    {% endif %}
+
+    <p>Termine siehe <a href="/calendar" class="cal-link">Kalender</a>, Preise siehe <a href="/info">Info</a> (???).</p>
+
+
+    <p class="accordion-collapse"><span>Weniger Informationen</span></p>
+  </section> <!-- End collapsed part of accordion -->
+
+  {% endfor %}
+  </div> <!-- End Accoridon -->
+  
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "_layout.html" %}
+
+{# extends "calendar-demo/layouts/_layout.html" #}
+{% set pageTitle = "Month" %}
+{% set page = "month" %}
+
+{% block content %}
+<h2>Calendar</h2>
+
+    {# Acquire URL segments #}
+    {% set baseUrlSegments = 1 %}
+    {% set segment1 = craft.app.request.segment(baseUrlSegments + 1) %}
+    {% set segment2 = craft.app.request.segment(baseUrlSegments + 2) %}
+    {% set segment3 = craft.app.request.segment(baseUrlSegments + 3) %}
+    {% set segment4 = craft.app.request.segment(baseUrlSegments + 4) %}
+    {% set segment5 = craft.app.request.segment(baseUrlSegments + 5) %}
+
+    {% set targetDate = "today" %}
+    {% set calendarHandle = null %}
+    {% if segment2 == "calendar" %}
+        {% set calendarHandle = segment3 %}
+        {% if segment4 %}
+            {% set targetDate = segment4~"-"~segment5~"-01" %}
+        {% endif %}
+    {% elseif segment2 is not empty %}
+        {% set targetDate = segment2~"-"~segment3~"-01" %}
+    {% endif %}
+
+	{# brauchts wahrscheinlich nicht #}
+    {% if segment2 == "calendar" %}
+	{% set calendar = craft.calendar.calendar({handle: segment3}) %}
+    {% endif %}
+
+	{% set month = craft.calendar.month({
+	    date: targetDate,
+	    calendar: calendarHandle,
+	}) %}
+
+<section id="month-nav">
+    <div id="prev-month">
+	    <a class="arrow-left-before" href="{# raus für präsi {{ siteUrl }}calendar-demo/month/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ month.previousDate.format('Y/m') }} #}">
+		{{ month.previousDate.format('F') }}
+	    </a>
+    </div>
+    <div id="next-month">
+	    {#<a class="arrow-right-after" href="{{ siteUrl }}calendar-demo/month/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ month.nextDate.format('Y/m') }}"> #}
+	    {# 
+	    Nachfolgend: Versuch, den Link anzupassen. Funktionert nicht.
+	    Ev. genügt es, folgende Routen zu konfigurieren (mit template calendar/_entry verknüpfen)?
+		calendar/month/{year}/{month}                 —> /calendar
+		calendar/month/calendar/{slug}                —> /calendar
+		calendar/month/calendar/{slug}/{year}/{month} —> /calendar
+	    #}
+	    <a class="arrow-right-after" href="{# raus für präsi {{ siteUrl }}calendar/month/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ month.nextDate.format('Y/m') }} #}">
+		{{ month.nextDate.format('F') }}
+	    </a>
+    </div>
+</section>
+
+<section id="calendar">
+	{% for week in month %}
+		{% for day in week %}
+		<div class="cal-case">
+		    <div class="weekday">{{ day.date.format('l') }}</div>
+		    {% if month.containsDate(day.date) %}
+		    {# Tage des Monats ohne jene des vorhergehenden/nachfolgenden Monats #}
+		    <div class="day_cell{{ day.date.isToday ? " today" }}">
+			<div class="date{{ day.eventCount ? " has_events" }}">
+			    {#<a class="num" href="{{ siteUrl }}calendar-demo/day/{{ segment2 == 'calendar' ? "calendar/"~segment3~"/" }}{{ day.date.format('Y/m/d') }}">#}
+				{{ day.date.format('j') }} {# Datum, der wievielte #}
+			    {#</a>#}
+			</div>
+		    {% else %}
+		    <div class="day_cell out_of_range"> {# vorhergehender monat und beginn folgemonat #}
+			<div class="date">
+				<span class="num">
+				    {{ day.date.format('j') }}
+				</span>
+			</div>
+		    {% endif %}
+
+		    {% for event in day.events %}
+			{% include "calendar/_event.html" %}
+		    {% endfor %}
+		    </div>
+		    </div>
+		{% endfor %}
+	{% endfor %}
+</section>
+
+{% endblock %}
