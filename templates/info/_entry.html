@@ -7,14 +7,19 @@
 	<section id="tel-mail" class="contact">
 		<h3>{{ entry.heading }}</h3>
 		<p><strong>Telefonisch</strong><br>
-		Montags bis Freitags: <a href="tel:{{ entry.tel|replace({' ': ''}) }}">{{ entry.tel }}</a></p>
+		Montags bis Freitags: <a href="tel:{{ entry.tel|replace({' ': ''}) }}"><span class="nowrap">{{ entry.tel }}</span></a></p>
 		<p><strong>Per Mail</strong><br>
 		<a href="mailto:{{ entry.mail }}">{{ entry.mail }}</a></p>
 	</section>
 
 	<section id="map" class="contact" style="margin-bottom: 2rem;">
-		<!-- <h3>So finden sie uns</h3> -->
-		<img src="/assets/_pic/tempAssets/googleMap.jpg" alt="">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4651.223828873805!2d8.592413716256793!3d47.299844717110204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479aa615eac60549%3A0xa6c22ebba7da20b4!2sSEESCHAU+Yoga-+und+Therapiezentrum!5e1!3m2!1sde!2sch!4v1539865284678"
+			width="600"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      allowfullscreen>
+  </iframe>
 	</section>
 
 	<section id="anreise-text" class="contact">

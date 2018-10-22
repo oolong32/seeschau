@@ -2,44 +2,43 @@
 {% block content %}
   <h2>News</h2>
   <section class="news">
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/bergsegen.jpg" alt="">
-		<p class="date">10. Oktober 2018</p>
-		<h3>Mountain Blessing «Awakening Beyond»</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/regulahut.jpg" alt="">
-		<p class="date">16. September 2018</p>
-		<h3>Druckfrisch «Zürich for Women only» …</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/neto.jpg" alt="">
-		<p class="date">19. August 2018</p>
-		<h3>Gaia Mother Tree by Ernesto Neto</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/orangen.jpg" alt="">
-		<p class="date">2. August 2018</p>
-		<h3>Beyond</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/paddelboot.jpg" alt="">
-		<p class="date">2. Oktober 2018</p>
-		<h3>Mountain Blessing «Awakening Beyond»</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
-  	<div class="news-item">
-		<img src="/assets/_pic/tempAssets/regulatisch.jpg" alt="">
-		<p class="date">30. Juli 2018</p>
-		<h3>Honoring Mother Earth</h3>
-		<p><a href="#">Mehr erfahren</a></p>
-	</div>
+{% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 6}) %}
+    <div class="news-item">
+{# {% if loop.first %}
+      <p>Status: {{ instagramdata.status }}</p>
+      <p>Error Type: {{ instagramdata.error_type }}</p>
+      <p>Error Message: {{ instagramdata.error_message }}</p>
+    {% endif %}
+#}
+    {% if instagramdata.status == 'true' %}
+    <p style="display:none">Loop Index: {{ loop.index }}</p>
+    {% if instagramdata.video_low_resolution != '' %}
+      <video width="320" height="240" controls>
+        <source src="{{ instagramdata.video_low_resolution }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      {#
+      <p>This is a video; not an image.</p>
+      <p>{{ instagramdata.video_low_resolution }}</p>
+      #}
+    {% else %}
+      <p><img src="{{instagramdata.low_resolution}}"></p>
+    {% endif %}
+      <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
+      <h3>{{instagramdata.caption}}</h3>
+      <p><a href="#">Mehr erfahren</a></p>
+    {% else %}
+        <p class="date error">Error Type: {{ instagramdata.error_type }}</p>
+        <h3 class="error">Error Message: {{ instagramdata.error_message }}</p>
+    {% endif %}
+    </div>
+  {# 
+  Gibts dafür eine Lösung?
 	<div id="more-news"><p>Mehr Posts laden</p></div>
-  </section>
+  #}
+{% endfor %}
+
+	{# ev. muss "user_id" angepasst werden #}
 
   <h2>Videos</h2>
   <section class="videos">

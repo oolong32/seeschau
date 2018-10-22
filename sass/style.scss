@@ -2,6 +2,7 @@
 
 $black: rgba( 0, 0, 0, 1);
 $white: rgba(255, 255, 255, 1);
+$green_a05: rgba(80, 227, 194, .05);
 $green_a1: rgba(80, 227, 194, .1);
 $green_a2: rgba(80, 227, 194, .2);
 $green_a25: rgba(80, 227, 194, .25);
@@ -52,6 +53,7 @@ h2 {
   text-transform: uppercase;
 }
 
+
 #masthead {
   h1, p {
     line-height: 1;
@@ -74,11 +76,16 @@ header nav ul li {
 main {
   font-size: 1.25rem;
   line-height: 1.68;
+  section h3 {
+    font-size: 2rem;
+  }
 }
 
 strong { font-weight: 600; }
 
 section#calendar { font-size: 0.9375rem; }
+
+.nowrap { white-space: nowrap; }
 
 /* End Text Formatting */
 
@@ -148,6 +155,18 @@ a.mail-link:before {
   content: url("/assets/_pic/arrow_right.svg");
 }
 
+.button a { // «Buttons» sind natürlich degenerierte Links
+  background: $green_a2;
+  display: inline-block;
+  padding: 0 0.25rem;
+  border: none;
+}
+.button a:hover,
+.button a:active,
+.button a:focus {
+  background: $green_a5;
+}
+
 /* End Link Styles */
 
 
@@ -176,11 +195,12 @@ a.mail-link:before {
   background-position: center;
 }
 .team footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg"); }
-.bodywork header #masthead {
+
+.workshops header #masthead {
   background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
   background-position: center ;
 }
-.bodywork footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
+.workshops footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
 .yoga #masthead {
   background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
   background-position: center ;
@@ -210,6 +230,11 @@ a.mail-link:before {
 ../_pic/mastheadBackgrounds/tatamiRaum@1x.png
 */
 
+/* Tests */
+.test {
+ border: 1px solid lawngreen;
+}
+/* End Tests */
 
 /* Layout Header*/
 
@@ -360,14 +385,10 @@ main {
     margin-bottom: 4.5rem;
     h3 {
       margin: 0 0 0.5rem 0;
-      font-size: 2rem;
     }
-    h4 {
-    }
-    p {
+    p, ul {
       margin-bottom: 1.75rem;
     }
-    ul { margin-bottom: 1.75rem; }
     a.anchor { /* Fix jump to anchor relative to header/masthead */
       // https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
       display: block;
@@ -419,7 +440,30 @@ main {
     content: url('/assets/_pic/plus.svg');
     padding-right: 0.25rem;
   }
+  // fake news bis hier
 
+  // Accordion Sections
+  section.visible {
+    border: none;
+    border-top: 1px solid $linegray;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 3rem;
+  }
+  section.visible:first-child {
+    padding-top: 0;
+  }
+  section.visible:first-child {
+    border: none;
+    padding-top: none;
+  }
+  section.collapsed { // untere linie & abstand weg, wegen akkordeon-struktur
+    border: none;
+    padding-bottom: 0;
+  }
+  // End Accordion Sections
+
+  // Accordion Trigger
   .accordion-trigger,
   .accordion-collapse { // better be a button
     text-align: center;
@@ -440,6 +484,9 @@ main {
    content: url("/assets/_pic/minus.svg"); 
    padding-right: 0.25rem;
   }
+  // End Accordion Trigger
+
+  // Grid for Team & Workshops
   section.raster {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -463,40 +510,8 @@ main {
       font-size: 2rem;
       line-height: 1.2;
     }
-
   }
-  section.contact,
-  section.angebote {
-    width: 46rem; /* schmaler als Seiten mit Bildern */
-    margin: 0 auto 4.5rem;
-    h3 {
-      font-weight: 500; line-height: 0.75;
-      margin-bottom: 3rem;
-    }
-  }
-  section.contact {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-  section.visible {
-    border: none;
-    border-top: 1px solid $linegray;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-top: 3rem;
-  }
-  section.visible:first-child {
-    padding-top: 0;
-  }
-  section.visible:first-child {
-    border: none;
-    padding-top: none;
-  }
-  section.collapsed { // untere linie & abstand weg, wegen akkordeon-struktur
-    border: none;
-    padding-bottom: 0;
-  }
-  section.raster:nth-child(odd) {
+  section.raster:nth-child(odd) { // change order of columns in every other row
     grid-template-columns: 1fr 320px;
     img { grid-column: 2/3; }
     div.raster-textfeld {
@@ -504,24 +519,52 @@ main {
       grid-row: 1;
     }
   }
+  // End Grid for Team & Workshops
 
+  // Einspaltige Layouts (Kontakt, Angebote
+  section.contact,
+  section.angebote {
+    width: 46rem; /* schmaler als Seiten mit Bildern */
+    margin: 0 auto 4.5rem;
+    h3 {
+      font-weight: 500; // <—————————————————————————— should be in Typo-Section!
+      line-height: 0.75; // <—————————————————————————— should be in Typo-Section!
+      margin-bottom: 3rem;
+    }
+  }
   section.contact {
+    margin-bottom: 0;
+    padding-bottom: 0;
     border-bottom: none;
   }
+  section#map {
+    iframe {
+      width: 100%;
+    }
+  }
+  // End Einspaltige Layouts (Kontakt, Angebote)
 
-  section#month-nav,
-  section#calendar { border: none;}
-  section#month-nav {
+  // Calendar Styles
+  section#cal-head {
+    border: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 0;
+    align-items: flex-end;
+    margin-bottom: 2rem;
     padding-bottom: 0;
-    position: relative;
-    top: -4rem;
     background: transparent;
+    h3 {
+      line-height: 1;
+      order: 2;
+      display: inline-block;
+      margin: 0;
+    }
+    #prev-month { order: 1; }
+    #next-month { order: 3; }
   }
-  section#calendar {
+  section#calendar { border: none;}
+  section#calendar { // Calendar Layout
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem ;
@@ -538,8 +581,9 @@ main {
         font-size: 1.25rem;
         line-height: 1.9;
       }
+      div.weekday-mobile { display: none; } // Abgekürzte Wochentage, nur auf Mobile
       div.day_cell {
-        height: 10.625rem; // WHAT? kein einfluss
+        height: 10.625rem; // notwendig für Einfärbung Zellen: today & out of range
         div.date {
           // height: 2.5rem;
           padding: 0.25rem 0.5rem;
@@ -608,14 +652,23 @@ main {
       }
       div.today {
         background: $green_a25;
-        .all_day { background: $lavender_75; }
+        .all_day {
+          background: $lavender_75;
+        }
         div.event span.calendar-color {
           background: $green;
         }
       }
+      div.out_of_range {
+        background: $green_a05;
+        div.event a.trigger {
+          color: #666;
+        }
+      }
     }
     div.cal-case:nth-child(7n+1) {
-      border-left: 1px solid $linegreen; }
+      border-left: 1px solid $linegreen;
+    }
     div.cal-case:nth-child(-n+7) { // die ersten 7 (oberste Zeile)
       border-top: 1px solid $linegreen;
       div.weekday { // in Desktop Viewport sichtbare Tagesnamen
@@ -625,10 +678,13 @@ main {
       }
     }
   }
-}
+  // End Calendar Styles
 
+} // End Main Styles
 
 /* End Layout Content/Main */
+
+/* ----------------------------------------*/
 
 /* Layout Footer */
 
@@ -641,10 +697,9 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 1.5rem;
-
-    /* Footer Social Media Buttons */
     svg { }
   }
+  /* End Footer Social Media Buttons */
 
   /* Footer Info Container */
   #infos {
@@ -761,8 +816,7 @@ footer {
       height: 4.75rem;
       padding: 0.25rem 0.5rem;
       h1 {
-        font-size: 2.625rem;
-        font-family: $francisGradientOutside; 
+        font-size: 2.25rem;
       }
       p {
         font-size: 0.8125rem;
@@ -836,15 +890,81 @@ footer {
         margin: 0
       }
     }
+    section#cal-head {
+      flex-wrap: wrap;
+      margin: 1rem 0;
+      h3 {
+        margin-bottom: 0.5rem;
+        width: 100%;
+        order: 1;
+      }
+      #prev-month,  #next-month { font-size: 0.9375rem; }
+      #prev-month { order: 2; }
+      #next-month { order: 3; }
+    }
+    section#calendar {
+      div.cal-case div.weekday,
+      div.cal-case:nth-child(-n+7) div.weekday { display: none } // ausgeschriebene Wochentage ausblenden
+      div.cal-case:nth-child(7n+1) { border-left: none; border-top: none; }
+      div.cal-case:nth-child(-n+7) { border-top: none;}
+      display: block; // Grid deaktivieren, alles untereinander
+      border-left: 1px solid $linegreen; // Linie um den ganzen Kalender
+      border-top: 1px solid $linegreen;
+      border-bottom: none;
+      padding-bottom: 0;
+      div.cal-case {
+        grid-template-columns: 2.25rem 1fr;
+        grid-template-rows: auto;
+        div.weekday-mobile {
+          display: block;
+          grid-column: 1/2;
+          text-transform: uppercase;
+          letter-spacing: 0.025rem;
+          border-right: 1px solid $linegreen;
+          padding: 0.25rem 0.3rem;
+        }
+        div.day_cell {
+          grid-column: 2/3;
+          display: grid;
+          grid-template-columns: 1rem 1fr;
+          grid-gap: 0 0.5rem;
+          height: auto;
+          padding: 0.25rem 0 0.15rem 0.3rem ;
+          div.date {
+            padding: 0;
+            grid-column: 1/2;
+          }
+          div.event {
+            grid-column: 2/3;
+            span.calendar-color {
+              position: relative; 
+              left: -0.25rem;
+            }
+            div.qtip { // popover on mobile
+              width: auto;
+            }
+          }
+        }
+      }
+      
+    } // End Mobile Calendar Styles
+  section.contact,
+  section.angebote {
+    width: 100%;
+  }
+    // section.foo {} // other sections, like angebote etc.
   }
   footer {
     width: 100%;
+    margin-top: 2rem;
     div#infos {
-      padding: 0 1rem;
+      padding: 4rem 0 1rem;
+      margin: 2rem 1rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(4, 2rem);
       grid-auto-flow: column;
+      border-top: 1px solid $linegray;
     }
     #masthead {
       height: 4.75rem;

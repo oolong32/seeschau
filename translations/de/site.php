@@ -1,0 +1,31 @@
+<?php
+return [
+  'January' => 'Januar',
+  'February' => 'Februar',
+  'March' => 'März',
+  'April' => 'April',
+  'May' => 'Mai',
+  'June' => 'Juni',
+  'July' => 'Juli',
+  'August' => 'August',
+  'Septmeber' => 'Septmeber',
+  'October' => 'Oktober',
+  'November' => 'November',
+  'December' => 'Dezember',
+  'Monday' => 'Montag',
+  'Tuesday' => 'Dienstag',
+  'Wednesday' => 'Mittwoch',
+  'Thursday' => 'Donnerstag',
+  'Friday' => 'Freitag',
+  'Saturday' => 'Samstag',
+  'Sunday' => 'Sonntag',
+  'Mon' => 'Mo',
+  'Tue' => 'Di',
+  'Wed' => 'Mi',
+  'Thu' => 'Do',
+  'Fri' => 'Fr',
+  'Sat' => 'Sa',
+  'Sun' => 'So',
+]
+
+?>
