@@ -1,0 +1,4 @@
+{
+  "buttons": ["bold", "link", "lists"],
+  "toolbarFixed": true
+}

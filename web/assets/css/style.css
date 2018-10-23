@@ -1,0 +1,1108 @@
+@charset "UTF-8";
+/* variables */
+@import url("./fonts.css");
+/* Text Formatting */
+html, * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PFBagueSansPro", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  font-variant-numeric: proportional-nums;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+header #masthead h1, header #masthead p, footer #masthead h1, footer #masthead p {
+  line-height: 1;
+  color: white;
+}
+header #masthead h1, footer #masthead h1 {
+  font-family: "WF-031942-010448-002219", "PFBagueSansPro", sans-serif;
+  font-weight: normal;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+}
+header #masthead p, footer #masthead p {
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.5215rem;
+}
+
+header nav ul li {
+  font-size: 1.25rem;
+}
+
+main {
+  font-size: 1.25rem;
+  line-height: 1.68;
+}
+main h2 {
+  font-size: 6.25rem;
+  font-family: "WF-031942-010448-002219", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+main section h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+main section.contact h3,
+main section.angebote h3 {
+  line-height: 0.75;
+}
+main section.contact #abo-preise {
+  font-variant-numeric: tabular-nums;
+}
+main section.raster h3 {
+  line-height: 0.75;
+}
+main section.raster p.teacher-quote {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+main section#calendar {
+  font-size: 0.9375rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* End Text Formatting */
+/* List Styles*/
+main ul li {
+  margin-left: 0.6rem;
+  text-indent: -0.6rem;
+}
+main ul li:before {
+  content: "· ";
+}
+
+/* End List Styles*/
+/* Link Styles */
+h1 a {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: black;
+  padding: 0;
+}
+
+h1 a:hover {
+  background: none;
+  border-bottom: none;
+}
+
+header nav ul li a {
+  border-bottom: none;
+}
+
+header nav ul li a:hover {
+  font-weight: 900;
+  background: transparent;
+  border: none;
+}
+
+header nav ul li.active a {
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: solid rgba(80, 227, 194, 0.25) 0.1875rem;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  border-bottom: solid rgba(80, 227, 194, 0.75) 0.1875rem;
+}
+
+a.arrow-left-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-left-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-right-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.arrow-right-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.mail-link:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+.button a {
+  background: rgba(80, 227, 194, 0.2);
+  display: inline-block;
+  padding: 0 0.25rem;
+  border: none;
+}
+
+.button a:hover,
+.button a:active,
+.button a:focus {
+  background: rgba(80, 227, 194, 0.5);
+}
+
+/* End Link Styles */
+/* Masthead Styles Global */
+#masthead {
+  background-origin: border-box;
+  background-size: cover;
+}
+#masthead a {
+  text-decoration: none;
+  color: white;
+}
+
+/* End Masthead Styles Global */
+/* Background Images per Page */
+#masthead {
+  background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
+  background-position: bottom;
+}
+
+.team header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
+  background-position: center;
+}
+
+.team footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg");
+}
+
+.workshops header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
+  background-position: center;
+}
+
+.workshops footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg");
+}
+
+.yoga #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
+  background-position: center;
+}
+
+.calendar header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
+  background-position: bottom;
+}
+
+.calendar footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg");
+}
+
+.info header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg");
+  background-position: center;
+}
+
+.info footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
+}
+
+.music-and-voice #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
+  background-position: center;
+}
+
+/*
+../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
+../_pic/mastheadBackgrounds/tatamiRaum@1x.png
+*/
+/* Tests */
+.test {
+  border: 1px solid lawngreen;
+}
+
+/* End Tests */
+/* Layout Header*/
+header {
+  background: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+header #hamburger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: all 0.3s ease-in;
+  display: none;
+}
+header #hamburger:hover {
+  transform: scale(1.1);
+}
+header #masthead {
+  height: 28rem;
+  /* Variable wud b nice <—————————————————————————————————————————*/
+  /* collapse-transition */
+  transition: all 0.2s ease-in;
+  /* end collapse-transition */
+  padding: 1.5rem 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+header #masthead h1, header #masthead p {
+  margin: 0;
+  /* collapse transition */
+  transition: all 0.3s linear;
+  /* end collapse transition */
+}
+header nav {
+  padding: 0.5rem 2rem;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header.shrink {
+  /* collapsed header */
+}
+header.shrink #masthead {
+  min-height: 0;
+  height: 7.8rem;
+  /* Variable wud b nice <———————————————————————————————————— */
+  width: 100%;
+  padding: 0 0 0 2rem;
+  overflow: hidden;
+  /* children have no influence on height */
+}
+header.shrink h1, header.shrink p {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+/* End Layout Header */
+/* Intro Page */
+.intro h1 {
+  display: none;
+}
+
+@keyframes blendy {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+  7.7% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  13% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body.intro div.container {
+  width: 100vw;
+  height: 100vh;
+  /* center items on page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertikale */
+  align-items: center;
+  /* Horizontale*/
+}
+body.intro div.container ul.img {
+  z-index: -3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  /* background images */
+}
+body.intro div.container ul.img li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  animation: blendy 65s linear infinite 0s;
+}
+body.intro div.container ul.img li:nth-child(1) {
+  z-index: 14;
+  animation-delay: 0s;
+  background: url("../_pic/introBackgrounds/fassadeJungfernrebe@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(2) {
+  z-index: 13;
+  animation-delay: 5s;
+  background: url("../_pic/introBackgrounds/ginko@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(3) {
+  z-index: 12;
+  animation-delay: 10s;
+  background: url("../_pic/introBackgrounds/saal@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(4) {
+  z-index: 11;
+  animation-delay: 15s;
+  background: url("../_pic/introBackgrounds/gebaeude@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(5) {
+  z-index: 10;
+  animation-delay: 20s;
+  background: url("../_pic/introBackgrounds/wasser@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(6) {
+  z-index: 9;
+  animation-delay: 25s;
+  background: url("../_pic/introBackgrounds/tatamiRaum@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(7) {
+  z-index: 8;
+  animation-delay: 30s;
+  background: url("../_pic/introBackgrounds/laub@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(8) {
+  z-index: 7;
+  animation-delay: 35s;
+  background: url("../_pic/introBackgrounds/blumenschale@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(9) {
+  z-index: 6;
+  animation-delay: 40s;
+  background: url("../_pic/introBackgrounds/tatamiReflexion@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(10) {
+  z-index: 5;
+  animation-delay: 45s;
+  background: url("../_pic/introBackgrounds/patio@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(11) {
+  z-index: 4;
+  animation-delay: 50s;
+  background: url("../_pic/introBackgrounds/schattenMauer@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(12) {
+  z-index: 3;
+  animation-delay: 55s;
+  background: url("../_pic/introBackgrounds/blatt@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(13) {
+  z-index: 2;
+  animation-delay: 60s;
+  background: url("../_pic/introBackgrounds/mammutbaumkrone@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container #seeschau-container {
+  transform: scale(2);
+}
+body.intro div.container #byline-container {
+  margin-top: 2em;
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+}
+body.intro div.container svg {
+  background: transparent;
+  fill: white;
+}
+
+/* End Intro Page */
+/* Layout Content/Main */
+main {
+  width: 65rem;
+  margin: 0 auto;
+  padding: 32rem 0 0;
+  /* so far fake styles for fake sections NEWS */
+}
+main h2 {
+  text-align: center;
+  margin: 0 0 0;
+}
+main h2:nth-child(n+2) {
+  margin-top: 4rem;
+}
+main section {
+  background: white;
+  outline: none;
+  border-bottom: solid 1px #9b9b9b;
+  padding-bottom: 2rem;
+  margin-bottom: 4.5rem;
+}
+main section h3 {
+  margin: 0 0 0.5rem 0;
+}
+main section p, main section ul {
+  margin-bottom: 1.75rem;
+}
+main section a.anchor {
+  /* Fix jump to anchor relative to header/masthead */
+  display: block;
+  position: relative;
+  top: -13rem;
+  visibility: hidden;
+}
+main section.news {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.5rem;
+}
+main section.news div.news-item h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+main section.news div.news-item p {
+  margin-bottom: 0.5rem;
+}
+main section.videos {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.5rem;
+}
+main div#more-news {
+  grid-column: 1/-1;
+  justify-self: center;
+  background: rgba(80, 227, 194, 0.2);
+  margin: 0;
+  padding: 0 0.25rem;
+}
+main div#more-news p {
+  line-height: 1.3;
+  margin: 0;
+}
+main div#more-news p:before {
+  content: url("/assets/_pic/plus.svg");
+  padding-right: 0.25rem;
+}
+main section.visible {
+  border: none;
+  border-top: 1px solid #9b9b9b;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 3rem;
+}
+main section.visible:first-child {
+  padding-top: 0;
+}
+main section.visible:first-child {
+  border: none;
+  padding-top: none;
+}
+main section.collapsed {
+  border: none;
+  padding-bottom: 0;
+}
+main .accordion-trigger,
+main .accordion-collapse {
+  text-align: center;
+}
+main .accordion-trigger span,
+main .accordion-collapse span {
+  display: inline-block;
+  padding: 0 0.25rem;
+  background: rgba(80, 227, 194, 0.2);
+  cursor: pointer;
+  user-select: none;
+}
+main .accordion-trigger span:hover,
+main .accordion-collapse span:hover {
+  background: rgba(80, 227, 194, 0.5);
+}
+main .accordion-trigger span:before {
+  content: url("/assets/_pic/plus.svg");
+  padding-right: 0.25rem;
+}
+main .accordion-collapse span:before {
+  content: url("/assets/_pic/minus.svg");
+  padding-right: 0.25rem;
+}
+main section.raster {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-column-gap: 2rem;
+}
+main section.raster img {
+  width: 320px;
+  height: auto;
+  grid-column: 1/2;
+}
+main section.raster div.raster-textfeld {
+  grid-column: 2/3;
+}
+main section.raster div.raster-textfeld section {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+main section.raster:nth-child(odd) {
+  grid-template-columns: 1fr 320px;
+}
+main section.raster:nth-child(odd) img {
+  grid-column: 2/3;
+}
+main section.raster:nth-child(odd) div.raster-textfeld {
+  grid-column: 1/2;
+  grid-row: 1;
+}
+main section.contact,
+main section.abo-infos,
+main section.angebote {
+  width: 46rem;
+  /* schmaler als Seiten mit Bildern */
+  margin: 0 auto 4.5rem;
+}
+main section.contact h3,
+main section.abo-infos h3,
+main section.angebote h3 {
+  margin-bottom: 3rem;
+}
+main section.contact {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+main section#map iframe {
+  width: 100%;
+}
+main section#cal-head {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+  background: transparent;
+}
+main section#cal-head h3 {
+  line-height: 1;
+  order: 2;
+  display: inline-block;
+  margin: 0;
+}
+main section#cal-head #prev-month {
+  order: 1;
+}
+main section#cal-head #next-month {
+  order: 3;
+}
+main section#calendar {
+  border: none;
+}
+main section#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem;
+}
+main section#calendar div.cal-case {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2.5rem auto;
+  border-right: 1px solid #bbd7d1;
+  border-bottom: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case div.weekday {
+  visibility: hidden;
+  display: none;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+main section#calendar div.cal-case div.weekday-mobile {
+  display: none;
+}
+main section#calendar div.cal-case div.day_cell {
+  height: 10.625rem;
+}
+main section#calendar div.cal-case div.day_cell div.date {
+  padding: 0.25rem 0.5rem;
+  text-align: right;
+}
+main section#calendar div.cal-case div.day_cell div.event {
+  padding: 0 0.25rem;
+  margin-bottom: 0.25rem;
+}
+main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.4375rem;
+  position: relative;
+  top: 0.1rem;
+  background: rgba(80, 227, 194, 0.75);
+}
+main section#calendar div.cal-case div.day_cell div.event a.trigger {
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+main section#calendar div.cal-case div.day_cell div.event a.ausfall {
+  text-decoration: line-through;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip {
+  width: 10.5rem;
+  border: 1px solid #50e3c2;
+  background: white;
+  visibility: visible;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 0.25rem 0.5rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip p {
+  margin-bottom: 0.25rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:after, main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:after {
+  border-color: transparent;
+  border-bottom-color: white;
+  border-width: 12px;
+  margin-left: -12px;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
+  border-color: transparent;
+  border-bottom-color: #50e3c2;
+  border-width: 13px;
+  margin-left: -13px;
+}
+main section#calendar div.cal-case div.day_cell div.event div.hidden {
+  visibility: hidden;
+}
+main section#calendar div.cal-case div.day_cell .all_day {
+  background: rgba(214, 186, 255, 0.4);
+}
+main section#calendar div.cal-case div.today {
+  background: rgba(80, 227, 194, 0.25);
+}
+main section#calendar div.cal-case div.today .all_day {
+  background: rgba(214, 186, 255, 0.75);
+}
+main section#calendar div.cal-case div.today div.event span.calendar-color {
+  background: #50e3c2;
+}
+main section#calendar div.cal-case div.out_of_range {
+  background: rgba(80, 227, 194, 0.05);
+}
+main section#calendar div.cal-case div.out_of_range div.event a.trigger {
+  color: #666;
+}
+main section#calendar div.cal-case:nth-child(7n+1) {
+  border-left: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case:nth-child(-n+7) {
+  border-top: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
+  visibility: visible;
+  display: block;
+  border-bottom: 1px solid #bbd7d1;
+}
+
+/* End Layout Content/Main */
+/* ----------------------------------------*/
+/* Layout Footer */
+footer {
+  margin-top: 4em;
+  z-index: 9750;
+  /* Footer Social Media Buttons */
+  /* End Footer Social Media Buttons */
+  /* Footer Info Container */
+}
+footer #social-media-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+footer #infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Footer Info Items */
+}
+footer #infos p {
+  white-space: nowrap;
+  margin-right: 1em;
+}
+footer #infos p:last-child {
+  margin-right: 0;
+}
+footer #masthead {
+  /* Background-Image and Logotype in Footer */
+  height: 20vw;
+  margin-top: 1rem;
+  padding: 1.5rem 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: flex-start;
+  /* Text on Footer Image */
+}
+footer #masthead h1, footer #masthead p {
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+footer #masthead h1 {
+  font-size: 6.25rem;
+  order: 2;
+  /* Starts below, higher number means higher up on Y-Axis */
+}
+
+/* End Layout Footer*/
+/* Nav overlay */
+#nav-overlay {
+  padding: 20rem 1rem 0 2rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  transition: all 0.2s ease-in;
+  background: white;
+  z-index: 9500;
+  display: none;
+}
+
+#nav-overlay.visible {
+  display: block;
+}
+
+/* End Nav Overlay */
+/* mobile styles */
+@media (max-width: 500px) {
+  header nav {
+    display: none;
+  }
+  header #masthead {
+    height: 15vh;
+    padding: 1rem;
+  }
+  header #masthead h1 {
+    font-size: 2rem;
+  }
+  header #masthead p {
+    font-size: 0.75rem;
+  }
+
+  #nav-overlay {
+    font-size: 2rem;
+    padding: 12vh 1rem 1rem 2rem;
+    animation: foo 0.2s ease-in;
+  }
+
+  main {
+    padding: 10rem 1rem 2rem;
+  }
+}
+@keyframes foo {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ———————————————————————————————————————————————————— */
+/* ——————————————————— Mobile-Styles —————————————————— */
+@media (max-width: 600px) {
+  body.intro div.container #seeschau-container {
+    transform: scale(0.5);
+    white-space: nowrap;
+  }
+  body.intro div.container #byline-container {
+    margin-top: 0;
+  }
+  body.intro div.container #byline-container p {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+
+  header.shrink #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  header.shrink h1, header.shrink p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  header #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  header #masthead h1 {
+    font-size: 2.25rem;
+  }
+  header #masthead p {
+    font-size: 0.8125rem;
+    letter-spacing: 0.125rem;
+  }
+  header #hamburger {
+    display: block;
+    top: 0.75rem;
+    right: 1rem;
+    transform: scale(0.75);
+  }
+
+  nav#nav-overlay {
+    padding-top: 6rem;
+  }
+
+  main {
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+  }
+  main h2 {
+    font-size: 2.625rem;
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+  }
+  main section.news {
+    width: 100%;
+    margin-bottom: 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+  }
+  main section.news div.news-item:nth-child(n+4) {
+    display: none;
+  }
+  main section.news div.news-item h3 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  main section.news div.news-item p {
+    margin-bottom: 0.125rem;
+  }
+  main section.news img {
+    width: 100%;
+    height: auto;
+  }
+  main section.videos {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2.25rem;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  main section.videos div.video-item img {
+    width: 100%;
+    height: auto;
+  }
+  main div#more-news {
+    grid-column: 1/-1;
+    justify-self: center;
+    background: rgba(80, 227, 194, 0.2);
+    margin: 0;
+    padding: 0 0.25rem;
+  }
+  main div#more-news p {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 0;
+  }
+  main section#cal-head {
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  main section#cal-head h3 {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    order: 1;
+  }
+  main section#cal-head #prev-month, main section#cal-head #next-month {
+    font-size: 0.9375rem;
+  }
+  main section#cal-head #prev-month {
+    order: 2;
+  }
+  main section#cal-head #next-month {
+    order: 3;
+  }
+  main section#calendar {
+    display: block;
+    border-left: 1px solid #bbd7d1;
+    border-top: 1px solid #bbd7d1;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  main section#calendar div.cal-case div.weekday,
+main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
+    display: none;
+  }
+  main section#calendar div.cal-case:nth-child(7n+1) {
+    border-left: none;
+    border-top: none;
+  }
+  main section#calendar div.cal-case:nth-child(-n+7) {
+    border-top: none;
+  }
+  main section#calendar div.cal-case {
+    grid-template-columns: 2.25rem 1fr;
+    grid-template-rows: auto;
+  }
+  main section#calendar div.cal-case div.weekday-mobile {
+    display: block;
+    grid-column: 1/2;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    border-right: 1px solid #bbd7d1;
+    padding: 0.25rem 0.3rem;
+  }
+  main section#calendar div.cal-case div.day_cell {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-gap: 0 0.5rem;
+    height: auto;
+    padding: 0.25rem 0 0.15rem 0.3rem;
+  }
+  main section#calendar div.cal-case div.day_cell div.date {
+    padding: 0;
+    grid-column: 1/2;
+  }
+  main section#calendar div.cal-case div.day_cell div.event {
+    grid-column: 2/3;
+  }
+  main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
+    position: relative;
+    left: -0.25rem;
+  }
+  main section#calendar div.cal-case div.day_cell div.event div.qtip {
+    width: auto;
+  }
+  main section.contact,
+main section.angebote {
+    width: 100%;
+  }
+
+  footer {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  footer div#infos {
+    margin: 2rem 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 2rem;
+    grid-template-rows: repeat(4, 2rem);
+    grid-auto-flow: column;
+  }
+  footer #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  footer #masthead h1 {
+    font-size: 2.625rem;
+    font-family: "WF-031942-010448-002217";
+  }
+  footer #masthead p {
+    font-size: 0.8125rem;
+    letter-spacing: 0.125rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

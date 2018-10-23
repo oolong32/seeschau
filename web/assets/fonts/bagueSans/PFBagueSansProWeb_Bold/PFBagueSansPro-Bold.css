@@ -1,0 +1,15 @@
+/* Webfont: PFBagueSansPro-Bold */@font-face {
+    font-family: 'PFBagueSansPro';
+    src: url('PFBagueSansPro-Bold.eot'); /* IE9 Compat Modes */
+    src: url('PFBagueSansPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PFBagueSansPro-Bold.woff') format('woff'), /* Modern Browsers */
+         url('PFBagueSansPro-Bold.svg#PFBagueSansPro-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+}
+
+p {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}

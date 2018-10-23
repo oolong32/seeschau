@@ -1,0 +1,49 @@
+
+@charset "UTF-8";
+
+@font-face
+{
+  font-family: "WF-031942-010448-002218";
+  src: url('fonts/WF-031942-010448-002218.eot');
+  src: url('fonts/WF-031942-010448-002218.eot?#iefix') format('embedded-opentype'), url('fonts/WF-031942-010448-002218.woff') format('woff'), url('fonts/WF-031942-010448-002218.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002220";
+  src: url('fonts/WF-031942-010448-002220.eot');
+  src: url('fonts/WF-031942-010448-002220.eot?#iefix') format('embedded-opentype'), url('fonts/WF-031942-010448-002220.woff') format('woff'), url('fonts/WF-031942-010448-002220.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002217";
+  src: url('fonts/WF-031942-010448-002217.eot');
+  src: url('fonts/WF-031942-010448-002217.eot?#iefix') format('embedded-opentype'), url('fonts/WF-031942-010448-002217.woff') format('woff'), url('fonts/WF-031942-010448-002217.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "WF-031942-010448-002219";
+  src: url('fonts/WF-031942-010448-002219.eot');
+  src: url('fonts/WF-031942-010448-002219.eot?#iefix') format('embedded-opentype'), url('fonts/WF-031942-010448-002219.woff') format('woff'), url('fonts/WF-031942-010448-002219.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+p.WF-031942-010448-002218 { text-align: center; font-size: 28pt; font-family:"WF-031942-010448-002218"; font-weight: normal; }
+
+p.WF-031942-010448-002220 { text-align: center; font-size: 28pt; font-family:"WF-031942-010448-002220"; font-weight: normal; }
+
+p.WF-031942-010448-002217 { text-align: center; font-size: 28pt; font-family:"WF-031942-010448-002217"; font-weight: normal; }
+
+p.WF-031942-010448-002219 { text-align: center; font-size: 28pt; font-family:"WF-031942-010448-002219"; font-weight: normal; }
+
+body { color: #606060; padding: 100px; }
