@@ -4,12 +4,3 @@
 /.env
 /.idea
 /vendor
-/config
-composer.json
-composer.lock
-/config
-/craft
-/craft.bat
-/modules
-/storage
-/web

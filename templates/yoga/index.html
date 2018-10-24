@@ -5,12 +5,12 @@
 
   {# <h2>{{ entry.title }}</h2> #}
   <h2>Yoga</h2>
-    {% if entry.categoryOverview|length %}
-  <section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
-	<h3>{{ entry.untertitel }}</h3>
-	{{ entry.categoryOverview }}
+  {% if entry.categoryOverview|length %}
+  <section style="width: 46rem; margin: 0 auto 3rem; padding: 0;"> {# of course styles go into stylesheet! #}
+    <h3>{{ entry.untertitel }}</h3>
+    {{ entry.categoryOverview }}
   </section>
-    {% endif %}
+  {% endif %}
 
    {% set yogaAngebote = craft.entries.section('yogaAngebote').all() %}
 
@@ -51,7 +51,7 @@
     <p>Ohne Voranmeldung willkommen!</p>
     {% endif %}
 
-    <p>Termine siehe <a href="/calendar" class="cal-link">Kalender</a>, Preise siehe <a href="/info">Info</a> (???).</p>
+    {% include 'includes/termin-link.html' %}
 
 
     <p class="accordion-collapse"><span>Weniger Informationen</span></p>

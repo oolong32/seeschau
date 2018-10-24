@@ -39,51 +39,70 @@ body {
 
 h2, h3, h4, h5, h6 { font-weight: 600;}
 
-h1 {
-  // font-size: 4.5em;
-	font-family: $francisGradientInside, 'PFBagueSansPro', sans-serif;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 6.25rem;
-  font-family: $francisGradientInside, sans-serif;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
-
-#masthead {
-  h1, p {
-    line-height: 1;
-    color: white;
-  }
-  h1 {
-    font-size: 6.5rem;
-  }
-  p { // byline "Haus der Künste"
-    font-weight: 500;
-    font-size: 1.75rem;
-    letter-spacing: 0.5215rem;
+header , footer{
+  #masthead {
+    h1, p {
+      line-height: 1;
+      color: white;
+    }
+    h1 {
+      font-family: $francisGradientInside, 'PFBagueSansPro', sans-serif;
+      font-weight: normal;
+      font-size: 6.5rem;
+      text-transform: uppercase;
+    }
+    p { // byline "Haus der Künste"
+      font-weight: 500;
+      font-size: 1.75rem;
+      letter-spacing: 0.5215rem;
+    }
   }
 }
 
-header nav ul li {
-  font-size: 1.25rem;
+header {
+  nav ul li {
+    font-size: 1.25rem;
+  }
 }
+
 
 main {
   font-size: 1.25rem;
   line-height: 1.68;
+  h2 {
+    font-size: 6.25rem;
+    font-family: $francisGradientInside, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
   section h3 {
     font-size: 2rem;
+    font-weight: 400;
   }
+  section.contact,
+  section.angebote {
+    h3 {
+      line-height: 0.75;
+    }
+  }
+  section.contact #abo-preise {
+    font-variant-numeric: tabular-nums;
+  }
+  section.raster {
+    h3 {
+      line-height: 0.75;
+    }
+    p.teacher-quote {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
+  section#calendar { font-size: 0.9375rem; }
 }
 
 strong { font-weight: 600; }
 
-section#calendar { font-size: 0.9375rem; }
 
 .nowrap { white-space: nowrap; }
 
@@ -502,13 +521,9 @@ main {
         border: none; // wegen Akkordeon zus. Section :-(
         margin: 0;
         padding: 0;
+        .accordion-trigger { text-align: left; }
+        .accordion-collapse { text-align: left; }
       }
-    }
-    h3 { font-weight: 400; line-height: 0.75; }
-    p.teacher-quote {
-      font-weight: 600;
-      font-size: 2rem;
-      line-height: 1.2;
     }
   }
   section.raster:nth-child(odd) { // change order of columns in every other row
@@ -518,17 +533,29 @@ main {
       grid-column: 1/2;
       grid-row: 1;
     }
+    div.raster-textfeld.foo {
+      grid-column: 1/-1;
+    }
+  }
+  section.raster.no-pic,
+  section.raster.no-pic:nth-child(odd) {
+    grid-template-columns: 1fr 46rem 1fr;
+    div.raster-bildfeld {
+    }
+    div.raster-textfeld {
+      grid-column: 2/-2; // ev. besser ganz links anschlagen?
+      width: 46rem;
+    }
   }
   // End Grid for Team & Workshops
 
   // Einspaltige Layouts (Kontakt, Angebote
   section.contact,
+  section.abo-infos,
   section.angebote {
     width: 46rem; /* schmaler als Seiten mit Bildern */
     margin: 0 auto 4.5rem;
     h3 {
-      font-weight: 500; // <—————————————————————————— should be in Typo-Section!
-      line-height: 0.75; // <—————————————————————————— should be in Typo-Section!
       margin-bottom: 3rem;
     }
   }
@@ -946,7 +973,6 @@ footer {
           }
         }
       }
-      
     } // End Mobile Calendar Styles
   section.contact,
   section.angebote {
@@ -958,13 +984,12 @@ footer {
     width: 100%;
     margin-top: 2rem;
     div#infos {
-      padding: 4rem 0 1rem;
       margin: 2rem 1rem 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-gap: 0 2rem;
       grid-template-rows: repeat(4, 2rem);
       grid-auto-flow: column;
-      border-top: 1px solid $linegray;
     }
     #masthead {
       height: 4.75rem;

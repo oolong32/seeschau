@@ -22,13 +22,25 @@
   </iframe>
 	</section>
 
-	<section id="anreise-text" class="contact">
+	<section id="anreise-text" class="abo-infos">
 		{{ entry.anreiseText }}
 	</section>
 
-  <section id="abonnemente" class="contact">
-  	<h3>Abonnemente</h3>
-	{{ entry.abonnementeText }}
+  <a id="abos" class="anchor"></a>
+  <h2>Abos</h2>
+  <section id="abo-preise" class="abo-infos">
+    <h4>Preise Hatha und Kundalini Yoga</h4>
+    {{ entry.aboPreise }}
+  </section>
+
+  <section class="abo-infos">
+    <h4>Lehrer</h4>
+    {{ entry.lehrer }}
+  </section>
+
+  <section class="abo-infos">
+    <h4>Allgemeines</h4>
+    {{ entry.aboAllgemein }}
   </section>
 
 {% endblock %}

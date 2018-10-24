@@ -30,6 +30,24 @@
         <span class='glyphicon glyphicon-calendar' style='color: {{ event.calendar.color }};'></span>
         <span style='color: {{ event.calendar.color }};'>{{ event.calendar.name }}</span>
         <hr />
+
+        {# Test #}
+        {# Test #}
+        {# Test #}
+        {# Test #}
+        {# Test #}
+        {#
+        {% if event.description %}
+        {{ event.description }}
+        <hr />
+        {% endif %}
+         #}
+        {# Test #}
+        {# Test #}
+        {# Test #}
+        {# Test #}
+        {# Test #}
+
         {% if event.allDay %}
             {% if event.multiDay %}
                 <b>Starts</b> {{ event.startDate.format('F j, Y') }}<br />
@@ -41,6 +59,7 @@
             <b>Starts</b> {{ event.startDate.format('F j, Y \\a\\t g:ia') }}<br />
             <b>Ends</b> {{ event.endDate.format('F j, Y \\a\\t g:ia') }}
         {% endif %}
+
 
         {% if event.repeating %}
             <hr />

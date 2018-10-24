@@ -15,7 +15,7 @@
   {% endif %} #}
 
   {% for workshop in workshops %}
-  <section class="raster">
+  <section class="raster{% if not workshop.extTeachers|length %} no-pic{% elseif not workshop.extTeachers[0].timg|length %} no-pic{% endif %}">
 
     <div class="raster-bildfeld">
       {% if workshop.extTeachers|length %}
@@ -36,7 +36,7 @@
           <h4>{{ workshop.untertitel }}</h4>
 
           {# Externe und interene Lehrer in Liste zusammenführen #}
-          {% if workshop.lehrpersonen|length == 0 and workshop.ExtTeachers|length == 0 %}
+          {% if workshop.lehrpersonen|length == 0 and workshop.extTeachers|length == 0 %}
             <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
           {% else %}
             {% set teachernames = [] %}
@@ -56,11 +56,11 @@
           <p class="teacher"> Mit
             {% for i in 0..(teachernames|length - 1) %}
               {% if loop.first %}
-                <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+                {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
               {% elseif not loop.last %}
-                , <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+                , {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
               {% else %}
-                und <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
+                und {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
               {% endif %}
             {% endfor %}
           </p>
@@ -82,7 +82,7 @@
             <p>Ohne Voranmeldung willkommen!</p>
           {% endif %}
 
-          <p>Termine siehe <a href="/calendar" class="cal-link">Kalender</a>, Preise siehe <a href="/info">Info</a> (???).</p> 
+          {% include 'includes/termin-link.html' %}
 
           <p class="accordion-collapse"><span>Weniger Informationen</span></p>
         </section> <!-- End collapsed part of accordion -->

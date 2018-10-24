@@ -621,6 +621,12 @@ main section.raster div.raster-textfeld section {
   margin: 0;
   padding: 0;
 }
+main section.raster div.raster-textfeld section .accordion-trigger {
+  text-align: left;
+}
+main section.raster div.raster-textfeld section .accordion-collapse {
+  text-align: left;
+}
 main section.raster:nth-child(odd) {
   grid-template-columns: 1fr 320px;
 }
@@ -630,6 +636,18 @@ main section.raster:nth-child(odd) img {
 main section.raster:nth-child(odd) div.raster-textfeld {
   grid-column: 1/2;
   grid-row: 1;
+}
+main section.raster:nth-child(odd) div.raster-textfeld.foo {
+  grid-column: 1/-1;
+}
+main section.raster.no-pic,
+main section.raster.no-pic:nth-child(odd) {
+  grid-template-columns: 1fr 46rem 1fr;
+}
+main section.raster.no-pic div.raster-textfeld,
+main section.raster.no-pic:nth-child(odd) div.raster-textfeld {
+  grid-column: 2/-2;
+  width: 46rem;
 }
 main section.contact,
 main section.abo-infos,

@@ -32,14 +32,14 @@
             {{ event.title }}
         </a>
     {% endif %}
-    {% if event.teacherselection %}
-    {% for teacher in event.teacherselection %}
-      <br>
+    {# if event.teacherselection #}
+    {# for teacher in event.teacherselection #}
+      {# <br> #}
       {# hier natürlich zählen ob eins oder mehr, oder braucht es immer nur einen Lehrer? #}
-      Teacher: {{ teacher }}
-      {% endfor %}
-    {% endif %}
+      {# Teacher: {{ teacher }} #}
+      {# endfor #}
+    {# endif #}
 
     {% include "calendar-demo/layouts/_event_popover.html" %}
-<p style="display:inline-block;">{{event.teacher}}</p>
+{#<p style="display:inline-block;">{{event.teacher}}</p>#}
 </div>
