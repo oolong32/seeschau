@@ -12,7 +12,7 @@
     {% endif %}
 #}
     {% if instagramdata.status == 'true' %}
-    <p style="display:none">Loop Index: {{ loop.index }}</p>
+      {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
     {% if instagramdata.video_low_resolution != '' %}
       <video width="320" height="240" controls>
         <source src="{{ instagramdata.video_low_resolution }}" type="video/mp4">
@@ -26,7 +26,7 @@
       <p><img src="{{instagramdata.low_resolution}}"></p>
     {% endif %}
       <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
-      <h3>{{instagramdata.caption}}</h3>
+      <h3>{{instagramdata.caption|length > 42 ? instagramdata.caption|slice(0, 42) ~ " …" : instagramdata.caption }}</h3>
       <p><a href="#">Mehr erfahren</a></p>
     {% else %}
         <p class="date error">Error Type: {{ instagramdata.error_type }}</p>
@@ -61,7 +61,8 @@
   	<div class="news-item">
 		<img src="/assets/_pic/tempAssets/orangen.jpg" alt="">
 		<p class="date">2. August 2018</p>
-		<h3>Beyond</h3>
+    {% set tooLongString = "Beyond long text lorem ipsum dolor sit amet, als Gregor Samsa eines Morgens nach unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt." %}
+		<h3>{{ tooLongString|length > 42 ? tooLongString|slice(0, 42) ~ " …" : tooLongString }}</h3>
 		<p><a href="#">Mehr erfahren</a></p>
 	</div>
   	<div class="news-item">
