@@ -4,11 +4,11 @@
     "vlucas/phpdotenv": "^2.4.0",
     "solspace/craft3-calendar": "2.0.6",
     "facebook/graph-sdk": "^5.6",
-    "benjamminf/craft-embedded-assets": "1.0.2",
     "craftcms/ckeditor": "1.0.0-beta.2",
     "craftcms/redactor": "2.1.6",
     "ether/simplemap": "v3.3.4",
-    "jmx2/pic-puller": "3.0.13.2"
+    "jmx2/pic-puller": "3.0.13.2",
+    "dukt/videos": "2.0.4"
   },
   "autoload": {
     "psr-4": {

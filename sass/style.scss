@@ -441,7 +441,27 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2.25rem;
     grid-row-gap: 2.5rem;
-    div.video-item {
+    div.video-item { // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+      position: relative;
+      height: 0;
+      padding-top: 25px;
+      padding-bottom: 56.25%; /* 16:9 */
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      div.video-placeholder {
+        height: 282px;
+        width: 502px;
+        background: red;
+      }
     }
   }
   div#more-news {
@@ -533,7 +553,7 @@ main {
       grid-column: 1/2;
       grid-row: 1;
     }
-    div.raster-textfeld.foo {
+    div.raster-textfeld.foo { // können wir bitte auf die Klasse "foo" verzichten und einen gescheiten Namen finden?
       grid-column: 1/-1;
     }
   }
@@ -898,12 +918,6 @@ footer {
       grid-row-gap: .5rem;
       margin-bottom: 0;
       padding-bottom: 0;
-      div.video-item {
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
     }
     div#more-news {
       grid-column: 1/-1;

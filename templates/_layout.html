@@ -1,4 +1,5 @@
 {# Basic Structure #}
+{% set hausmarke = craft.request.firstSegment %}{# auf welcher seite befinden wir uns? #}
 
 <!DOCTYPE html>
 <html lang="de">
@@ -6,7 +7,6 @@
   {% include 'includes/head.html' %}
 </head>
 
-{% set hausmarke = craft.request.firstSegment %}
 
 <body class="{{ hausmarke }}">
   <header>

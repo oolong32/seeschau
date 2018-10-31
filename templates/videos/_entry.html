@@ -1,0 +1,28 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+  
+  <h2>Videos</h2>
+  
+  <section class="videos">
+
+    <div class="video-item">
+      {% set video = entry.video %}
+      {{ video.embed({ width: 736, height: 414 }) }}
+      {# <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3>#}
+    </div>
+
+  </section>
+
+{# 
+  <p><a href="#myModal1" rel="modal:open">Open Modal</a></p>
+#}
+
+{# Blödsinn, hoffentlich nicht nötig. macht nur Probleme
+  <div id="myModal1" class="modal" style="max-width: 100%;">
+    {{ video.embed({ width: 500, height: 281 }) }}
+    <a href="#" rel="modal:close">Close</a>
+  </div>
+#}
+
+{% endblock %}
