@@ -30,12 +30,22 @@
 		      <ul>
 		      {% for kurs in teacher.angebote %}
 			{% set url = kurs.url|split('\/') %}
-			<li><a href="{{ url[3] }}#{{ url[4] }}">{{ kurs.title }}</a></li> 
+{# Achtung #}
+{# Achtung #}
+{# Achtung #}
+{# Hier gibt es ein Problem, wenn in der Adresszeile eine URL mit Hashtag steht!!!, z.b. https://seeschau.test/team/#rebecca-robinson #}
+{# Hier gibt es ein Problem, wenn in der Adresszeile eine URL mit Hashtag steht!!!, z.b. https://seeschau.test/team/#rebecca-robinson #}
+{# Hier gibt es ein Problem, wenn in der Adresszeile eine URL mit Hashtag steht!!!, z.b. https://seeschau.test/team/#rebecca-robinson #}
+{# Achtung #}
+{# Achtung #}
+{# Achtung #}
+      <li style="color:lawngreen">Debug-Link: <strong>{{ url[3] }}</strong> und <strong>{{ url[4] }}</strog></li>
+			<li><a href="/{{ url[3] }}#{{ url[4] }}">{{ kurs.title }}</a></li> 
 		      {% endfor %}
 		      </ul>
 		      {% else %}
 			{% set url = teacher.angebote[0].url|split('\/') %}
-		      <p><a href="{{ url[3] }}#{{ url[4] }}">{{ teacher.angebote[0].title }}</a></p>
+		      <p><a href="/{{ url[3] }}#{{ url[4] }}">{{ teacher.angebote[0].title }}</a></p>
 		      {% endif %}
 	      {% endif %}
 	      <p class="accordion-collapse" style="text-align: left;"><span>Weniger Informationen</span></p>
