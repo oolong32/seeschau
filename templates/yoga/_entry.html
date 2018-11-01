@@ -3,9 +3,9 @@
 
 {% block content %}
 	<h2>Yoga</h2>
-  	{% set parent = craft.entries.section('yoga').first() %}
+  {% set parent = craft.entries.section('yoga').first() %}
 	{% if parent.untertitel|length or parent.categoryOverview|length %}
-	<section style="width: 46rem; margin: 0 auto; border:none;"> {# of course styles go into stylesheet! #}
+	<section class="intro-text">
 		<h3>{{ parent.untertitel }}</h3>
 		{{ parent.categoryOverview }}
 	</section>

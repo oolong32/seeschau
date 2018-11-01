@@ -28,6 +28,7 @@ header #masthead h1, header #masthead p, footer #masthead h1, footer #masthead p
   color: white;
 }
 header #masthead h1, footer #masthead h1 {
+  display: inline, block;
   font-family: "WF-031942-010448-002219", "PFBagueSansPro", sans-serif;
   font-weight: normal;
   font-size: 6.5rem;
@@ -53,24 +54,20 @@ main h2 {
   font-weight: normal;
   text-transform: uppercase;
 }
-main section h3 {
+main h3 {
   font-size: 2rem;
   font-weight: 400;
 }
-main section.contact h3,
-main section.angebote h3 {
-  line-height: 0.75;
-}
-main section.contact #abo-preise {
-  font-variant-numeric: tabular-nums;
-}
-main section.raster h3 {
-  line-height: 0.75;
-}
-main section.raster p.teacher-quote {
+main p.teacher-quote {
   font-weight: 600;
   font-size: 2rem;
   line-height: 1.2;
+}
+main p, main ul {
+  margin-bottom: 1.75rem;
+}
+main section.contact #abo-preise {
+  font-variant-numeric: tabular-nums;
 }
 main section#calendar {
   font-size: 0.9375rem;
@@ -483,11 +480,11 @@ header.shrink h1, header.shrink p {
 ../_pic/mastheadBackgrounds/tatamiRaum@1x.png
 */
 /* End Background Images per Page }}}1 */
-/* Layout Content/Main {{{1 */
+/* Layout Main {{{1 */
 main {
   width: 65rem;
   margin: 0 auto;
-  padding: 32rem 0 0;
+  padding: 20rem 0 0;
   /* Sections allgemein {{{2 */
   /* End Sections Allgemein }}}2 */
   /* News Page {{{2 */
@@ -520,14 +517,11 @@ main section {
   background: white;
   outline: none;
   border-bottom: solid 1px #9b9b9b;
-  padding-bottom: 2rem;
-  margin-bottom: 4.5rem;
+  padding-bottom: 2.5rem;
+  margin: 0 auto;
 }
 main section h3 {
   margin: 0 0 0.5rem 0;
-}
-main section p, main section ul {
-  margin-bottom: 1.75rem;
 }
 main section a.anchor {
   /* Fix jump to anchor relative to header/masthead */
@@ -535,6 +529,10 @@ main section a.anchor {
   position: relative;
   top: -13rem;
   visibility: hidden;
+}
+main section.intro-text {
+  width: 46rem;
+  border: none;
 }
 main section.news {
   border: none;
@@ -604,11 +602,8 @@ main section.visible {
   padding-top: 3rem;
 }
 main section.visible:first-child {
-  padding-top: 0;
-}
-main section.visible:first-child {
   border: none;
-  padding-top: none;
+  padding-top: 0;
 }
 main section.collapsed {
   border: none;
@@ -642,6 +637,7 @@ main section.raster {
   display: grid;
   grid-template-columns: 320px 1fr;
   grid-column-gap: 2rem;
+  border: none;
 }
 main section.raster img {
   width: 320px;
@@ -704,7 +700,7 @@ main section.contact {
 main section#map iframe {
   width: 100%;
 }
-main section + section > h4 {
+main .abo-infos > h4 {
   margin-top: 3.5rem;
 }
 main section#cal-head {
@@ -852,7 +848,7 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   border-bottom: 1px solid #bbd7d1;
 }
 
-/* End Layout Content/Main }}}1 */
+/* End Layout Main }}}1 */
 /* Layout Footer {{{1 */
 footer {
   margin-top: 4em;
@@ -993,21 +989,34 @@ footer #masthead h1 {
   main {
     width: 100%;
     padding: 5rem 1rem 1rem;
+    /* Main Micro Typography {{{3 */
+    /* End Main Micro Typography }}}3 */
     /* Mobile News Page {{{3 */
     /* Mobile News Page }}}3 */
     /* Mobile Calendar Layout {{{3 */
     /* End Mobile Calendar Layout }}}3 */
-    /* Mobile Single Column Pages {{{3 * /
-    section.contact,
-    section.angebote {
-      width: 100%;
-    }
+    /* Mobile Single Column Pages {{{3 */
     /* End Mobile Single Column Pages }}}3 */
+    /* Mobile Two Column Pages {{{3 */
+    /* End Two Single Column Pages }}}3 */
   }
   main h2 {
     font-size: 2.625rem;
     text-align: left;
     margin: 0 0 0.75rem 0;
+  }
+  main h3, main p.teacher-quote {
+    font-size: 1.25rem;
+  }
+  main h4, main p, main ul, main ol {
+    font-size: 1rem;
+  }
+  main p, main p.teacher-quote ul {
+    margin-bottom: 1rem;
+  }
+  main p.accordion-trigger,
+main p.accordion-collapse {
+    text-align: left;
   }
   main section.news {
     width: 100%;
@@ -1119,6 +1128,24 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   }
   main section#calendar div.cal-case div.day_cell div.event div.qtip {
     width: auto;
+  }
+  main section {
+    margin-bottom: 3rem;
+    padding: 0;
+  }
+  main section.intro-text,
+main section.contact,
+main section.angebote {
+    width: 100%;
+  }
+  main section.raster {
+    display: block;
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+  }
+  main section.raster img {
+    width: 100%;
   }
 
   /* End Layout Mobile Main }}}2 */

@@ -50,6 +50,7 @@ header , footer{
       color: white;
     }
     h1 {
+      display: inline, block;
       font-family: $francisGradientInside, 'PFBagueSansPro', sans-serif;
       font-weight: normal;
       font-size: 6.5rem;
@@ -69,7 +70,6 @@ header {
   }
 }
 
-
 main {
   font-size: 1.25rem;
   line-height: 1.68;
@@ -79,29 +79,19 @@ main {
     font-weight: normal;
     text-transform: uppercase;
   }
-  section h3 {
+  h3 {
     font-size: 2rem;
     font-weight: 400;
   }
-  section.contact,
-  section.angebote {
-    h3 {
-      line-height: 0.75;
-    }
+  p.teacher-quote {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
   }
-  section.contact #abo-preise {
-    font-variant-numeric: tabular-nums;
+  p, ul {
+    margin-bottom: 1.75rem;
   }
-  section.raster {
-    h3 {
-      line-height: 0.75;
-    }
-    p.teacher-quote {
-      font-weight: 600;
-      font-size: 2rem;
-      line-height: 1.2;
-    }
-  }
+  section.contact #abo-preise { font-variant-numeric: tabular-nums; }
   section#calendar { font-size: 0.9375rem; }
 }
 
@@ -378,11 +368,11 @@ header.shrink { /* collapsed header */
 
 /* End Background Images per Page }}}1 */
 
-/* Layout Content/Main {{{1 */
+/* Layout Main {{{1 */
 main {
   width: 65rem;
   margin: 0 auto;
-  padding: 32rem 0 0; 
+  padding: 20rem 0 0; 
   h2 {
     text-align: center;
     margin: 0 0 0;
@@ -396,13 +386,10 @@ main {
     background: $white;
     outline: none;
     border-bottom: solid 1px $linegray;
-    padding-bottom: 2rem;
-    margin-bottom: 4.5rem;
+    padding-bottom: 2.5rem;
+    margin: 0 auto;
     h3 {
       margin: 0 0 0.5rem 0;
-    }
-    p, ul {
-      margin-bottom: 1.75rem;
     }
     a.anchor { /* Fix jump to anchor relative to header/masthead */
       // https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
@@ -413,6 +400,11 @@ main {
     }
   }
   /* End Sections Allgemein }}}2 */
+
+  section.intro-text {
+    width: 46rem;
+    border: none;
+  }
 
   /* News Page {{{2 */
 
@@ -494,11 +486,8 @@ main {
     padding-top: 3rem;
   }
   section.visible:first-child {
-    padding-top: 0;
-  }
-  section.visible:first-child {
     border: none;
-    padding-top: none;
+    padding-top: 0;
   }
   section.collapsed { // untere linie & abstand weg, wegen akkordeon-struktur
     border: none;
@@ -536,6 +525,7 @@ main {
     display: grid;
     grid-template-columns: 320px 1fr;
     grid-column-gap: 2rem;
+    border: none;
     img {
       width: 320px;
       height: auto;
@@ -595,7 +585,7 @@ main {
       width: 100%;
     }
   }
-  section + section>h4 { // betrifft Untertitel in Abo-Section auf Infoseite
+  .abo-infos > h4 { // betrifft Untertitel in Abo-Section auf Infoseite
     margin-top: 3.5rem;
   }
   /* End Einspaltige Layouts (Kontakt, Angebote) }}}2 */
@@ -738,7 +728,7 @@ main {
 
 }
 
-/* End Layout Content/Main }}}1 */
+/* End Layout Main }}}1 */
 
 /* Layout Footer {{{1 */
 
@@ -897,11 +887,28 @@ footer {
     width: 100%;
     // padding: 10rem 1rem 2rem;
     padding: 5rem 1rem 1rem;
+
+    /* Main Micro Typography {{{3 */
     h2 { // Seitenüberschriften
       font-size: 2.625rem;
       text-align: left;
       margin: 0 0 0.75rem 0;
     }
+    h3, p.teacher-quote {
+      font-size: 1.25rem;
+    }
+    h4, p, ul, ol {
+      font-size: 1rem;
+    }
+    p, p.teacher-quote ul {
+      margin-bottom: 1rem;
+    }
+    p.accordion-trigger,
+    p.accordion-collapse {
+      text-align: left;
+    }
+
+    /* End Main Micro Typography }}}3 */
 
     /* Mobile News Page {{{3 */
     section.news {
@@ -1009,12 +1016,28 @@ footer {
     }
     /* End Mobile Calendar Layout }}}3 */
 
-    /* Mobile Single Column Pages {{{3 * /
+    section {
+      margin-bottom: 3rem;
+      padding: 0;
+    }
+    /* Mobile Single Column Pages {{{3 */
+    section.intro-text,
     section.contact,
     section.angebote {
       width: 100%;
+      // Achtung. in Yoga-Template gibt es hard-coded section-width!!!
     }
     /* End Mobile Single Column Pages }}}3 */
+
+    /* Mobile Two Column Pages {{{3 */
+    section.raster {
+      display: block; // Schluss mit Grid
+      border-bottom: none;
+      padding: 0;
+      margin-bottom: 2.5rem;
+      img { width: 100%; }
+    }
+    /* End Two Single Column Pages }}}3 */
 
   }
   /* End Layout Mobile Main }}}2 */
