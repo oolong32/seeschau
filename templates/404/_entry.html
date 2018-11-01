@@ -7,8 +7,9 @@
   <section>
     <h3>Seite nicht gefunden</h3>
     {% set info = craft.entries().section("info").first() %}
-    <p>Vielleicht können wir Ihnen am Telefon Auskunft geben: Montags bis Freitags unter der Nummer <a href="tel:{{ info.tel|replace({' ': ''}) }}"><span class="nowrap">{{ info.tel }}</span></a>.</p>
-		<p>Oder Sie kontaktieren uns per Mail: <a href="mailto:{{ info.mail }}">{{ info.mail }}</a></p>
+    <p>Vielleicht können wir Ihnen am Telefon Auskunft geben: Montags bis Freitags unter der Nummer <a href="tel:{{ info.tel|replace({' ': ''}) }}"><span class="nowrap">{{ info.tel }}</span></a>, oder Sie kontaktieren uns per Mail: <a href="mailto:{{ info.mail }}">{{ info.mail }}</a></p>
+    
+
     {% include "includes/nav.html" %}
   </section>
 {% endblock %}
