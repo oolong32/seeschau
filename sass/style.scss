@@ -25,6 +25,8 @@ $mastheadHeight: 1234567890px;
 
 /* Variables }}}1 */
 
+/* ——————————————————————————————————  Micro Typography ————————————————————————————————————— */
+
 /* Text Formatting {{{1 */
 
 html, * { box-sizing: border-box; }
@@ -190,133 +192,13 @@ a.mail-link:before {
 
 /* End Link Styles }}}1 */
 
-/* Masthead Styles Global {{{1 */
-
-#masthead {
-  background-origin: border-box;
-  background-size: cover;
-  a { // Link to home
-    text-decoration: none;
-    color: white;
-  }
-}
-
-/* End Masthead Styles Global }}}1 */
-
-/* Background Images per Page {{{1 */
-
-#masthead {
-  background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
-  background-position: bottom ;
-}
-
-.team header #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
-  background-position: center;
-}
-.team footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg"); }
-
-.workshops header #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
-  background-position: center ;
-}
-.workshops footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
-.yoga #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
-  background-position: center ;
-}
-.calendar header #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
-  background-position: bottom ;
-}
-.calendar footer #masthead { background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg"); }
-
-.info header #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg");
-  background-position: center;
-}
-.info footer #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
-}
-
-.music-and-voice #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
-  background-position: center;
-}
-// .class #masthead { background-image: url(""); }
-
-/*
-../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
-../_pic/mastheadBackgrounds/tatamiRaum@1x.png
-*/
-
-/* End Background Images per Page }}}1 */
+/* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
 
 /* Tests {{{1 */
 .test {
  border: 1px solid lawngreen;
 }
 /* End Tests }}}1 */
-
-/* Layout Header {{{1 */
-
-header {
-  background: $white;
-  margin: 0; padding: 0;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
-  #hamburger {
-    position: absolute;
-    top: 1rem; right: 1rem;
-    transition: all .3s ease-in;
-    display: none;
-  }
-  #hamburger:hover {
-    transform: scale(1.1);
-  }
-  #masthead {
-    height: 28rem; /* Variable wud b nice <—————————————————————————————————————————*/
-    /* collapse-transition */
-    transition: all 0.2s ease-in;
-    /* end collapse-transition */
-    padding: 1.5rem 1.5rem 2.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    h1, p {
-      margin: 0;
-      /* collapse transition */
-      transition: all 0.3s linear;
-      /* end collapse transition */
-    }
-  }
-  nav {
-    padding: 0.5rem 2rem;
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-}
-
-header.shrink { /* collapsed header */
-  #masthead {
-    min-height: 0;
-    height: 7.8rem; /* Variable wud b nice <———————————————————————————————————— */
-    width: 100%;
-    padding: 0 0 0 2rem;
-    overflow: hidden; /* children have no influence on height */
-  }
-  h1, p {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-}
-/* End Layout Header }}}1 */
 
 /* Intro Page {{{1 */
 .intro h1 { display: none; }
@@ -386,6 +268,115 @@ body.intro {
 }
 
 /* End Intro Page }}}1 */
+
+/* Layout Header {{{1 */
+
+header {
+  background: $white;
+  margin: 0; padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  #hamburger {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    transition: all .3s ease-in;
+    display: none;
+  }
+  #hamburger:hover {
+    transform: scale(1.1);
+  }
+  #masthead {
+    height: 28rem; /* Variable wud b nice <—————————————————————————————————————————*/
+    /* collapse-transition */
+    transition: all 0.2s ease-in;
+    /* end collapse-transition */
+    padding: 1.5rem 1.5rem 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    h1, p {
+      margin: 0;
+      /* collapse transition */
+      transition: all 0.3s linear;
+      /* end collapse transition */
+    }
+  }
+  nav {
+    padding: 0.5rem 2rem;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+header.shrink { /* collapsed header */
+  #masthead {
+    min-height: 0;
+    height: 7.8rem; /* Variable wud b nice <———————————————————————————————————— */
+    width: 100%;
+    padding: 0 0 0 2rem;
+    overflow: hidden; /* children have no influence on height */
+  }
+  h1, p {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+/* End Layout Header }}}1 */
+
+/* Background Images per Page {{{1 */
+
+#masthead {
+  background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
+  background-position: bottom ;
+}
+
+.team header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
+  background-position: center;
+}
+.team footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg"); }
+
+.workshops header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
+  background-position: center ;
+}
+.workshops footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
+.yoga #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
+  background-position: center ;
+}
+.calendar header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
+  background-position: bottom ;
+}
+.calendar footer #masthead { background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg"); }
+
+.info header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg");
+  background-position: center;
+}
+.info footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
+}
+
+.music-and-voice #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
+  background-position: center;
+}
+// .class #masthead { background-image: url(""); }
+
+/*
+../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
+../_pic/mastheadBackgrounds/tatamiRaum@1x.png
+*/
+
+/* End Background Images per Page }}}1 */
 
 /* Layout Content/Main {{{1 */
 main {
@@ -794,6 +785,19 @@ footer {
   }
 }
 /* End Layout Footer }}}1 */
+
+/* Masthead Styles Header & Footer {{{1 */
+
+#masthead {
+  background-origin: border-box;
+  background-size: cover;
+  a { // Link to home
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* End Masthead Styles Global }}}1 */
 
 /* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
 
