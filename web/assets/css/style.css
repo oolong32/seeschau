@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/* variables */
 @import url("./fonts.css");
-/* Text Formatting */
+/* Variables {{{1 */
+/* Variables }}}1 */
+/* Text Formatting {{{1 */
 html, * {
   box-sizing: border-box;
 }
@@ -82,8 +83,8 @@ strong {
   white-space: nowrap;
 }
 
-/* End Text Formatting */
-/* List Styles*/
+/* End Text Formatting }}}1 */
+/* List Styles {{{1 */
 main ul li {
   margin-left: 0.6rem;
   text-indent: -0.6rem;
@@ -92,8 +93,8 @@ main ul li:before {
   content: "· ";
 }
 
-/* End List Styles*/
-/* Link Styles */
+/* End List Styles }}}1 */
+/* Link Styles {{{1 */
 h1 a {
   text-decoration: none;
   border: none;
@@ -177,8 +178,8 @@ a.mail-link:before {
   background: rgba(80, 227, 194, 0.5);
 }
 
-/* End Link Styles */
-/* Masthead Styles Global */
+/* End Link Styles }}}1 */
+/* Masthead Styles Global {{{1 */
 #masthead {
   background-origin: border-box;
   background-size: cover;
@@ -188,8 +189,8 @@ a.mail-link:before {
   color: white;
 }
 
-/* End Masthead Styles Global */
-/* Background Images per Page */
+/* End Masthead Styles Global }}}1 */
+/* Background Images per Page {{{1 */
 #masthead {
   background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
   background-position: bottom;
@@ -245,13 +246,14 @@ a.mail-link:before {
 ../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
 ../_pic/mastheadBackgrounds/tatamiRaum@1x.png
 */
-/* Tests */
+/* End Background Images per Page }}}1 */
+/* Tests {{{1 */
 .test {
   border: 1px solid lawngreen;
 }
 
-/* End Tests */
-/* Layout Header*/
+/* End Tests }}}1 */
+/* Layout Header {{{1 */
 header {
   background: white;
   margin: 0;
@@ -315,8 +317,8 @@ header.shrink h1, header.shrink p {
   transform: translateY(-200px);
 }
 
-/* End Layout Header */
-/* Intro Page */
+/* End Layout Header }}}1 */
+/* Intro Page {{{1 */
 .intro h1 {
   display: none;
 }
@@ -489,13 +491,32 @@ body.intro div.container svg {
   fill: white;
 }
 
-/* End Intro Page */
-/* Layout Content/Main */
+/* End Intro Page }}}1 */
+/* Layout Content/Main {{{1 */
 main {
   width: 65rem;
   margin: 0 auto;
   padding: 32rem 0 0;
-  /* so far fake styles for fake sections NEWS */
+  /* Sections allgemein {{{2 */
+  /* End Sections Allgemein }}}2 */
+  /* News Page {{{2 */
+  /* News Sections {{{3 */
+  /* End News Sections }}}3 */
+  /* Video Sections {{{3 */
+  /* End Video Sections }}}3 */
+  /* End News Page }}}2 */
+  /* Accordion {{{2 */
+  /* Accordion Sections {{{3 */
+  /* End Accordion Sections }}}3 */
+  /* Accordion Trigger {{{3 */
+  /* End Accordion Trigger }}}3 */
+  /* End Accordion }}}2 */
+  /* Grid for Team & Workshops {{{2 */
+  /* End Grid for Team & Workshops }}}2 */
+  /* Einspaltige Layouts (Kontakt, Angebote {{{2 */
+  /* End Einspaltige Layouts (Kontakt, Angebote) }}}2 */
+  /* Calendar Styles {{{2 */
+  /* End Calendar Styles }}}2 */
 }
 main h2 {
   text-align: center;
@@ -677,7 +698,7 @@ main section.abo-infos,
 main section.angebote {
   width: 46rem;
   /* schmaler als Seiten mit Bildern */
-  margin: 0 auto 4.5rem;
+  margin: 0 auto;
 }
 main section.contact h3,
 main section.abo-infos h3,
@@ -691,6 +712,9 @@ main section.contact {
 }
 main section#map iframe {
   width: 100%;
+}
+main section + section > h4 {
+  margin-top: 3.5rem;
 }
 main section#cal-head {
   border: none;
@@ -837,9 +861,8 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   border-bottom: 1px solid #bbd7d1;
 }
 
-/* End Layout Content/Main */
-/* ----------------------------------------*/
-/* Layout Footer */
+/* End Layout Content/Main }}}1 */
+/* Layout Footer {{{1 */
 footer {
   margin-top: 4em;
   z-index: 9750;
@@ -886,68 +909,13 @@ footer #masthead h1 {
   /* Starts below, higher number means higher up on Y-Axis */
 }
 
-/* End Layout Footer*/
-/* Nav overlay */
-#nav-overlay {
-  padding: 20rem 1rem 0 2rem;
-  font-size: 3rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  right: 0;
-  height: 100vh;
-  transition: all 0.2s ease-in;
-  background: white;
-  z-index: 9500;
-  display: none;
-}
-
-#nav-overlay.visible {
-  display: block;
-}
-
-/* End Nav Overlay */
-/* mobile styles */
-@media (max-width: 500px) {
-  header nav {
-    display: none;
-  }
-  header #masthead {
-    height: 15vh;
-    padding: 1rem;
-  }
-  header #masthead h1 {
-    font-size: 2rem;
-  }
-  header #masthead p {
-    font-size: 0.75rem;
-  }
-
-  #nav-overlay {
-    font-size: 2rem;
-    padding: 12vh 1rem 1rem 2rem;
-    animation: foo 0.2s ease-in;
-  }
-
-  main {
-    padding: 10rem 1rem 2rem;
-  }
-}
-@keyframes foo {
-  from {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-/* ———————————————————————————————————————————————————— */
-/* ——————————————————— Mobile-Styles —————————————————— */
+/* End Layout Footer }}}1 */
+/* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
+/* Latop-Styles {{{1 */
+/* Latop-Styles }}}1 */
+/* Mobile Styles {{{1 */
 @media (max-width: 600px) {
+  /* Intro-Animation {{{2 */
   body.intro div.container #seeschau-container {
     transform: scale(0.5);
     white-space: nowrap;
@@ -960,15 +928,11 @@ footer #masthead h1 {
     letter-spacing: 0.2rem;
   }
 
-  header.shrink #masthead {
-    height: 4.75rem;
-    padding: 0.25rem 0.5rem;
+  /* End Intro-Animation }}}2 */
+  /* Layout Header {{{2 */
+  header nav {
+    display: none;
   }
-  header.shrink h1, header.shrink p {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   header #masthead {
     height: 4.75rem;
     padding: 0.25rem 0.5rem;
@@ -987,13 +951,56 @@ footer #masthead h1 {
     transform: scale(0.75);
   }
 
-  nav#nav-overlay {
-    padding-top: 6rem;
+  /* End Layout Header }}}2 */
+  /* Layout Collapsed Header {{{2 */
+  header.shrink #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  header.shrink h1, header.shrink p {
+    opacity: 1;
+    transform: translateY(0);
   }
 
+  /* End Layout Collapsed Header }}}2 */
+  /* Navigation Overlay {{{2 */
+  #nav-overlay {
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    transition: all 0.2s ease-in;
+    background: white;
+    z-index: 9500;
+    display: none;
+    font-size: 2rem;
+    padding: 6rem 1rem 1rem 2rem;
+    animation: foo 0.2s ease-in;
+  }
+
+  #nav-overlay.visible {
+    display: block;
+  }
+
+  /* Navigation Overlay }}}2 */
+  /* Layout Main {{{2 */
   main {
     width: 100%;
     padding: 5rem 1rem 1rem;
+    /* Mobile News Page {{{3 */
+    /* Mobile News Page }}}3 */
+    /* Mobile Calendar Layout {{{3 */
+    /* End Mobile Calendar Layout }}}3 */
+    /* Mobile Single Column Pages {{{3 * /
+    section.contact,
+    section.angebote {
+      width: 100%;
+    }
+    /* End Mobile Single Column Pages }}}3 */
   }
   main h2 {
     font-size: 2.625rem;
@@ -1111,11 +1118,9 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   main section#calendar div.cal-case div.day_cell div.event div.qtip {
     width: auto;
   }
-  main section.contact,
-main section.angebote {
-    width: 100%;
-  }
 
+  /* End Layout Mobile Main }}}2 */
+  /* Layout Mobile Footer {{{2 */
   footer {
     width: 100%;
     margin-top: 2rem;
@@ -1140,6 +1145,22 @@ main section.angebote {
     font-size: 0.8125rem;
     letter-spacing: 0.125rem;
   }
+
+  /* End Layout Mobile Footer }}}2*/
 }
+/* End Mobile Styles }}}1 */
+/* Keyframes Nav-Overlay {{{1 */
+@keyframes foo {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* End Keyframes Nav-Overlay }}}1 */
+/* The End */
 
 /*# sourceMappingURL=style.css.map */
