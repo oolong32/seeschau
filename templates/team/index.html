@@ -4,13 +4,13 @@
   <h2>Team</h2>
   {% for teacher in craft.entries.section('team').limit(null) %}
   <section class="raster">
+    <a id="{{ teacher.slug }}" class="anchor"></a>
 
     {% if teacher.portrait|length %}
     <img src="{{ teacher.portrait.first().getUrl('cropSquare') }}" alt="{{ teacher.title }}">
     {% endif %}
 
     <div class="raster-textfeld">
-    <a id="{{ teacher.slug }}" class="anchor"></a>
       <h3>{{ teacher.title }}</h3>
       {% if teacher.quote|length %}
       <p class="teacher-quote">«{{ teacher.quote }}»{% if teacher.quoteAuthor|length %} – {{ teacher.quoteAuthor }}{% endif %}</p>

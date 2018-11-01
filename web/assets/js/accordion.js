@@ -18,9 +18,9 @@ $( function() {
 function mendAnchors() {
   if (window.location.hash.substr(1)) {
     var hash = "#" + (window.location.hash.substr(1)); // test for hash-link in url
-    // console.log("jumping to " + hash); 
+    console.log("jumping to " + hash); 
     $(document).scrollTop( $(hash).offset().top );  
-    // console.log("jumped");
+    console.log("jumped");
   }
 }
 
