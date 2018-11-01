@@ -175,7 +175,11 @@ a.mail-link:before {
   background: rgba(80, 227, 194, 0.5);
 }
 
-/* End Link Styles }}}1 */
+#nav-overlay a {
+  border: none;
+}
+
+/* End Links }}}1 */
 /* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
 /* Tests {{{1 */
 .test {
