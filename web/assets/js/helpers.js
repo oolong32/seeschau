@@ -1,12 +1,12 @@
 console.clear();
 
-let hamburger = document.querySelector('#hamburger');
-let header = document.querySelector('header');
-let navOver = document.querySelector('#nav-overlay');
+var hamburger = document.querySelector('#hamburger');
+var header = document.querySelector('header');
+var navOver = document.querySelector('#nav-overlay');
 
-let last_known_scroll_position = 0;
-let ticking = false;
-let shrinkHead = false; /* record status of header, needed when toggling menu overlay */
+var last_known_scroll_position = 0;
+var ticking = false;
+var shrinkHead = false; /* record status of header, needed when toggling menu overlay */
 
 // collapse header on scroll
 function shrinkHeader(scroll_pos) {

@@ -28,7 +28,6 @@ header #masthead h1, header #masthead p, footer #masthead h1, footer #masthead p
   color: white;
 }
 header #masthead h1, footer #masthead h1 {
-  display: inline, block;
   font-family: "WF-031942-010448-002219", "PFBagueSansPro", sans-serif;
   font-weight: normal;
   font-size: 6.5rem;
