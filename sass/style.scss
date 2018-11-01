@@ -553,16 +553,6 @@ main {
       grid-column: 1/-1;
     }
   }
-  section.raster.no-pic,
-  section.raster.no-pic:nth-child(odd) {
-    grid-template-columns: 1fr 46rem 1fr;
-    div.raster-bildfeld {
-    }
-    div.raster-textfeld {
-      grid-column: 2/-2; // ev. besser ganz links anschlagen?
-      width: 46rem;
-    }
-  }
   /* End Grid for Team & Workshops }}}2 */
 
   /* Einspaltige Layouts (Kontakt, Angebote {{{2 */

@@ -671,15 +671,6 @@ main section.raster:nth-child(odd) div.raster-textfeld {
 main section.raster:nth-child(odd) div.raster-textfeld.foo {
   grid-column: 1/-1;
 }
-main section.raster.no-pic,
-main section.raster.no-pic:nth-child(odd) {
-  grid-template-columns: 1fr 46rem 1fr;
-}
-main section.raster.no-pic div.raster-textfeld,
-main section.raster.no-pic:nth-child(odd) div.raster-textfeld {
-  grid-column: 2/-2;
-  width: 46rem;
-}
 main section.contact,
 main section.abo-infos,
 main section.angebote {
