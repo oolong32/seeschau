@@ -907,6 +907,30 @@ footer #masthead h1 {
 /* End Masthead Styles Global }}}1 */
 /* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
 /* Latop-Styles {{{1 */
+@media (max-width: 1440px) {
+  /* Header {{{2 */
+  header #masthead {
+    height: 19.5rem;
+  }
+  header #masthead h1 {
+    font-size: 5rem;
+  }
+  header #masthead p {
+    font-size: 1.625rem;
+    letter-spacing: 0.275rem;
+  }
+
+  /* End Header }}}2 */
+  /* Main {{{2 */
+  main {
+    padding: 11rem 0 0;
+  }
+  main h2 {
+    font-size: 5rem;
+  }
+
+  /* End Main }}}2 */
+}
 /* Latop-Styles }}}1 */
 /* Mobile Styles {{{1 */
 @media (max-width: 600px) {

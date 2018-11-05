@@ -789,9 +789,34 @@ footer {
 
 /* Latop-Styles {{{1 */
 
-@media (max-width: 1000px) {
-  body  {
+// Dieser Breakpoint dient eher der Kosmetik. Es geht darum, den sichtbaren
+// Bereich besser auszunutzen (im ursprünglichen Design wurden Menüleiste,
+// Browser-Chrome und Apple-Dock nicht eingeplant)
+
+@media (max-width: 1440px) { // Apple 15" Laptop
+
+  /* Header {{{2 */
+  header #masthead {
+    height: 19.5rem;
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1.625rem;
+      letter-spacing: 0.275rem;
+    }
   }
+  /* End Header }}}2 */
+
+  /* Main {{{2 */
+  main {
+    padding: 11rem 0 0;
+    h2 {
+      font-size: 5rem;
+    }
+  }
+  /* End Main }}}2 */
+
 }
 
 /* Latop-Styles }}}1 */
