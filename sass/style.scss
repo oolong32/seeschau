@@ -533,9 +533,11 @@ main {
       width: 320px;
       height: auto;
       grid-column: 1/2;
+      grid-row: 2; // 1 ist der Ankerlink
     }
     div.raster-textfeld { 
       grid-column: 2/3;
+      grid-row: 2;
       section {
         border: none; // wegen Akkordeon zus. Section :-(
         margin: 0;
@@ -550,7 +552,6 @@ main {
     img { grid-column: 2/3; }
     div.raster-textfeld {
       grid-column: 1/2;
-      grid-row: 1;
     }
     div.raster-textfeld.foo { // können wir bitte auf die Klasse "foo" verzichten und einen gescheiten Namen finden?
       grid-column: 1/-1;
