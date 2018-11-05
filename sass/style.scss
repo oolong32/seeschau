@@ -756,7 +756,7 @@ footer {
   }
 
   #masthead { /* Background-Image and Logotype in Footer */
-    height: 20vw;
+    height: 28rem;
     margin-top: 1rem;
     padding: 1.5rem 1.5rem 2.5rem 2rem;
     display: flex;
@@ -795,8 +795,9 @@ footer {
 
 @media (max-width: 1440px) { // Apple 15" Laptop
 
-  /* Header {{{2 */
-  header #masthead {
+  /* Header & Footer {{{2 */
+  header #masthead,
+  footer #masthead {
     height: 19.5rem;
     h1 {
       font-size: 5rem;
@@ -806,7 +807,7 @@ footer {
       letter-spacing: 0.275rem;
     }
   }
-  /* End Header }}}2 */
+  /* End Header & Footer }}}2 */
 
   /* Main {{{2 */
   main {

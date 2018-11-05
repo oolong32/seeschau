@@ -874,7 +874,7 @@ footer #infos p:last-child {
 }
 footer #masthead {
   /* Background-Image and Logotype in Footer */
-  height: 20vw;
+  height: 28rem;
   margin-top: 1rem;
   padding: 1.5rem 1.5rem 2.5rem 2rem;
   display: flex;
@@ -908,19 +908,22 @@ footer #masthead h1 {
 /* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
 /* Latop-Styles {{{1 */
 @media (max-width: 1440px) {
-  /* Header {{{2 */
-  header #masthead {
+  /* Header & Footer {{{2 */
+  header #masthead,
+footer #masthead {
     height: 19.5rem;
   }
-  header #masthead h1 {
+  header #masthead h1,
+footer #masthead h1 {
     font-size: 5rem;
   }
-  header #masthead p {
+  header #masthead p,
+footer #masthead p {
     font-size: 1.625rem;
     letter-spacing: 0.275rem;
   }
 
-  /* End Header }}}2 */
+  /* End Header & Footer }}}2 */
   /* Main {{{2 */
   main {
     padding: 11rem 0 0;
