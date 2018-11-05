@@ -7,13 +7,12 @@
   <section class="raster">
 
     <div class="raster-bildfeld">
-      {% if entry.extTeachers|length %}
-        {% for extTeacher in entry.extTeachers %}
-        <!-- <p>{% if extTeacher.tlink|length %}<a href="{{ extTeacher.tlink }}" target="_blank">{% endif %}{{ extTeacher.tname }}{% if extTeacher.tlink|length %}</a>{% endif %}</p> -->
-        <img src="{{ extTeacher.timg[0].url }}" alt="{{ extTeacher.tname }}" width="100">
+      {% if entry.images|length %}
+        {% for image in entry.images %}
+        <img src="{{ image.url }}" alt="{{ entry.title }}" width="100">
         {% endfor %}
       {% else %}
-        <!-- no Teacher Image -->
+        <img class="placeholder" src="/assets/_pic/tempAssets/placeholder.svg" alt="Placeholder Image">
       {% endif %}
     </div>
     

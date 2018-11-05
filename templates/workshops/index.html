@@ -15,16 +15,15 @@
   {% endif %} #}
 
   {% for workshop in workshops %}
-  <section class="raster{% if not workshop.extTeachers|length %} no-pic{% elseif not workshop.extTeachers[0].timg|length %} no-pic{% endif %}">
+  <section class="raster">
 
     <div class="raster-bildfeld">
-      {% if workshop.extTeachers|length %}
-        {% for extTeacher in workshop.extTeachers %}
-        <!-- <p>{% if extTeacher.tlink|length %}<a href="{{ extTeacher.tlink }}" target="_blank">{% endif %}{{ extTeacher.tname }}{% if extTeacher.tlink|length %}</a>{% endif %}</p> -->
-        <img src="{{ extTeacher.timg[0].url }}" alt="{{ extTeacher.tname }}" width="100">
+      {% if workshop.images|length %}
+        {% for image in workshop.images %}
+        <img src="{{ image.url }}" alt="{{ workshop.title }}">
         {% endfor %}
       {% else %}
-        <!-- no Teacher Image -->
+        <img class="placeholder" src="/assets/_pic/tempAssets/placeholder.svg" alt="Placeholder Image">
       {% endif %}
     </div>
     

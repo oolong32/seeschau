@@ -6,9 +6,11 @@
   <section class="raster">
     <a id="{{ teacher.slug }}" class="anchor"></a>
 
-    {% if teacher.portrait|length %}
-    <img src="{{ teacher.portrait.first().getUrl('cropSquare') }}" alt="{{ teacher.title }}">
-    {% endif %}
+    <div class="raster-bildfeld">
+      {% if teacher.portrait|length %}
+      <img src="{{ teacher.portrait.first().getUrl('cropSquare') }}" alt="{{ teacher.title }}">
+      {% endif %}
+    </div>
 
     <div class="raster-textfeld">
       <h3>{{ teacher.title }}</h3>
@@ -34,6 +36,14 @@
 {# Achtung #}
 {# Achtung #}
 {# Hier gibt es ein Problem, wenn in der Adresszeile eine URL mit Hashtag steht!!!, z.b. https://seeschau.test/team/#rebecca-robinson #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
+{# gelöst #}
 {# gelöst #}
 {# Achtung #}
 {# Achtung #}

@@ -642,11 +642,13 @@ main section.raster {
   grid-column-gap: 2rem;
   border: none;
 }
-main section.raster img {
-  width: 320px;
-  height: auto;
+main section.raster .raster-bildfeld {
   grid-column: 1/2;
   grid-row: 2;
+}
+main section.raster .raster-bildfeld img {
+  width: 320px;
+  height: auto;
 }
 main section.raster div.raster-textfeld {
   grid-column: 2/3;
@@ -666,7 +668,7 @@ main section.raster div.raster-textfeld section .accordion-collapse {
 main section.raster:nth-child(odd) {
   grid-template-columns: 1fr 320px;
 }
-main section.raster:nth-child(odd) img {
+main section.raster:nth-child(odd) .raster-bildfeld {
   grid-column: 2/3;
 }
 main section.raster:nth-child(odd) div.raster-textfeld {
