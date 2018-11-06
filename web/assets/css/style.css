@@ -960,7 +960,7 @@ footer #masthead p {
     padding: 0.25rem 0.5rem;
   }
   header #masthead h1 {
-    font-size: 2.25rem;
+    font-size: 2.45rem;
   }
   header #masthead p {
     font-size: 0.8125rem;
@@ -1000,10 +1000,38 @@ footer #masthead p {
     z-index: 9500;
     display: none;
     font-size: 2rem;
-    padding: 6rem 1rem 1rem 2rem;
     animation: foo 0.2s ease-in;
+    padding: 0;
   }
 
+  nav {
+    padding: 6rem 1rem 1rem 2rem;
+  }
+
+  /*
+  #nav-footer {
+    div#infos {
+      margin: 2rem 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 2rem;
+      grid-template-rows: repeat(4, 2rem);
+      grid-auto-flow: column;
+    }
+  }
+  #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+    h1 {
+      font-size: 2.625rem;
+      font-family: $francisGradientLeft; 
+    }
+    p {
+      font-size: 0.8125rem;
+      letter-spacing: 0.125rem;
+    }
+  }
+  */
   #nav-overlay.visible {
     display: block;
   }
@@ -1031,9 +1059,16 @@ footer #masthead p {
   }
   main h3, main p.teacher-quote {
     font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  main section.contact h3,
+main section.abo-infos h3,
+main section.angebote h3 {
+    margin-bottom: 0.75rem;
   }
   main h4, main p, main ul, main ol {
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.4;
   }
   main p, main p.teacher-quote ul {
     margin-bottom: 1rem;
@@ -1157,8 +1192,11 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
     top: -6rem;
   }
   main section {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     padding: 0;
+  }
+  main section.visible {
+    padding-top: 1.4rem;
   }
   main section.intro-text,
 main section.contact,
@@ -1188,6 +1226,7 @@ main section.angebote {
     grid-gap: 0 2rem;
     grid-template-rows: repeat(4, 2rem);
     grid-auto-flow: column;
+    font-size: 15px;
   }
   footer #masthead {
     height: 4.75rem;
