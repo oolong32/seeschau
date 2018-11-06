@@ -83,37 +83,34 @@
 
   <h2>Videos</h2>
   
+{# real content
   <section class="videos">
 
     {% set videos = craft.entries.section('videos').limit(4) %}
     {% for videoEntry in videos %}
     <div class="video-item">
       {% set video = videoEntry.video %}
-      {{ video.embed({ width: 500, height: 267 }) }} {# check figures #}
-      {# <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3> #}
+      {{ video.embed({ width: 500, height: 267 }) }}
     </div>
 
     <!-- ich habe nur ein Video in meinem Feed :-/ -->
     <div class="video-item">
       {% set video = videoEntry.video %}
-      {{ video.embed({ width: 500, height: 267 }) }} {# check figures #}
-      {# <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3> #}
+      {{ video.embed({ width: 500, height: 267 }) }}
     </div>
     <div class="video-item">
       {% set video = videoEntry.video %}
-      {{ video.embed({ width: 500, height: 267 }) }} {# check figures #}
-      {# <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3> #}
+      {{ video.embed({ width: 500, height: 267 }) }}
     </div>
     <div class="video-item">
       {% set video = videoEntry.video %}
-      {{ video.embed({ width: 500, height: 267 }) }} {# check figures #}
-      {# <h3><a href="{{ video.url }}" target="_blank">{{ video.title }}</a></h3> #}
+      {{ video.embed({ width: 500, height: 267 }) }}
     </div>
     {% endfor %}
 
   </section>
+#}
 {# Fake content #}
-{#
   <section class="videos">
 	<div class="video-item">
 		<img src="/assets/_pic/tempAssets/mantra.jpg" alt="">
@@ -129,6 +126,5 @@
 	</div>
 	<div id="more-news"><p>Mehr Videos laden</p></div>
   </section>
-#}
 {# Fake content #}
 {% endblock %}
