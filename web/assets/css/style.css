@@ -55,6 +55,7 @@ main h2 {
 }
 main h3 {
   font-size: 2rem;
+  line-height: 1;
   font-weight: 400;
 }
 main p.teacher-quote {
@@ -220,6 +221,7 @@ body.intro div.container {
   /* Vertikale */
   align-items: center;
   /* Horizontale*/
+  /* End Background Images }}}2 */
 }
 body.intro div.container ul.img {
   z-index: -3;
@@ -230,7 +232,7 @@ body.intro div.container ul.img {
   right: 0;
   height: 100vh;
   width: 100vw;
-  /* background images */
+  /* Background Images {{{2 */
 }
 body.intro div.container ul.img li {
   position: absolute;
@@ -344,6 +346,11 @@ body.intro div.container ul.img li:nth-child(13) {
   background-size: cover;
   background-origin: border-box;
   background-position: bottom;
+}
+body.intro div.container #seeschau-container,
+body.intro div.container #byline-container {
+  position: relative;
+  top: -2rem;
 }
 body.intro div.container #seeschau-container {
   transform: scale(2);
@@ -531,11 +538,7 @@ main section {
   margin: 0 auto;
 }
 main section h3 {
-  margin: 0 0 0.5rem 0;
-}
-main section.intro-text {
-  width: 46rem;
-  border: none;
+  margin: 0 0 1.75rem 0;
 }
 main section.news {
   border: none;
@@ -603,6 +606,14 @@ main section.visible {
   margin-bottom: 0;
   padding-bottom: 0;
   padding-top: 3rem;
+  /* Visible Workshop Infos {{{4 */
+  /* End Visible Workshop Infos }}}4 */
+}
+main section.visible .workshop-infos {
+  margin-bottom: 1.75rem;
+}
+main section.visible .workshop-infos p {
+  margin-bottom: 0;
 }
 main section.visible:first-child {
   border: none;
@@ -677,17 +688,17 @@ main section.raster:nth-child(odd) div.raster-textfeld {
 main section.raster:nth-child(odd) div.raster-textfeld.foo {
   grid-column: 1/-1;
 }
+main section.intro-text {
+  width: 46rem;
+  border: none;
+}
 main section.contact,
+main section.anreise-infos,
 main section.abo-infos,
 main section.angebote {
   width: 46rem;
   /* schmaler als Seiten mit Bildern */
   margin: 0 auto;
-}
-main section.contact h3,
-main section.abo-infos h3,
-main section.angebote h3 {
-  margin-bottom: 3rem;
 }
 main section.contact {
   margin-bottom: 0;
@@ -1040,7 +1051,7 @@ footer #masthead p {
   /* Layout Main {{{2 */
   main {
     width: 100%;
-    padding: 5rem 1rem 1rem;
+    padding: 5.4rem 1rem 1rem;
     /* Main Micro Typography {{{3 */
     /* End Main Micro Typography }}}3 */
     /* Mobile News Page {{{3 */
@@ -1054,24 +1065,25 @@ footer #masthead p {
   }
   main h2 {
     font-size: 2.625rem;
+    line-height: 1.1;
     text-align: left;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.8125rem 0;
   }
-  main h3, main p.teacher-quote {
+  main section h3, main p.teacher-quote {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8125rem;
   }
   main section.contact h3,
 main section.abo-infos h3,
 main section.angebote h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8125rem;
   }
   main h4, main p, main ul, main ol {
     font-size: 0.9375rem;
     line-height: 1.4;
   }
   main p, main p.teacher-quote ul {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8125rem;
   }
   main p.accordion-trigger,
 main p.accordion-collapse {
@@ -1192,11 +1204,11 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
     top: -6rem;
   }
   main section {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8125rem;
     padding: 0;
   }
   main section.visible {
-    padding-top: 1.4rem;
+    padding-top: 0.8125rem;
   }
   main section.intro-text,
 main section.contact,
@@ -1208,9 +1220,17 @@ main section.angebote {
     border-bottom: none;
     padding: 0;
     margin-bottom: 2.5rem;
+    /* Visible Workshop Infos {{{4 */
+    /* End Visible Workshop Infos }}}4 */
   }
   main section.raster img {
     width: 100%;
+  }
+  main section.raster .workshop-infos {
+    margin-bottom: 0.8125rem;
+  }
+  main section.raster .workshop-infos p {
+    margin-bottom: 0;
   }
 
   /* End Layout Mobile Main }}}2 */

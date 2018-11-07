@@ -80,6 +80,7 @@ main {
   }
   h3 {
     font-size: 2rem;
+    line-height: 1; // fast aliniert mit Bildern in Raster
     font-weight: 400;
   }
   p.teacher-quote {
@@ -220,7 +221,8 @@ body.intro {
       bottom: 0;
       right: 0;
       height: 100vh; width: 100vw;
-      /* background images */
+
+      /* Background Images {{{2 */
       li {
         position: absolute;
         top: 0;
@@ -245,7 +247,16 @@ body.intro {
       li:nth-child(13) { z-index: 2; animation-delay: 60s; background: url("../_pic/introBackgrounds/mammutbaumkrone@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
       // li:nth-child(14) { z-index: 1; animation-delay: 65s; background: url("../_pic/introBackgrounds/seeReflexion@1x.jpg") no-repeat center center fixed; background-size: cover; background-origin: border-box; background-position: bottom; }
     }                                                                                                            
-    #seeschau-container { transform: scale(2); }                                                                 
+    /* End Background Images }}}2 */
+
+    #seeschau-container,
+    #byline-container {
+      position: relative;
+      top: -2rem;
+    }
+    #seeschau-container {
+      transform: scale(2);
+    }                                                                 
     #byline-container {                                                                                          
       margin-top: 2em;                                                                                          ;
       color: white;
@@ -399,15 +410,10 @@ main {
     padding-bottom: 2.5rem;
     margin: 0 auto;
     h3 {
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 1.75rem 0;
     }
   }
   /* End Sections Allgemein }}}2 */
-
-  section.intro-text {
-    width: 46rem;
-    border: none;
-  }
 
   /* News Page {{{2 */
 
@@ -487,6 +493,15 @@ main {
     margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 3rem;
+
+    /* Visible Workshop Infos {{{4 */
+    .workshop-infos {
+      margin-bottom: 1.75rem;
+      // border: solid $linegreen 1px;
+      p { margin-bottom: 0;}
+    }
+    /* End Visible Workshop Infos }}}4 */
+
   }
   section.visible:first-child {
     border: none;
@@ -562,14 +577,17 @@ main {
   /* End Grid for Team & Workshops }}}2 */
 
   /* Einspaltige Layouts (Kontakt, Angebote {{{2 */
+  section.intro-text {
+    width: 46rem;
+    border: none;
+  }
+
   section.contact,
+  section.anreise-infos,
   section.abo-infos,
   section.angebote {
     width: 46rem; /* schmaler als Seiten mit Bildern */
     margin: 0 auto;
-    h3 {
-      margin-bottom: 3rem;
-    }
   }
   section.contact {
     margin-bottom: 0;
@@ -934,34 +952,33 @@ footer {
   /* Layout Main {{{2 */
   main {
     width: 100%;
-    // padding: 10rem 1rem 2rem;
-    padding: 5rem 1rem 1rem;
+    padding: 5.4rem 1rem 1rem;
 
     /* Main Micro Typography {{{3 */
     h2 { // Seitenüberschriften
       font-size: 2.625rem;
+      line-height: 1.1;
       text-align: left;
-      margin: 0 0 0.75rem 0;
+      margin: 0 0 0.8125rem 0;
     }
-    h3, p.teacher-quote {
+    section h3, p.teacher-quote {
       font-size: 1.25rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8125rem;
     }
     section.contact h3,
     section.abo-infos h3,
-    section.angebote h3 { margin-bottom: .75rem; }
+    section.angebote h3 { margin-bottom: 0.8125rem; }
     h4, p, ul, ol {
       font-size: 0.9375rem;
       line-height: 1.4;
     }
     p, p.teacher-quote ul {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8125rem;
     }
     p.accordion-trigger,
     p.accordion-collapse {
       text-align: left;
     }
-
     /* End Main Micro Typography }}}3 */
 
     /* Mobile News Page {{{3 */
@@ -1074,12 +1091,13 @@ footer {
       top: -6rem;
     }
     section {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8125rem;
       padding: 0;
     }
     section.visible {
-      padding-top: 1.4rem;
+      padding-top: 0.8125rem;
     }
+
     /* Mobile Single Column Pages {{{3 */
     section.intro-text,
     section.contact,
@@ -1096,6 +1114,14 @@ footer {
       padding: 0;
       margin-bottom: 2.5rem;
       img { width: 100%; }
+
+      /* Visible Workshop Infos {{{4 */
+      .workshop-infos {
+        margin-bottom: 0.8125rem;
+        p { margin-bottom: 0;}
+      }
+      /* End Visible Workshop Infos }}}4 */
+
     }
     /* End Two Single Column Pages }}}3 */
 

@@ -20,7 +20,7 @@
     <div class="raster-bildfeld">
       {% if workshop.images|length %}
         {% for image in workshop.images %}
-        <img src="{{ image.url }}" alt="{{ workshop.title }}">
+        <img src="{{ image.url('cropSquare') }}" alt="{{ workshop.title }}">
         {% endfor %}
       {% else %}
         <img class="placeholder" src="/assets/_pic/tempAssets/placeholder.svg" alt="Placeholder Image">
@@ -35,6 +35,7 @@
           <h4>{{ workshop.untertitel }}</h4>
 
           {# Externe und interene Lehrer in Liste zusammenführen #}
+          <div class="workshop-infos">
           {% if workshop.lehrpersonen|length == 0 and workshop.extTeachers|length == 0 %}
             <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
           {% else %}
@@ -51,23 +52,43 @@
               {% set teacherurls = teacherurls|merge([teacher.url]) %}
             {% endfor %}
 
-          {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
-          <p class="teacher"> Mit
-            {% spaceless %}
-              {% for i in 0..(teachernames|length - 1) %}
-                {% if loop.first %}{# span zusammen mit spaceless verhindert unnötige Leerzeichen vor Komma #}
-                  <span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
-                {% else %}
-                  und {% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
-                {% endif %}
-              {% endfor %}
-            {% endspaceless %}
-          </p>
+            {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
+            <p>Mit
+              {% spaceless %}
+                {% for i in 0..(teachernames|length - 1) %}
+                  {% if loop.first %}{# span zusammen mit spaceless verhindert unnötige Leerzeichen vor Komma #}
+                    <span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                  {% else %}
+                    und {% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endspaceless %}
+            </p>
           {% endif %}
 
-          {% if workshop.visibleText|length %}
-            {{ workshop.visibleText }}
+          {# Termin im gleichen Behälter wie Lehrer #}
+          {% if workshop.workshopDate|length %}
+            <p>{{ workshop.workshopDate }}</p>
+          {% else %}
+            <p>Der Termin wird in Kürze angekündigt.</p>
           {% endif %}
+          </div>
+
+          {% if workshop.workshopProcedure|length %}
+          <div class="workshop-infos">
+            <h4>Ablauf</h4>
+            {{ workshop.workshopProcedure }}
+          </div>
+          {% endif %}
+
+          <div class="workshop-infos">
+          <h4>Preis</h4>
+          {% if workshop.workshopPrice|length %}
+            {{ workshop.workshopPrice }}
+          {% else %}
+            <p>Preis auf Anfrage.</p>
+          {% endif %}
+          </div>
 
           <p class="accordion-trigger"><span>Weitere Informationen</span></p>
         </section>

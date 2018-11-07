@@ -9,7 +9,12 @@
     <div class="raster-bildfeld">
       {% if entry.images|length %}
         {% for image in entry.images %}
-        <img src="{{ image.url }}" alt="{{ entry.title }}" width="100">
+          {# bild noch nicht sauber #}
+          {# bild noch nicht sauber #}
+          {# bild noch nicht sauber #}
+          {# bild noch nicht sauber #}
+          {# bild noch nicht sauber #}
+        <img src="{{ image.url('cropSquare') }}" alt="{{ entry.title }}" width="100">
         {% endfor %}
       {% else %}
         <img class="placeholder" src="/assets/_pic/tempAssets/placeholder.svg" alt="Placeholder Image">
@@ -24,6 +29,7 @@
           <h4>{{ entry.untertitel }}</h4>
 
           {# Externe und interene Lehrer in Liste zusammenführen #}
+          <div class="workshop-infos">
           {% if entry.lehrpersonen|length == 0 and entry.extTeachers|length == 0 %}
             <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
           {% else %}
@@ -41,7 +47,7 @@
             {% endfor %}
 
           {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
-          <p class="teacher"> Mit
+          <p> Mit
             {% spaceless %}
               {% for i in 0..(teachernames|length - 1) %}
                 {% if loop.first %}
@@ -54,9 +60,29 @@
           </p>
           {% endif %}
 
-          {% if entry.visibleText|length %}
-            {{ entry.visibleText }}
+          {# Termin im gleichen Behälter wie Lehrer #}
+          {% if entry.workshopDate|length %}
+            <p>{{ entry.workshopDate }}</p>
+          {% else %}
+            <p>Der Termin wird in Kürze angekündigt.</p>
           {% endif %}
+          </div>
+
+          {% if entry.workshopProcedure|length %}
+          <div class="workshop-infos">
+            <h4>Ablauf</h4>
+            {{ entry.workshopProcedure }}
+          </div>
+          {% endif %}
+
+          <div class="workshop-infos">
+          <h4>Preis</h4>
+          {% if entry.workshopPrice|length %}
+            {{ entry.workshopPrice }}
+          {% else %}
+            <p>Preis auf Anfrage.</p>
+          {% endif %}
+          </div>
 
           <p class="accordion-trigger"><span>Weitere Informationen</span></p>
         </section>
