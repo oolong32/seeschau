@@ -948,7 +948,7 @@ footer #masthead p {
   body.intro div.container #seeschau-container,
 body.intro div.container #byline-container {
     position: relative;
-    top: -2rem;
+    top: -2.5rem;
   }
   body.intro div.container #seeschau-container {
     transform: scale(0.5);
@@ -1052,7 +1052,7 @@ body.intro div.container #byline-container {
   /* Layout Main {{{2 */
   main {
     width: 100%;
-    padding: 5.4rem 1rem 1rem;
+    padding: 5rem 1rem 1rem;
     /* Main Micro Typography {{{3 */
     /* End Main Micro Typography }}}3 */
     /* Mobile News Page {{{3 */
