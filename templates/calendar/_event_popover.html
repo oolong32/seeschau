@@ -36,11 +36,11 @@
 				{% if event.lehrpersonen|length > 1 %}
 					<ul>
 					{% for lehrperson in event.lehrpersonen %}
-						<li><a href="/{{ lehrperson.url }}">{{ lehrperson }}</a></li>
+						<li><a href="{{ lehrperson.url }}">{{ lehrperson }}</a></li>
 					{% endfor %}
 					</ul>
 				{% else %}
-					<p><a href="/{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
+					<p><a href="{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
 				{% endif %}
 			{% endif %}
 
