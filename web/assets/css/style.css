@@ -730,16 +730,13 @@ main section#cal-head #next-month {
 }
 main section#calendar {
   border: none;
-}
-main section#calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem;
+  grid-template-rows: repeat(5, auto);
 }
 main section#calendar div.cal-case {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2.5rem auto;
   border-right: 1px solid #bbd7d1;
   border-bottom: 1px solid #bbd7d1;
 }
@@ -754,7 +751,8 @@ main section#calendar div.cal-case div.weekday-mobile {
   display: none;
 }
 main section#calendar div.cal-case div.day_cell {
-  height: 10.625rem;
+  /* Single Event in Calendar {{{3 */
+  /* End Single Event in Calendar }}}3 */
 }
 main section#calendar div.cal-case div.day_cell div.date {
   padding: 0.25rem 0.5rem;
@@ -763,6 +761,8 @@ main section#calendar div.cal-case div.day_cell div.date {
 main section#calendar div.cal-case div.day_cell div.event {
   padding: 0 0.25rem;
   margin-bottom: 0.25rem;
+  /* Q-Tip {{{4 */
+  /* End Q-Tip }}}4 */
 }
 main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
   display: inline-block;
@@ -843,6 +843,7 @@ main section#calendar div.cal-case:nth-child(7n+1) {
   border-left: 1px solid #bbd7d1;
 }
 main section#calendar div.cal-case:nth-child(-n+7) {
+  grid-template-rows: 2.5rem auto;
   border-top: 1px solid #bbd7d1;
 }
 main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
@@ -1165,6 +1166,7 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   }
   main section#calendar div.cal-case:nth-child(-n+7) {
     border-top: none;
+    grid-template-rows: auto;
   }
   main section#calendar div.cal-case {
     grid-template-columns: 2.25rem 1fr;
@@ -1183,6 +1185,7 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
     display: grid;
     grid-template-columns: 1rem 1fr;
     grid-gap: 0 0.5rem;
+    min-height: auto;
     height: auto;
     padding: 0.25rem 0 0.15rem 0.3rem;
   }
@@ -1199,6 +1202,10 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   }
   main section#calendar div.cal-case div.day_cell div.event div.qtip {
     width: auto;
+  }
+  main section#calendar div.cal-case:nth-child(n) {
+    min-height: 0;
+    height: auto;
   }
   main a.anchor {
     top: -6rem;

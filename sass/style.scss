@@ -618,17 +618,25 @@ main {
     #prev-month { order: 1; }
     #next-month { order: 3; }
   }
-  section#calendar { border: none;}
+
   section#calendar { // Calendar Layout
+    border: none;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem ;
+    // grid-template-rows: 13.125rem 10.625rem 10.625rem 10.625rem 10.625rem ;
+    grid-template-rows: repeat(5, auto);
+
+    div.cal-case:nth-child(0n+7){ // Höhe erste Reihe (+ Wochentage)
+      // min-height: 13.125rem;
+    }
+
     div.cal-case {
+      // min-height: 10.625rem;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 2.5rem auto;
       border-right: 1px solid $linegreen;
       border-bottom: 1px solid $linegreen;
+
       div.weekday {
         visibility: hidden;
         display: none;
@@ -637,13 +645,15 @@ main {
         line-height: 1.9;
       }
       div.weekday-mobile { display: none; } // Abgekürzte Wochentage, nur auf Mobile
+
       div.day_cell {
-        height: 10.625rem; // notwendig für Einfärbung Zellen: today & out of range
+        // min-height: 10.625rem; // notwendig für Einfärbung Zellen: today & out of range
         div.date {
-          // height: 2.5rem;
           padding: 0.25rem 0.5rem;
           text-align: right;
         }
+
+        /* Single Event in Calendar {{{3 */
         div.event {
           padding: 0 0.25rem;
           margin-bottom: 0.25rem;
@@ -665,6 +675,8 @@ main {
             background: transparent;
           }
           a.ausfall { text-decoration: line-through; }
+
+          /* Q-Tip {{{4 */
           div.qtip {
             width: 10.5rem;
             border: 1px solid $green;
@@ -688,23 +700,25 @@ main {
             pointer-events: none;
           }
           div.qtip:after {
-          border-color: transparent;
-          border-bottom-color: $white;
-          border-width: 12px;
-          margin-left: -12px;
+            border-color: transparent;
+            border-bottom-color: $white;
+            border-width: 12px;
+            margin-left: -12px;
+          }
+          div.qtip:before {
+            border-color: transparent; 
+            border-bottom-color: $green;
+            border-width: 13px;
+            margin-left: -13px;
+          }
+          div.hidden { visibility: hidden; }
+          /* End Q-Tip }}}4 */
         }
-        div.qtip:before {
-          border-color: transparent; 
-          border-bottom-color: $green;
-          border-width: 13px;
-          margin-left: -13px;
-        }
-        div.hidden { visibility: hidden; }
-        }
-        .all_day {
-          background: $lavender;
-        }
+        .all_day { background: $lavender; }
+        /* End Single Event in Calendar }}}3 */
+
       }
+
       div.today {
         background: $green_a25;
         .all_day {
@@ -714,17 +728,20 @@ main {
           background: $green;
         }
       }
+
       div.out_of_range {
         background: $green_a05;
         div.event a.trigger {
           color: #666;
         }
       }
-    }
-    div.cal-case:nth-child(7n+1) {
+    } // end div.cal-case
+
+    div.cal-case:nth-child(7n+1) { // Farbe der Kalenderlinien
       border-left: 1px solid $linegreen;
     }
     div.cal-case:nth-child(-n+7) { // die ersten 7 (oberste Zeile)
+      grid-template-rows: 2.5rem auto; // höhe der Wochentage festlegen
       border-top: 1px solid $linegreen;
       div.weekday { // in Desktop Viewport sichtbare Tagesnamen
         visibility: visible;
@@ -732,7 +749,7 @@ main {
         border-bottom: 1px solid $linegreen;
       }
     }
-  }
+  } // end section#calendar
   /* End Calendar Styles }}}2 */
 
 }
@@ -1044,7 +1061,10 @@ footer {
       div.cal-case div.weekday,
       div.cal-case:nth-child(-n+7) div.weekday { display: none } // ausgeschriebene Wochentage ausblenden
       div.cal-case:nth-child(7n+1) { border-left: none; border-top: none; }
-      div.cal-case:nth-child(-n+7) { border-top: none;}
+      div.cal-case:nth-child(-n+7) {
+        border-top: none;
+        grid-template-rows: auto; // höhe der Wochentage festlegen
+      }
       display: block; // Grid deaktivieren, alles untereinander
       border-left: 1px solid $linegreen; // Linie um den ganzen Kalender
       border-top: 1px solid $linegreen;
@@ -1066,6 +1086,7 @@ footer {
           display: grid;
           grid-template-columns: 1rem 1fr;
           grid-gap: 0 0.5rem;
+          min-height: auto;
           height: auto;
           padding: 0.25rem 0 0.15rem 0.3rem ;
           div.date {
@@ -1084,6 +1105,7 @@ footer {
           }
         }
       }
+      div.cal-case:nth-child(n) { min-height: 0; height: auto; } // unset height of all cells
     }
     /* End Mobile Calendar Layout }}}3 */
 
