@@ -24,7 +24,7 @@
           <h4>{{ entry.untertitel }}</h4>
 
           {# Externe und interene Lehrer in Liste zusammenführen #}
-          {% if entry.lehrpersonen|length == 0 and entry.ExtTeachers|length == 0 %}
+          {% if entry.lehrpersonen|length == 0 and entry.extTeachers|length == 0 %}
             <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
           {% else %}
             {% set teachernames = [] %}
@@ -42,15 +42,15 @@
 
           {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
           <p class="teacher"> Mit
-            {% for i in 0..(teachernames|length - 1) %}
-              {% if loop.first %}
-                <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
-              {% elseif not loop.last %}
-                , <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
-              {% else %}
-                und <a href="{{ teacherurls[i] }}">{{ teachernames[i] }}</a>
-              {% endif %}
-            {% endfor %}
+            {% spaceless %}
+              {% for i in 0..(teachernames|length - 1) %}
+                {% if loop.first %}
+                  <span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] -}}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                {% else %}
+                  und {% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endspaceless %}
           </p>
           {% endif %}
 

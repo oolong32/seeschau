@@ -53,15 +53,15 @@
 
           {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
           <p class="teacher"> Mit
-            {% for i in 0..(teachernames|length - 1) %}
-              {% if loop.first %}
-                {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
-              {% elseif not loop.last %}
-                , {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
-              {% else %}
-                und {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
-              {% endif %}
-            {% endfor %}
+            {% spaceless %}
+              {% for i in 0..(teachernames|length - 1) %}
+                {% if loop.first %}{# span zusammen mit spaceless verhindert unnötige Leerzeichen vor Komma #}
+                  <span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                {% else %}
+                  und {% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endspaceless %}
           </p>
           {% endif %}
 
