@@ -948,7 +948,7 @@ footer #masthead p {
   body.intro div.container #seeschau-container,
 body.intro div.container #byline-container {
     position: relative;
-    top: -3rem;
+    top: -2rem;
   }
   body.intro div.container #seeschau-container {
     transform: scale(0.5);
