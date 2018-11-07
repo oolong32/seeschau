@@ -57,9 +57,9 @@
               {% spaceless %}
                 {% for i in 0..(teachernames|length - 1) %}
                   {% if loop.first %}{# span zusammen mit spaceless verhindert unnötige Leerzeichen vor Komma #}
-                    <span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                    <span>{% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
                   {% else %}
-                    und {% if teacherurls[i]|length %}<a href="/{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+                    und {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
                   {% endif %}
                 {% endfor %}
               {% endspaceless %}
