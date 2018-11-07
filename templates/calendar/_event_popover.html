@@ -5,7 +5,7 @@
 	{% else %}
 		{% if event.angebot|length %}
 			{% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
-			<p><strong><a href="{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
+			<p><strong><a href="/{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
 
 			{# Dauer #}
 			<p class='event_time'>
@@ -36,11 +36,11 @@
 				{% if event.lehrpersonen|length > 1 %}
 					<ul>
 					{% for lehrperson in event.lehrpersonen %}
-						<li><a href="{{ lehrperson.url }}">{{ lehrperson }}</a></li>
+						<li><a href="/{{ lehrperson.url }}">{{ lehrperson }}</a></li>
 					{% endfor %}
 					</ul>
 				{% else %}
-					<p><a href="{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
+					<p><a href="/{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
 				{% endif %}
 			{% endif %}
 
