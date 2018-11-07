@@ -347,11 +347,6 @@ body.intro div.container ul.img li:nth-child(13) {
   background-origin: border-box;
   background-position: bottom;
 }
-body.intro div.container #seeschau-container,
-body.intro div.container #byline-container {
-  position: relative;
-  top: -2rem;
-}
 body.intro div.container #seeschau-container {
   transform: scale(2);
 }
@@ -949,6 +944,11 @@ footer #masthead p {
 /* Mobile Styles {{{1 */
 @media (max-width: 600px) {
   /* Intro-Animation {{{2 */
+  body.intro div.container #seeschau-container,
+body.intro div.container #byline-container {
+    position: relative;
+    top: -3rem;
+  }
   body.intro div.container #seeschau-container {
     transform: scale(0.5);
     white-space: nowrap;

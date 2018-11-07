@@ -249,11 +249,6 @@ body.intro {
     }                                                                                                            
     /* End Background Images }}}2 */
 
-    #seeschau-container,
-    #byline-container {
-      position: relative;
-      top: -2rem;
-    }
     #seeschau-container {
       transform: scale(2);
     }                                                                 
@@ -846,6 +841,11 @@ footer {
   /* Intro-Animation {{{2 */
   body.intro {
     div.container {
+      #seeschau-container,
+      #byline-container {
+        position: relative;
+        top: -3rem;
+      }
       #seeschau-container {
         transform: scale(.5);
         white-space: nowrap;
