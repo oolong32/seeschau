@@ -270,6 +270,7 @@ body.intro {
 
 /* Layout Header {{{1 */
 
+nav#nav-overlay { display: none; }
 header {
   background: $white;
   margin: 0; padding: 0;
@@ -373,7 +374,7 @@ header.shrink { /* collapsed header */
 main {
   width: 65rem;
   margin: 0 auto;
-  padding: 20rem 0 0; 
+  padding: 31rem 0 0; 
   h2 {
     text-align: center;
     margin: 0 0 1rem;

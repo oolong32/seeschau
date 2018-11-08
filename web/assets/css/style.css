@@ -364,6 +364,10 @@ body.intro div.container svg {
 
 /* End Intro Page }}}1 */
 /* Layout Header {{{1 */
+nav#nav-overlay {
+  display: none;
+}
+
 header {
   background: white;
   margin: 0;
@@ -482,7 +486,7 @@ header.shrink h1, header.shrink p {
 main {
   width: 65rem;
   margin: 0 auto;
-  padding: 20rem 0 0;
+  padding: 31rem 0 0;
   /* Sections allgemein {{{2 */
   /* End Sections Allgemein }}}2 */
   /* News Page {{{2 */
