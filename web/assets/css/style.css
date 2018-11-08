@@ -2,7 +2,186 @@
 @import url("./fonts.css");
 /* Variables {{{1 */
 /* Variables }}}1 */
-/*  —————————— Micro Typography —————————— */
+/* ——————————————————————————————————  Micro Typography ————————————————————————————————————— */
+/* Text Formatting {{{1 */
+html, * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PFBagueSansPro", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  font-variant-numeric: proportional-nums;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+header #masthead h1, header #masthead p, footer #masthead h1, footer #masthead p {
+  line-height: 1;
+  color: white;
+}
+header #masthead h1, footer #masthead h1 {
+  font-family: "WF-031942-010448-002219", "PFBagueSansPro", sans-serif;
+  font-weight: normal;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+}
+header #masthead p, footer #masthead p {
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.5215rem;
+}
+
+header nav ul li {
+  font-size: 1.25rem;
+}
+
+main {
+  font-size: 1.25rem;
+  line-height: 1.68;
+}
+main h2 {
+  font-size: 6.25rem;
+  font-family: "WF-031942-010448-002219", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+main h3 {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 400;
+}
+main p.teacher-quote {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+main p, main ul {
+  margin-bottom: 1.75rem;
+}
+main section.contact #abo-preise {
+  font-variant-numeric: tabular-nums;
+}
+main section#calendar {
+  font-size: 0.9375rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* End Text Formatting }}}1 */
+/* List Styles {{{1 */
+main ul li {
+  margin-left: 0.6rem;
+  text-indent: -0.6rem;
+}
+main ul li:before {
+  content: "· ";
+}
+
+/* End List Styles }}}1 */
+/* Link Styles {{{1 */
+h1 a {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: black;
+  padding: 0;
+}
+
+h1 a:hover {
+  background: none;
+  border-bottom: none;
+}
+
+header nav ul li a {
+  border-bottom: none;
+}
+
+header nav ul li a:hover {
+  font-weight: 900;
+  background: transparent;
+  border: none;
+}
+
+header nav ul li.active a {
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: solid rgba(80, 227, 194, 0.25) 0.1875rem;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  border-bottom: solid rgba(80, 227, 194, 0.75) 0.1875rem;
+}
+
+a.arrow-left-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-left-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-right-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.arrow-right-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.mail-link:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+.button a {
+  background: rgba(80, 227, 194, 0.2);
+  display: inline-block;
+  padding: 0 0.25rem;
+  border: none;
+}
+
+.button a:hover,
+.button a:active,
+.button a:focus {
+  background: rgba(80, 227, 194, 0.5);
+}
+
+#nav-overlay a {
+  border: none;
+}
+
+/* End Links }}}1 */
+/* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
 /* Tests {{{1 */
 .test {
   border: 1px solid lawngreen;
@@ -733,7 +912,7 @@ footer #masthead h1 {
 }
 
 /* End Masthead Styles Global }}}1 */
-/* —————————— Laptop- & Mobile-Styles —————————— */
+/* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
 /* Latop-Styles {{{1 */
 @media (max-width: 1440px) {
   /* Header & Footer {{{2 */
