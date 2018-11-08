@@ -995,7 +995,7 @@ body.intro div.container #byline-container {
   /* Layout Collapsed Header {{{2 */
   header.shrink #masthead {
     height: 4.75rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
   }
   header.shrink h1, header.shrink p {
     opacity: 1;
