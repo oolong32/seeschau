@@ -5,3 +5,4 @@
 /.idea
 /vendor
 /web/assets/img/*
+/web/assets/img/**
