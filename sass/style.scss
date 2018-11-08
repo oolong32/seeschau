@@ -278,15 +278,7 @@ header {
   top: 0;
   z-index: 9999;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
-  #hamburger {
-    position: absolute;
-    top: 1rem; right: 1rem;
-    transition: all .3s ease-in;
-    display: none;
-  }
-  #hamburger:hover {
-    transform: scale(1.1);
-  }
+  #hamburger { display: none; } // no hamburger on desktop
   #masthead {
     height: 28rem; /* Variable wud b nice <—————————————————————————————————————————*/
     /* collapse-transition */
@@ -837,331 +829,118 @@ footer {
       letter-spacing: 0.275rem;
     }
   }
-  /* End Header & Footer }}}2 */
+    /* End Header & Footer }}}2 */
 
-  /* Main {{{2 */
-  main {
-    padding: 11rem 0 0;
-    h2 {
-      font-size: 5rem;
+    /* Main {{{2 */
+    main {
+      padding: 11rem 0 0;
+      h2 {
+        font-size: 5rem;
+      }
     }
+    /* End Main }}}2 */
+
   }
-  /* End Main }}}2 */
 
-}
+  /* Latop-Styles }}}1 */
 
-/* Latop-Styles }}}1 */
+  /* Mobile Styles {{{1 */
+  @media (max-width: 600px) {
 
-/* Mobile Styles {{{1 */
-@media (max-width: 600px) {
-
-  /* Intro-Animation {{{2 */
-  body.intro {
-    div.container {
-      #seeschau-container,
-      #byline-container {
-        position: relative;
-        top: -2.5rem;
-      }
-      #seeschau-container {
-        transform: scale(.5);
-        white-space: nowrap;
-      }
-      #byline-container {
-        margin-top: 0; 
-        p {
-          font-size: 1rem;
-          letter-spacing: 0.2rem;
+    /* Intro-Animation {{{2 */
+    body.intro {
+      div.container {
+        #seeschau-container,
+        #byline-container {
+          position: relative;
+          top: -2.5rem;
         }
-      }
-    }
-  }
-  /* End Intro-Animation }}}2 */
-
-  /* Layout Header {{{2 */
-  header {
-    nav { display: none; } // hide Navigation
-
-    #masthead {
-      height: 4.75rem;
-      padding: 0.25rem 0.5rem;
-      h1 { font-size: 2.45rem; }
-      p {
-        font-size: 0.8125rem;
-        letter-spacing: 0.125rem;
-      }
-    }
-    
-    #hamburger {
-      display: block;
-      top: 0.75rem;
-      right: 1rem;
-      transform: scale(0.75);
-    }
-  }
-  /* End Layout Header }}}2 */
-
-  /* Layout Collapsed Header {{{2 */
-  header.shrink { // keine Änderung bei Scroll
-    #masthead {
-      height: 4.75rem;
-      padding: 0.25rem 0.5rem;
-    }
-    h1, p {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  /* End Layout Collapsed Header }}}2 */
-
-  /* Navigation Overlay {{{2 */
-  #nav-overlay {
-    font-size: 3rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    right: 0;
-    height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
-    // transform: translateY(-100vh);
-    transition: all .2s ease-in;
-    background: $white;
-    z-index: 9500;
-    display: none;
-    font-size: 2rem;
-    // padding: 20rem 1rem 0 2rem;
-    animation: foo .2s ease-in; // bringts nicht so, weil nur in eine Richtung möglich
-    padding: 0;
-  }
-  nav {
-    padding: 6rem 1rem 1rem 2rem;
-  }
-  /*
-  #nav-footer {
-    div#infos {
-      margin: 2rem 1rem 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 0 2rem;
-      grid-template-rows: repeat(4, 2rem);
-      grid-auto-flow: column;
-    }
-  }
-  #masthead {
-    height: 4.75rem;
-    padding: 0.25rem 0.5rem;
-    h1 {
-      font-size: 2.625rem;
-      font-family: $francisGradientLeft; 
-    }
-    p {
-      font-size: 0.8125rem;
-      letter-spacing: 0.125rem;
-    }
-  }
-  */
-  #nav-overlay.visible {
-    display: block;
-  }
-  /* Navigation Overlay }}}2 */
-
-  /* Layout Main {{{2 */
-  main {
-    width: 100%;
-    padding: 5rem 1rem 1rem;
-
-    /* Main Micro Typography {{{3 */
-    h2 { // Seitenüberschriften
-      font-size: 2.625rem;
-      line-height: 1.1;
-      text-align: left;
-      margin: 0 0 0.8125rem 0;
-    }
-    section h3, p.teacher-quote {
-      font-size: 1.25rem;
-      margin-bottom: 0.8125rem;
-    }
-    section.contact h3,
-    section.abo-infos h3,
-    section.angebote h3 { margin-bottom: 0.8125rem; }
-    h4, p, ul, ol {
-      font-size: 0.9375rem;
-      line-height: 1.4;
-    }
-    p, p.teacher-quote ul {
-      margin-bottom: 0.8125rem;
-    }
-    p.accordion-trigger,
-    p.accordion-collapse {
-      text-align: left;
-    }
-    /* End Main Micro Typography }}}3 */
-
-    /* Mobile News Page {{{3 */
-    section.news {
-      width: 100%;
-      margin-bottom: 0;
-      grid-template-columns: 1fr;
-      grid-row-gap: 2rem;
-      div.news-item:nth-child(n+4) { // nur 3 items einblenden
-        display: none;
-      }
-      div.news-item {
-        h3 {
-          font-size: 2rem;
-          margin-bottom: 0.25rem;
+        #seeschau-container {
+          transform: scale(.5);
+          white-space: nowrap;
         }
-        p {
-          margin-bottom: 0.125rem;
-        }
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    section.videos {
-      border: none;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-column-gap: 2.25rem;
-      grid-row-gap: .5rem;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    div#more-news {
-      grid-column: 1/-1;
-      justify-self: center;
-      background: $green_a2;
-      margin: 0;
-      padding: 0 0.25rem;
-      p { 
-        font-size: 1rem;
-        line-height: 1.3;
-        margin: 0
-      }
-    }
-    /* Mobile News Page }}}3 */
-
-    /* Mobile Calendar Layout {{{3 */
-    section#cal-head {
-      flex-wrap: wrap;
-      margin: 1rem 0;
-      h3 {
-        margin-bottom: 0.5rem;
-        width: 100%;
-        order: 1;
-      }
-      #prev-month,  #next-month { font-size: 0.9375rem; }
-      #prev-month { order: 2; }
-      #next-month { order: 3; }
-    }
-    section#calendar {
-      div.cal-case div.weekday,
-      div.cal-case:nth-child(-n+7) div.weekday { display: none } // ausgeschriebene Wochentage ausblenden
-      div.cal-case:nth-child(7n+1) { border-left: none; border-top: none; }
-      div.cal-case:nth-child(-n+7) {
-        border-top: none;
-        grid-template-rows: auto; // höhe der Wochentage festlegen
-      }
-      display: block; // Grid deaktivieren, alles untereinander
-      border-left: 1px solid $linegreen; // Linie um den ganzen Kalender
-      border-top: 1px solid $linegreen;
-      border-bottom: none;
-      padding-bottom: 0;
-      div.cal-case {
-        grid-template-columns: 2.25rem 1fr;
-        grid-template-rows: auto;
-        div.weekday-mobile {
-          display: block;
-          grid-column: 1/2;
-          text-transform: uppercase;
-          letter-spacing: 0.025rem;
-          border-right: 1px solid $linegreen;
-          padding: 0.25rem 0.3rem;
-        }
-        div.day_cell {
-          grid-column: 2/3;
-          display: grid;
-          grid-template-columns: 1rem 1fr;
-          grid-gap: 0 0.5rem;
-          min-height: auto;
-          height: auto;
-          padding: 0.25rem 0 0.15rem 0.3rem ;
-          div.date {
-            padding: 0;
-            grid-column: 1/2;
-          }
-          div.event {
-            grid-column: 2/3;
-            span.calendar-color {
-              position: relative; 
-              left: -0.25rem;
-            }
-            div.qtip { // popover on mobile
-              width: auto;
-            }
+        #byline-container {
+          margin-top: 0; 
+          p {
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
           }
         }
       }
-      div.cal-case:nth-child(n) { min-height: 0; height: auto; } // unset height of all cells
     }
-    /* End Mobile Calendar Layout }}}3 */
+    /* End Intro-Animation }}}2 */
 
-    a.anchor {
-      top: -6rem;
-    }
-    section {
-      margin-bottom: 0.8125rem;
-      padding: 0;
-    }
-    section.visible {
-      padding-top: 0.8125rem;
-    }
-
-    /* Mobile Single Column Pages {{{3 */
-    section.intro-text,
-    section.contact,
-    section.angebote {
-      width: 100%;
-      // Achtung. in Yoga-Template gibt es hard-coded section-width!!!
-    }
-    /* End Mobile Single Column Pages }}}3 */
-
-    /* Mobile Two Column Pages {{{3 */
-    section.raster {
-      display: block; // Schluss mit Grid
-      border-bottom: none;
-      padding: 0;
-      margin-bottom: 2.5rem;
-      img { width: 100%; }
-
-      /* Visible Workshop Infos {{{4 */
-      .workshop-infos {
-        margin-bottom: 0.8125rem;
-        p { margin-bottom: 0;}
+    /* Layout Header {{{2 */
+    header {
+      nav { display: none; } // hide Navigation
+      #masthead {
+        height: 4.75rem;
+        padding: 0.25rem 0.5rem;
+        h1 { font-size: 2.45rem; }
+        p {
+          font-size: 0.8125rem;
+          letter-spacing: 0.125rem;
+        }
       }
-      /* End Visible Workshop Infos }}}4 */
-
+      #hamburger {
+        position: absolute;
+        display: block;
+        top: 1rem;
+        right: 0.5rem;
+        transform: scale(0.75);
+        transform-origin: top right;
+        transition: all .3s ease-in;
+      }
+      #hamburger:hover { transform: scale(1.1); }
     }
-    /* End Two Single Column Pages }}}3 */
+    /* End Layout Header }}}2 */
 
-  }
-  /* End Layout Mobile Main }}}2 */
+    /* Layout Collapsed Header {{{2 */
+    header.shrink { // keine Änderung bei Scroll
+      #masthead {
+        height: 4.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+      h1, p {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* End Layout Collapsed Header }}}2 */
 
-  /* Layout Mobile Footer {{{2 */
-  footer {
-    width: 100%;
-    margin-top: 2rem;
-    div#infos {
-      margin: 2rem 1rem 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 0 2rem;
-      grid-template-rows: repeat(4, 2rem);
-      grid-auto-flow: column;
-      font-size: 15px;
+    /* Navigation Overlay {{{2 */
+    #nav-overlay {
+      font-size: 3rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      right: 0;
+      height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
+      // transform: translateY(-100vh);
+      transition: all .2s ease-in;
+      background: $white;
+      z-index: 9500;
+      display: none;
+      font-size: 2rem;
+      // padding: 20rem 1rem 0 2rem;
+      animation: foo .2s ease-in; // bringts nicht so, weil nur in eine Richtung möglich
+      padding: 0;
+    }
+    nav {
+      padding: 6rem 1rem 1rem 2rem;
+    }
+    /*
+    #nav-footer {
+      div#infos {
+        margin: 2rem 1rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 2rem;
+        grid-template-rows: repeat(4, 2rem);
+        grid-auto-flow: column;
+      }
     }
     #masthead {
       height: 4.75rem;
@@ -1175,17 +954,232 @@ footer {
         letter-spacing: 0.125rem;
       }
     }
+    */
+    #nav-overlay.visible {
+      display: block;
+    }
+    /* Navigation Overlay }}}2 */
+
+    /* Layout Main {{{2 */
+    main {
+      width: 100%;
+      padding: 5rem 1rem 1rem;
+
+      /* Main Micro Typography {{{3 */
+      h2 { // Seitenüberschriften
+        font-size: 2.625rem;
+        line-height: 1.1;
+        text-align: left;
+        margin: 0 0 0.8125rem 0;
+      }
+      section h3, p.teacher-quote {
+        font-size: 1.25rem;
+        margin-bottom: 0.8125rem;
+      }
+      section.contact h3,
+      section.abo-infos h3,
+      section.angebote h3 { margin-bottom: 0.8125rem; }
+      h4, p, ul, ol {
+        font-size: 0.9375rem;
+        line-height: 1.4;
+      }
+      p, p.teacher-quote ul {
+        margin-bottom: 0.8125rem;
+      }
+      p.accordion-trigger,
+      p.accordion-collapse {
+        text-align: left;
+      }
+      /* End Main Micro Typography }}}3 */
+
+      /* Mobile News Page {{{3 */
+      section.news {
+        width: 100%;
+        margin-bottom: 0;
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        div.news-item:nth-child(n+4) { // nur 3 items einblenden
+          display: none;
+        }
+        div.news-item {
+          h3 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+          }
+          p {
+            margin-bottom: 0.125rem;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      section.videos {
+        border: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 2.25rem;
+        grid-row-gap: .5rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      div#more-news {
+        grid-column: 1/-1;
+        justify-self: center;
+        background: $green_a2;
+        margin: 0;
+        padding: 0 0.25rem;
+        p { 
+          font-size: 1rem;
+          line-height: 1.3;
+          margin: 0
+        }
+      }
+      /* Mobile News Page }}}3 */
+
+      /* Mobile Calendar Layout {{{3 */
+      section#cal-head {
+        flex-wrap: wrap;
+        margin: 1rem 0;
+        h3 {
+          margin-bottom: 0.5rem;
+          width: 100%;
+          order: 1;
+        }
+        #prev-month,  #next-month { font-size: 0.9375rem; }
+        #prev-month { order: 2; }
+        #next-month { order: 3; }
+      }
+      section#calendar {
+        div.cal-case div.weekday,
+        div.cal-case:nth-child(-n+7) div.weekday { display: none } // ausgeschriebene Wochentage ausblenden
+        div.cal-case:nth-child(7n+1) { border-left: none; border-top: none; }
+        div.cal-case:nth-child(-n+7) {
+          border-top: none;
+          grid-template-rows: auto; // höhe der Wochentage festlegen
+        }
+        display: block; // Grid deaktivieren, alles untereinander
+        border-left: 1px solid $linegreen; // Linie um den ganzen Kalender
+        border-top: 1px solid $linegreen;
+        border-bottom: none;
+        padding-bottom: 0;
+        div.cal-case {
+          grid-template-columns: 2.25rem 1fr;
+          grid-template-rows: auto;
+          div.weekday-mobile {
+            display: block;
+            grid-column: 1/2;
+            text-transform: uppercase;
+            letter-spacing: 0.025rem;
+            border-right: 1px solid $linegreen;
+            padding: 0.25rem 0.3rem;
+          }
+          div.day_cell {
+            grid-column: 2/3;
+            display: grid;
+            grid-template-columns: 1rem 1fr;
+            grid-gap: 0 0.5rem;
+            min-height: auto;
+            height: auto;
+            padding: 0.25rem 0 0.15rem 0.3rem ;
+            div.date {
+              padding: 0;
+              grid-column: 1/2;
+            }
+            div.event {
+              grid-column: 2/3;
+              span.calendar-color {
+                position: relative; 
+                left: -0.25rem;
+              }
+              div.qtip { // popover on mobile
+                width: auto;
+              }
+            }
+          }
+        }
+        div.cal-case:nth-child(n) { min-height: 0; height: auto; } // unset height of all cells
+      }
+      /* End Mobile Calendar Layout }}}3 */
+
+      a.anchor {
+        top: -6rem;
+      }
+      section {
+        margin-bottom: 0.8125rem;
+        padding: 0;
+      }
+      section.visible {
+        padding-top: 0.8125rem;
+      }
+
+      /* Mobile Single Column Pages {{{3 */
+      section.intro-text,
+      section.contact,
+      section.angebote {
+        width: 100%;
+        // Achtung. in Yoga-Template gibt es hard-coded section-width!!!
+      }
+      /* End Mobile Single Column Pages }}}3 */
+
+      /* Mobile Two Column Pages {{{3 */
+      section.raster {
+        display: block; // Schluss mit Grid
+        border-bottom: none;
+        padding: 0;
+        margin-bottom: 2.5rem;
+        img { width: 100%; }
+
+        /* Visible Workshop Infos {{{4 */
+        .workshop-infos {
+          margin-bottom: 0.8125rem;
+          p { margin-bottom: 0;}
+        }
+        /* End Visible Workshop Infos }}}4 */
+
+      }
+      /* End Two Single Column Pages }}}3 */
+
+    }
+    /* End Layout Mobile Main }}}2 */
+
+    /* Layout Mobile Footer {{{2 */
+    footer {
+      width: 100%;
+      margin-top: 2rem;
+      div#infos {
+        margin: 2rem 1rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 2rem;
+        grid-template-rows: repeat(4, 2rem);
+        grid-auto-flow: column;
+        font-size: 15px;
+      }
+      #masthead {
+        height: 4.75rem;
+        padding: 0.25rem 0.5rem;
+        h1 {
+          font-size: 2.625rem;
+          font-family: $francisGradientLeft; 
+        }
+        p {
+          font-size: 0.8125rem;
+          letter-spacing: 0.125rem;
+        }
+      }
+    }
+    /* End Layout Mobile Footer }}}2*/
+
   }
-  /* End Layout Mobile Footer }}}2*/
+  /* End Mobile Styles }}}1 */
 
-}
-/* End Mobile Styles }}}1 */
+  /* Keyframes Nav-Overlay {{{1 */
+  @keyframes foo {
+    from { transform: translateY(3rem); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  /* End Keyframes Nav-Overlay }}}1 */
 
-/* Keyframes Nav-Overlay {{{1 */
-@keyframes foo {
-  from { transform: translateY(3rem); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-/* End Keyframes Nav-Overlay }}}1 */
-
-/* The End */
+  /* The End */

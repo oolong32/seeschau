@@ -375,14 +375,7 @@ header {
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 header #hamburger {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  transition: all 0.3s ease-in;
   display: none;
-}
-header #hamburger:hover {
-  transform: scale(1.1);
 }
 header #masthead {
   height: 28rem;
@@ -979,10 +972,16 @@ body.intro div.container #byline-container {
     letter-spacing: 0.125rem;
   }
   header #hamburger {
+    position: absolute;
     display: block;
-    top: 0.75rem;
-    right: 1rem;
+    top: 1rem;
+    right: 0.5rem;
     transform: scale(0.75);
+    transform-origin: top right;
+    transition: all 0.3s ease-in;
+  }
+  header #hamburger:hover {
+    transform: scale(1.1);
   }
 
   /* End Layout Header }}}2 */
