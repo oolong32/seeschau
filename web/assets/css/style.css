@@ -506,10 +506,7 @@ main {
 }
 main h2 {
   text-align: center;
-  margin: 0 0 0;
-}
-main h2:nth-child(n+2) {
-  margin-top: 4rem;
+  margin: 0 0 1rem;
 }
 main a.anchor {
   /* Fix jump to anchor relative to header/masthead */
@@ -696,8 +693,14 @@ main section.contact {
 main section#map iframe {
   width: 100%;
 }
+main section.abo-infos {
+  padding-bottom: 0;
+}
+main section.abo-infos:last-child {
+  border: none;
+}
 main .abo-infos > h4 {
-  margin-top: 3.5rem;
+  margin-top: 1.25rem;
 }
 main section#cal-head {
   border: none;
@@ -845,6 +848,10 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   border-bottom: 1px solid #bbd7d1;
 }
 
+body.team main section.raster div.raster-textfeld h3 {
+  margin: 0;
+}
+
 /* End Layout Main }}}1 */
 /* Layout Footer {{{1 */
 footer {
@@ -962,7 +969,7 @@ body.intro div.container #byline-container {
   }
   header #masthead {
     height: 4.75rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem;
   }
   header #masthead h1 {
     font-size: 2.45rem;
@@ -975,7 +982,7 @@ body.intro div.container #byline-container {
     position: absolute;
     display: block;
     top: 1rem;
-    right: 0.5rem;
+    right: 1rem;
     transform: scale(0.75);
     transform-origin: top right;
     transition: all 0.3s ease-in;
@@ -1218,7 +1225,9 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   }
   main section.intro-text,
 main section.contact,
-main section.angebote {
+main section.angebote,
+main section.abo-infos,
+main section.anreise-infos {
     width: 100%;
   }
   main section.raster {
@@ -1229,7 +1238,10 @@ main section.angebote {
     /* Visible Workshop Infos {{{4 */
     /* End Visible Workshop Infos }}}4 */
   }
-  main section.raster img {
+  main section.raster .raster-bildfeld {
+    margin-bottom: 0.5rem;
+  }
+  main section.raster .raster-bildfeld img {
     width: 100%;
   }
   main section.raster .workshop-infos {
@@ -1237,6 +1249,10 @@ main section.angebote {
   }
   main section.raster .workshop-infos p {
     margin-bottom: 0;
+  }
+
+  section.abo-infos > h4 {
+    margin-top: 0.8125rem;
   }
 
   /* End Layout Mobile Main }}}2 */
