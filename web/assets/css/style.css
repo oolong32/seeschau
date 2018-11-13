@@ -441,14 +441,11 @@ header.shrink h1, header.shrink p {
   background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg");
 }
 
-.workshops header #masthead {
+.workshops #nav-overlay #masthead,
+.workshops header #masthead,
+.workshops footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
   background-position: center;
-}
-
-.workshops #nav-overlay #masthead,
-.workshops footer #masthead {
-  background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg");
 }
 
 .yoga #nav-overlay #masthead,
