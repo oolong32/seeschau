@@ -1211,10 +1211,14 @@ footer {
         h1 {
           font-size: 2.625rem;
           font-family: $francisGradientLeft; 
+          line-height: 1;
+          margin-bottom: 0;
         }
         p {
+          color: white;
           font-size: 0.8125rem;
           letter-spacing: 0.125rem;
+          font-weight: 500;
         }
       }
     }
