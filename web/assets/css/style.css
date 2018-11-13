@@ -436,6 +436,7 @@ header.shrink h1, header.shrink p {
   background-position: center;
 }
 
+.team #nav-overlay #masthead,
 .team footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg");
 }
@@ -445,10 +446,12 @@ header.shrink h1, header.shrink p {
   background-position: center;
 }
 
+.workshops #nav-overlay #masthead,
 .workshops footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg");
 }
 
+.yoga #nav-overlay #masthead,
 .yoga #masthead {
   background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
   background-position: center;
@@ -459,6 +462,7 @@ header.shrink h1, header.shrink p {
   background-position: bottom;
 }
 
+.calendar #nav-overlay #masthead,
 .calendar footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg");
 }
@@ -468,10 +472,12 @@ header.shrink h1, header.shrink p {
   background-position: center;
 }
 
+.info #nav-overlay #masthead,
 .info footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
 }
 
+.music-and-voice #nav-overlay #masthead,
 .music-and-voice #masthead {
   background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
   background-position: center;
@@ -619,7 +625,7 @@ main .accordion-collapse {
 main .accordion-trigger span,
 main .accordion-collapse span {
   display: inline-block;
-  padding: 0 0.25rem;
+  padding: 0 0.5rem;
   background: rgba(80, 227, 194, 0.2);
   cursor: pointer;
   user-select: none;

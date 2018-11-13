@@ -332,31 +332,39 @@ header.shrink { /* collapsed header */
   background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
   background-position: center;
 }
+.team #nav-overlay #masthead,
 .team footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg"); }
 
 .workshops header #masthead {
   background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
   background-position: center ;
 }
+.workshops #nav-overlay #masthead,
 .workshops footer #masthead { background-image: url("../_pic/mastheadBackgrounds/ginkobaumkrone@1x.jpg"); }
+
+.yoga #nav-overlay #masthead,
 .yoga #masthead {
   background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
   background-position: center ;
 }
+
 .calendar header #masthead {
   background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
   background-position: bottom ;
 }
+.calendar #nav-overlay #masthead,
 .calendar footer #masthead { background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg"); }
 
 .info header #masthead {
   background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg");
   background-position: center;
 }
+.info #nav-overlay #masthead,
 .info footer #masthead {
   background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
 }
 
+.music-and-voice #nav-overlay #masthead,
 .music-and-voice #masthead {
   background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
   background-position: center;
