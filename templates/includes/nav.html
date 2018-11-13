@@ -1,10 +1,10 @@
 {% set p = craft.request.firstSegment %}
 <ul>
-  <li {% if p == "news" %}class="active"{% endif %}><a href="/news">News</a></li>
-  <li {% if p == "team" %}class="active"{% endif %}><a href="/team">Team</a></li>
-  <li {% if p == "yoga" %}class="active"{% endif %}><a href="/yoga">Yoga</a></li>
-  <li {% if p == "music-and-voice" %}class="active"{% endif %}><a href="/music-and-voice">Music & Voice</a></li>
-  <li {% if p == "workshops" %}class="active"{% endif %}><a href="/workshops">Workshops</a></li>
-  <li {% if p == "calendar" %}class="active"{% endif %}><a href="/calendar">Calendar</a></li>
-  <li {% if p == "info" %}class="active"{% endif %}><a href="/info">Info</a></li>
+  <li {% if p == "news" %}class="active"{% endif %}><a title="{{ p }}" href="/news">News</a></li>
+  <li {% if p == "team" %}class="active"{% endif %}><a title="{{ p }}" href="/team">Team</a></li>
+  <li {% if p == "yoga" %}class="active"{% endif %}><a title="{{ p }}" href="/yoga">Yoga</a></li>
+  <li {% if p == "music-and-voice" %}class="active"{% endif %}><a title="&nbsp;Music & Voice&nbsp;" href="/music-and-voice">Music&nbsp;&&nbsp;Voice</a></li>
+  <li {% if p == "workshops" %}class="active"{% endif %}><a title="{{ p }}" href="/workshops">Workshops</a></li>
+  <li {% if p == "calendar" %}class="active"{% endif %}><a title="{{ p }}" href="/calendar">Calendar</a></li>
+  <li {% if p == "info" %}class="active"{% endif %}><a title="{{ p }}" href="/info">Info</a></li>
 </ul>

@@ -270,7 +270,8 @@ body.intro {
 
 /* Layout Header {{{1 */
 
-nav#nav-overlay { display: none; }
+nav#nav-overlay { display: none; } // Overlay ausblenden
+
 header {
   background: $white;
   margin: 0; padding: 0;
@@ -302,6 +303,18 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      li a {
+      }
+      // prevent shaky text alignment on hover
+      // problem: differing width when bold
+      li a:after {
+        display: block;
+        content: attr(title);
+        font-weight: bold;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
     }
   }
 }
