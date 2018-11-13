@@ -406,10 +406,14 @@ header nav ul {
   flex-direction: row;
   justify-content: space-between;
 }
+header nav ul li a {
+  display: inline-block;
+  text-align: center;
+}
 header nav ul li a:after {
   display: block;
   content: attr(title);
-  font-weight: bold;
+  font-weight: 900;
   height: 0;
   overflow: hidden;
   visibility: hidden;
