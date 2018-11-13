@@ -914,7 +914,7 @@ footer {
 
     /* Navigation Overlay {{{2 */
     #nav-overlay {
-      font-size: 3rem;
+      padding: 0;
       position: fixed;
       top: 0;
       left: 0;
@@ -927,13 +927,17 @@ footer {
       background: $white;
       z-index: 9500;
       display: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       // padding: 20rem 1rem 0 2rem;
       animation: foo .2s ease-in; // bringts nicht so, weil nur in eine Richtung möglich
-      padding: 0;
-    }
-    ul {
-      padding: 6rem 1rem 1rem 2rem;
+      ul {
+        padding: 6rem 1rem 1rem 1rem;
+      }
+      #social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
     }
     /*
     #nav-footer {
@@ -1157,7 +1161,8 @@ footer {
     /* End Layout Mobile Main }}}2 */
 
     /* Layout Mobile Footer {{{2 */
-    footer {
+    footer,
+    #overlay-footer {
       width: 100%;
       margin-top: 2rem;
       div#infos {
@@ -1181,6 +1186,10 @@ footer {
           letter-spacing: 0.125rem;
         }
       }
+    }
+    #overlay-footer {
+      position: absolute;
+      bottom: 0;
     }
     /* End Layout Mobile Footer }}}2*/
 

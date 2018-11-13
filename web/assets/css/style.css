@@ -1009,7 +1009,7 @@ body.intro div.container #byline-container {
   /* End Layout Collapsed Header }}}2 */
   /* Navigation Overlay {{{2 */
   #nav-overlay {
-    font-size: 3rem;
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -1021,13 +1021,16 @@ body.intro div.container #byline-container {
     background: white;
     z-index: 9500;
     display: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     animation: foo 0.2s ease-in;
-    padding: 0;
   }
-
-  ul {
-    padding: 6rem 1rem 1rem 2rem;
+  #nav-overlay ul {
+    padding: 6rem 1rem 1rem 1rem;
+  }
+  #nav-overlay #social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
   }
 
   /*
@@ -1261,11 +1264,13 @@ main section.anreise-infos {
 
   /* End Layout Mobile Main }}}2 */
   /* Layout Mobile Footer {{{2 */
-  footer {
+  footer,
+#overlay-footer {
     width: 100%;
     margin-top: 2rem;
   }
-  footer div#infos {
+  footer div#infos,
+#overlay-footer div#infos {
     margin: 2rem 1rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1274,17 +1279,25 @@ main section.anreise-infos {
     grid-auto-flow: column;
     font-size: 15px;
   }
-  footer #masthead {
+  footer #masthead,
+#overlay-footer #masthead {
     height: 4.75rem;
     padding: 0.25rem 0.5rem;
   }
-  footer #masthead h1 {
+  footer #masthead h1,
+#overlay-footer #masthead h1 {
     font-size: 2.625rem;
     font-family: "WF-031942-010448-002217";
   }
-  footer #masthead p {
+  footer #masthead p,
+#overlay-footer #masthead p {
     font-size: 0.8125rem;
     letter-spacing: 0.125rem;
+  }
+
+  #overlay-footer {
+    position: absolute;
+    bottom: 0;
   }
 
   /* End Layout Mobile Footer }}}2*/
