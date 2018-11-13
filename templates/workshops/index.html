@@ -90,6 +90,15 @@
           {% endif %}
           </div>
 
+
+          <div class="workshop-infos">
+          {% if not workshop.anmeldungManuell %}
+            <p class="upper-mail-link"><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ workshop.title }}">Hier anmelden</a></p>
+          {% else %}
+            {{ workshop.anmeldungManuell }}
+          {% endif %}
+          </div>
+
           <p class="accordion-trigger"><span>Weitere Informationen</span></p>
         </section>
 
