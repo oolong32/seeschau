@@ -90,8 +90,6 @@
           {% endif %}
           </div>
 
-<<<<<<< HEAD
-
           <div class="workshop-infos">
           {% if not workshop.anmeldungManuell %}
             <p class="upper-mail-link"><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ workshop.title }}">Hier anmelden</a></p>
@@ -100,17 +98,6 @@
           {% endif %}
           </div>
 
-||||||| merged common ancestors
-=======
-
-          <div class="workshop-infos">
-          {% if not workshop.anmeldungManuell %}
-            {% include 'includes/mailLink.html' %}
-          {% else %}
-            {% workshop.anmeldungManuell %}
-          {% endif %}
-          </div>
->>>>>>> 31ed9c195bc99afde29e3f058b640de240fb82d8
           <p class="accordion-trigger"><span>Weitere Informationen</span></p>
         </section>
 
