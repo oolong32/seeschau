@@ -90,6 +90,14 @@
           {% endif %}
           </div>
 
+
+          <div class="workshop-infos">
+          {% if not workshop.anmeldungManuell %}
+            {% include 'includes/mailLink.html' %}
+          {% else %}
+            {% workshop.anmeldungManuell %}
+          {% endif %}
+          </div>
           <p class="accordion-trigger"><span>Weitere Informationen</span></p>
         </section>
 
