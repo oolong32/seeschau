@@ -407,7 +407,6 @@ header nav ul {
   justify-content: space-between;
 }
 header nav ul li a {
-  display: inline-block;
   text-align: center;
 }
 header nav ul li a:after {
