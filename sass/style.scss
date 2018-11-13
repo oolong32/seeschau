@@ -304,6 +304,8 @@ header {
       flex-direction: row;
       justify-content: space-between;
       li a {
+        display: inline-block;
+        text-align:center;
       }
       // prevent shaky text alignment on hover
       // problem: differing width when bold
@@ -311,7 +313,7 @@ header {
       li a:after {
         display: block;
         content: attr(title);
-        font-weight: bold;
+        font-weight: 900;
         height: 0;
         overflow: hidden;
         visibility: hidden;
