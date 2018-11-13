@@ -500,7 +500,7 @@ header.shrink h1, header.shrink p {
 main {
   width: 65rem;
   margin: 0 auto;
-  padding: 31rem 0 0;
+  padding: 30.5rem 0 0;
   /* Sections allgemein {{{2 */
   /* End Sections Allgemein }}}2 */
   /* News Page {{{2 */
@@ -952,7 +952,7 @@ footer #masthead p {
   /* End Header & Footer }}}2 */
   /* Main {{{2 */
   main {
-    padding: 23rem 0 0;
+    padding: 22.5rem 0 0;
   }
   main h2 {
     font-size: 5rem;
