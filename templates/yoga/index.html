@@ -40,16 +40,19 @@
       {{ section.visibleText }}
     {% endif %}
 
+    {% if not section.anmeldungManuell %}
+      {% include 'includes/mailLink.html' %}
+    {% else %}
+      {{ section.anmeldungManuell }}
+    {% else %}
+
+    {% endif %}
+
     <p class="accordion-trigger"><span>Weitere Informationen</span></p>
   </section>
 
   <section class="collapsed angebote">
     {{ section.beschrieb }} {# Show remaining Paragraphs of Text #}
-    {% if section.mailLink %}
-    <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
-    {% else %}
-    <p>Ohne Voranmeldung willkommen!</p>
-    {% endif %}
 
     {% include 'includes/termin-link.html' %}
 

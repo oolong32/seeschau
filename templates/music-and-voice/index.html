@@ -40,11 +40,11 @@
       {{ section.visibleText }}
     {% endif %}
 
-    {% if section.mailLink %}
-    <p class="upper-mail-link"><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
+    {% if not section.anmeldungManuell %}
+      {% include 'includes/mailLink.html' %}
     {% else %}
-    <p>Ohne Voranmeldung willkommen!</p>
-    {% endif %}
+      {{ section.anmeldungManuell }}
+    {% else %}
 
     <p class="accordion-trigger"><span>Weitere Informationen</span></p>
   </section>
@@ -52,14 +52,7 @@
   <section class="collapsed angebote">
     {{ section.beschrieb }} {# Show remaining Paragraphs of Text #}
 
-    {% if section.mailLink %}
-    <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ section.title }}">Hier anmelden</a></p>
-    {% else %}
-    <p>Ohne Voranmeldung willkommen!</p>
-    {% endif %}
-
-
-          {% include 'includes/termin-link.html' %}
+  	{% include 'includes/termin-link.html' %}
 
     <p class="accordion-collapse"><span>Weniger Informationen</span></p>
   </section> <!-- End collapsed part of accordion -->
