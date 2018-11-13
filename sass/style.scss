@@ -307,6 +307,7 @@ header {
       }
       // prevent shaky text alignment on hover
       // problem: differing width when bold
+      // https://stackoverflow.com/questions/556153/inline-elements-shifting-when-made-bold-on-hover
       li a:after {
         display: block;
         content: attr(title);
