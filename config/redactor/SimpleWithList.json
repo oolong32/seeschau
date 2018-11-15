@@ -1,5 +1,5 @@
 {
-  "buttons": ["bold", "link", "lists"],
+  "buttons": ["bold", "link", "lists", "file"],
   "toolbarFixed": true,
   "linkNewTab": true
 }
