@@ -336,6 +336,10 @@ header.shrink { /* collapsed header */
     transform: translateY(-200px);
   }
 }
+
+header.mini { // footer visible, see JS helpers
+  #masthead { height: 0; } 
+}
 /* End Layout Header }}}1 */
 
 /* Background Images per Page {{{1 */

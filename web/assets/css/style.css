@@ -435,6 +435,10 @@ header.shrink h1, header.shrink p {
   transform: translateY(-200px);
 }
 
+header.mini #masthead {
+  height: 0;
+}
+
 /* End Layout Header }}}1 */
 /* Background Images per Page {{{1 */
 #masthead {
