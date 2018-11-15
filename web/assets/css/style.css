@@ -800,9 +800,6 @@ main section#calendar div.cal-case div.day_cell div.event a.trigger {
   cursor: pointer;
   background: transparent;
 }
-main section#calendar div.cal-case div.day_cell div.event a.ausfall {
-  text-decoration: line-through;
-}
 main section#calendar div.cal-case div.day_cell div.event div.qtip {
   width: 10.5rem;
   border: 1px solid #50e3c2;

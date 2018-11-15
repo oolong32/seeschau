@@ -27,6 +27,7 @@
   {% endfor %}
 {% endif %}
 
+{% if not ausfall %}
 <div class="event tips{{ classes }}"{# style #} data-toggle="popover">
     {% if event.multiDay %}
         <a class="trigger" href="">
@@ -38,18 +39,11 @@
         {% if not event.allDay %}
             <span class="calendar-color"></span>{# styled in Stylesheet #}
         {% endif %}
-        <a class="trigger{% if ausfall %} ausfall{% endif %}" href="" {% if event.allDay %}{# Gibt es diesen Fall? #}{% endif %}>
+        <a class="trigger" href="" {% if event.allDay %}{# Gibt es diesen Fall? #}{% endif %}>
             {{ event.title }}
         </a>
     {% endif %}
-    {# if event.teacherselection #}
-    {# for teacher in event.teacherselection #}
-      {# <br> #}
-      {# hier natürlich zählen ob eins oder mehr, oder braucht es immer nur einen Lehrer? #}
-      {# Teacher: {{ teacher }} #}
-      {# endfor #}
-    {# endif #}
 
     {% include "calendar/_event_popover.html" %}
-{#<p style="display:inline-block;">{{event.teacher}}</p>#}
 </div>
+{% endif %}
