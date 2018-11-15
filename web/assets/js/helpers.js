@@ -7,12 +7,25 @@ var navOver = document.querySelector('#nav-overlay');
 var last_known_scroll_position = 0;
 var ticking = false;
 var shrinkHead = false; /* record status of header, needed when toggling menu overlay */
+var footerVisible = false;
 
 // collapse header on scroll
 function shrinkHeader(scroll_pos) {
+  // subtract scrollposition + window height from document height
+  var scroll_progress = document.documentElement.scrollHeight - (last_known_scroll_position + document.documentElement.clientHeight); // 0 wenn completely scrolled to bottom
+
   if (last_known_scroll_position > 100) {
     header.classList.add('shrink');
     shrinkHead = true;
+    if (scroll_progress < 430) { // footer is visible 430 = footer height on desktop
+      header.classList.add('mini');
+      footerVisible = true;
+    } else { // scrolling, footer not visible
+      if (header.classList.contains('mini')) { // footer not visible anymore, header can expand
+        header.classList.remove('mini');
+        footerVisible = false;
+      }
+    }
   } else {
     if (header.classList.contains('shrink')) {
       header.classList.remove('shrink');
