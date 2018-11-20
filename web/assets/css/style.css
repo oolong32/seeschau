@@ -780,6 +780,7 @@ main section#calendar div.cal-case div.day_cell div.date {
 main section#calendar div.cal-case div.day_cell div.event {
   padding: 0 0.25rem;
   margin-bottom: 0.25rem;
+  font-weight: 600;
   /* Q-Tip {{{4 */
   /* End Q-Tip }}}4 */
 }
@@ -793,7 +794,6 @@ main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
   background: rgba(80, 227, 194, 0.75);
 }
 main section#calendar div.cal-case div.day_cell div.event a.trigger {
-  font-weight: 600;
   color: black;
   text-decoration: none;
   border: none;
@@ -839,6 +839,9 @@ main section#calendar div.cal-case div.day_cell div.event div.hidden {
 }
 main section#calendar div.cal-case div.day_cell .all_day {
   background: rgba(214, 186, 255, 0.4);
+}
+main section#calendar div.cal-case div.day_cell .holiday {
+  background: whitesmoke;
 }
 main section#calendar div.cal-case div.today {
   background: rgba(80, 227, 194, 0.25);

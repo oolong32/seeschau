@@ -1,0 +1,20 @@
+{# Einzelner Event in der Monatsansicht #}
+{% set classes = "" %}
+{% set classes = classes ~ (event.allDay ? " all_day") %}
+{# if event.multiDay Ferien müssen immer aussehen wie Multiday! #}
+  {% set classes = classes ~ " multi_day" %}
+  {% set classes = classes ~ (day.containsDate(event.startDate) ? " first_day") %}
+  {% set classes = classes ~ (day.containsDate(event.endDate) ? " last_day") %}
+{# endif #}
+
+<div class="holiday event tips{{ classes }}" data-toggle="popover">
+  {% autoescape false %}
+    <a class="trigger" href="">
+  {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? "Ferien" : "&nbsp;"|raw }}
+{#{{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}#}
+    </a>
+  {% endautoescape %}
+  <div class="qtip hidden">
+    <p>{{ event.title }}</p>
+  </div>
+</div>
