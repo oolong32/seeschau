@@ -83,7 +83,6 @@
 
   <h2>Videos</h2>
   
-{# real content
   <section class="videos">
 
     {% set videos = craft.entries.section('videos').limit(4) %}
@@ -109,8 +108,9 @@
     {% endfor %}
 
   </section>
-#}
+
 {# Fake content #}
+{#
   <section class="videos">
 	<div class="video-item">
 		<img src="/assets/_pic/tempAssets/mantra.jpg" alt="">
@@ -126,5 +126,6 @@
 	</div>
 	<div id="more-news"><p>Mehr Videos laden</p></div>
   </section>
+#}
 {# Fake content #}
 {% endblock %}
