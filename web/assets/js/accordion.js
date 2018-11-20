@@ -21,6 +21,12 @@ function mendAnchors() {
     console.log("jumping to " + hash); 
     $(document).scrollTop( $(hash).offset().top );  
     console.log("jumped");
+    // there is a problem with the top anchor-linked element getting overlapped by the header
+    // let’s try to collapse the header after each jump.
+    if (!header.classList.contains('shrink')) {
+      header.classList.add('shrink');
+      console.log('and header shrunk');
+    }
   }
 }
 
