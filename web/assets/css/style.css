@@ -1099,6 +1099,10 @@ body.intro div.container #byline-container {
     text-align: left;
     margin: 0 0 0.8125rem 0;
   }
+  main h2:not(:first-of-type) {
+    margin-top: 1.75rem;
+    color: crimson;
+  }
   main section h3, main p.teacher-quote {
     font-size: 1.25rem;
     margin-bottom: 0.8125rem;
