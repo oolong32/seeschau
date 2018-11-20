@@ -52,7 +52,9 @@
   <section class="collapsed angebote">
     {{ section.beschrieb }} {# Show remaining Paragraphs of Text #}
 
-  	{% include 'includes/termin-link.html' %}
+    {% if section.genericInfos %}
+      {% include 'includes/termin-link.html' %}
+    {% endif %}
 
     <p class="accordion-collapse"><span>Weniger Informationen</span></p>
   </section> <!-- End collapsed part of accordion -->
