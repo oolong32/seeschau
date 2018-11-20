@@ -2,6 +2,28 @@
 
 {% block content %}
 
+  <!-- Abos und Preise -->
+
+  <a id="abos" class="anchor"></a>
+  <h2>Abos</h2>
+  <section id="abo-preise" class="abo-infos">
+    <h4>Preise Hatha und Kundalini Yoga</h4>
+    {{ entry.aboPreise }}
+  </section>
+
+  <section class="abo-infos">
+    <h4>Lehrer</h4>
+    {{ entry.lehrer }}
+  </section>
+
+  <section class="abo-infos">
+    <h4>Allgemeines</h4>
+    {{ entry.aboAllgemein }}
+  </section>
+
+  <!-- Kontakt und Anreise -->
+
+  <a id="info" class="anchor"></a>
 	<h2>{{ entry.title }}</h2>
 
 	<section id="tel-mail" class="contact">
@@ -25,22 +47,5 @@
 	<section id="anreise-text" class="anreise-infos">
 		{{ entry.anreiseText }}
 	</section>
-
-  <a id="abos" class="anchor"></a>
-  <h2>Abos</h2>
-  <section id="abo-preise" class="abo-infos">
-    <h4>Preise Hatha und Kundalini Yoga</h4>
-    {{ entry.aboPreise }}
-  </section>
-
-  <section class="abo-infos">
-    <h4>Lehrer</h4>
-    {{ entry.lehrer }}
-  </section>
-
-  <section class="abo-infos">
-    <h4>Allgemeines</h4>
-    {{ entry.aboAllgemein }}
-  </section>
 
 {% endblock %}
