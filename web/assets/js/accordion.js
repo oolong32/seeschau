@@ -33,20 +33,8 @@ function mendAnchors() {
 $(".accordion-trigger").click(function() {
     var index = $(this).parent().index() / 2;
     $(this).parent().parent().accordion("option", "active", index);
-    //if (!$(this).parent().hasClass("ui-accordion-header-active")) {
-      /* var index = $(this).parent().index() / 2;
-      $(this).parent().parent().accordion("option", "active", index); */
-      // $(this).children().first().text('Weniger Informationen');
-    /*} else {
-      console.log("schluss!");
-      $(this).parent().parent().accordion({
-        active: false
-      });*/
-
-      //$(this).children().first().text('Weitere Informationen');
-    //}
     $(this).hide(300);
-    $(this).parent().find('.upper-mail-link').hide(300);
+    $(this).parent().find('.upper-mail-link').hide(300); // >___<
 });
 
 $(".accordion-collapse").click(function() {
