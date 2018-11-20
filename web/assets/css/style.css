@@ -1101,7 +1101,6 @@ body.intro div.container #byline-container {
   }
   main h2:not(:first-of-type) {
     margin-top: 1.75rem;
-    color: crimson;
   }
   main section h3, main p.teacher-quote {
     font-size: 1.25rem;
