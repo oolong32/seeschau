@@ -525,6 +525,8 @@ main {
   /* End Einspaltige Layouts (Kontakt, Angebote) }}}2 */
   /* Calendar Styles {{{2 */
   /* End Calendar Styles }}}2 */
+  /* Table Styles */
+  /* End Table Styles */
 }
 main h2 {
   text-align: center;
@@ -869,6 +871,20 @@ main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
   visibility: visible;
   display: block;
   border-bottom: 1px solid #bbd7d1;
+}
+main table {
+  border-collapse: collapse;
+  margin: 0 0 1.75em;
+}
+main th, main td {
+  border: 1px solid #9b9b9b;
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+}
+main th {
+  color: #99ccff;
+  border-bottom: 1px solid #bbd7d1;
+  font-variant-numeric: tabular-nums;
 }
 
 body.team main section.raster div.raster-textfeld h3 {

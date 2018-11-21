@@ -779,6 +779,24 @@ main {
   } // end section#calendar
   /* End Calendar Styles }}}2 */
 
+  /* Table Styles */
+  table {
+    border-collapse: collapse;
+    margin: 0 0 1.75em;
+  }
+  th, td {
+    border: 1px solid $linegray; 
+    padding: 0.3rem 0.5rem;
+    text-align: left;
+  }
+
+  th {
+    color: hsl(210, 100%, 80%);
+    border-bottom: 1px solid $linegreen; 
+    font-variant-numeric: tabular-nums;
+  }
+  /* End Table Styles */
+
 }
 body.team main section.raster div.raster-textfeld h3 { margin: 0; } // Ausnahme für Team
 

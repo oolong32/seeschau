@@ -66,9 +66,13 @@
             </p>
           {% endif %}
 
-          {# Termin im gleichen Behälter wie Lehrer #}
+          </div>
+
+          {# Termin nicht mehr im gleichen Behälter wie Lehrer #}
+          <div class="workshop-date"> {# brauchts hier noch styles? vergl. mit unten #}
+          <h4>Termine</h4>
           {% if workshop.workshopDate|length %}
-            <p>{{ workshop.workshopDate }}</p>
+            {{ workshop.workshopDate }}
           {% else %}
             <p>Der Termin wird in Kürze angekündigt.</p>
           {% endif %}
