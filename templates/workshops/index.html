@@ -104,14 +104,6 @@
         <section class="collapsed">
           {{ workshop.beschrieb }}
 
-          {% if workshop.mailLink %}
-            <p><a class="mail-link" href="mailto:info@seeschau.ch?subject=Anmeldung {{ workshop.title }}">Hier anmelden</a></p>
-          {% else %}
-            <p>Ohne Voranmeldung willkommen!</p>
-          {% endif %}
-
-{# {% include 'includes/termin-link.html' %} #}
-
           <p class="accordion-collapse"><span>Weniger Informationen</span></p>
         </section> <!-- End collapsed part of accordion -->
       </div>
