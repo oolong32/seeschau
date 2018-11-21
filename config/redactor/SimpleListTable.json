@@ -1,0 +1,6 @@
+{
+  "buttons": ["bold", "link", "lists", "file"],
+  "toolbarFixed": true,
+  "linkNewTab": true,
+  "plugins": ["table"]
+}
