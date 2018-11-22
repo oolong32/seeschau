@@ -1154,6 +1154,7 @@ main p.accordion-collapse {
     margin: 0 0 0.75em;
   }
   main th, main td {
+    font-size: 0.8125rem;
     padding: 0.2rem 0.3rem 0.1rem;
   }
   main section.news {
