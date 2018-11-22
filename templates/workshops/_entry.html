@@ -62,8 +62,9 @@
           </div>
 
           <div class="workshop-infos">
+          <!-- <h4>Termine</h4> -->
             {% if entry.workshopDate|length %}
-              <p>{{ entry.workshopDate }}</p>
+              {{ entry.workshopDate }}
             {% else %}
               <p>Der Termin wird in Kürze angekündigt.</p>
             {% endif %}
