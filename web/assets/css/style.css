@@ -35,8 +35,9 @@ header #masthead h1, footer #masthead h1 {
 }
 header #masthead p, footer #masthead p {
   font-weight: 500;
-  font-size: 1.75rem;
-  letter-spacing: 0.5215rem;
+  line-height: 1.3;
+  font-size: 2.25rem;
+  letter-spacing: 0.65rem;
 }
 
 header nav ul li {
@@ -353,9 +354,9 @@ body.intro div.container #seeschau-container {
 body.intro div.container #byline-container {
   margin-top: 2em;
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.53rem;
 }
 body.intro div.container svg {
   background: transparent;
@@ -973,8 +974,9 @@ footer #masthead h1 {
   }
   header #masthead p,
 footer #masthead p {
-    font-size: 1.625rem;
-    letter-spacing: 0.275rem;
+    font-size: 1.85rem;
+    line-height: 1.3;
+    letter-spacing: 0.45rem;
   }
 
   /* End Header & Footer }}}2 */
@@ -1022,8 +1024,9 @@ body.intro div.container #byline-container {
     font-size: 2.45rem;
   }
   header #masthead p {
-    font-size: 0.8125rem;
-    letter-spacing: 0.125rem;
+    font-size: 1rem;
+    line-height: 1.35;
+    letter-spacing: 0.175rem;
   }
   header #hamburger {
     position: absolute;

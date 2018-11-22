@@ -58,8 +58,9 @@ header , footer{
     }
     p { // byline "Haus der Künste"
       font-weight: 500;
-      font-size: 1.75rem;
-      letter-spacing: 0.5215rem;
+      line-height: 1.3;
+      font-size: 2.25rem;
+      letter-spacing: 0.65rem;
     }
   }
 }
@@ -256,9 +257,9 @@ body.intro {
     #byline-container {                                                                                          
       margin-top: 2em;                                                                                          ;
       color: white;
-      font-size: 2rem; 
+      font-size: 2.5rem; 
       font-weight: 500; 
-      letter-spacing: 0.3rem;
+      letter-spacing: 0.53rem;
     }
     svg {
       background: transparent;
@@ -889,8 +890,9 @@ footer {
       font-size: 5rem;
     }
     p {
-      font-size: 1.625rem;
-      letter-spacing: 0.275rem;
+      font-size: 1.85rem;
+      line-height: 1.3;
+      letter-spacing: 0.45rem;
     }
   }
     /* End Header & Footer }}}2 */
@@ -942,8 +944,9 @@ footer {
         padding: 0.25rem 1rem;
         h1 { font-size: 2.45rem; }
         p {
-          font-size: 0.8125rem;
-          letter-spacing: 0.125rem;
+          font-size: 1rem;
+          line-height: 1.35;
+          letter-spacing: 0.175rem;
         }
       }
       #hamburger {
