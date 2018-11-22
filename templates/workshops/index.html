@@ -87,8 +87,8 @@
           <div class="workshop-infos">
           <h4>Preis</h4>
           {% if workshop.workshopPrice|length %}
-            {{ workshop.workshopPrice }}
-          {% else %}
+            <p>{{ workshop.workshopPrice }}</p>
+            {% else %}
             <p>Preis auf Anfrage.</p>
           {% endif %}
           </div>
