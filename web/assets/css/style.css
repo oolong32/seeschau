@@ -892,6 +892,14 @@ body.team main section.raster div.raster-textfeld h3 {
 }
 
 /* End Layout Main }}}1 */
+/* Exceptions in Main */
+.workshops section.raster {
+  border-bottom: 1px solid #9b9b9b;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* End Exceptions in Main */
 /* Layout Footer {{{1 */
 footer {
   margin-top: 4em;
@@ -1149,6 +1157,9 @@ main section.angebote h3 {
   main p.accordion-trigger,
 main p.accordion-collapse {
     text-align: left;
+  }
+  main .accordion-trigger {
+    margin-top: 1.25rem;
   }
   main table {
     margin: 0 0 0.75em;

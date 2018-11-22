@@ -592,6 +592,7 @@ main {
       grid-column: 1/-1;
     }
   }
+
   /* End Grid for Team & Workshops }}}2 */
 
   /* Einspaltige Layouts (Kontakt, Angebote {{{2 */
@@ -802,6 +803,14 @@ main {
 body.team main section.raster div.raster-textfeld h3 { margin: 0; } // Ausnahme für Team
 
 /* End Layout Main }}}1 */
+
+/* Exceptions in Main */
+.workshops section.raster {
+  border-bottom: 1px solid $linegray;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+/* End Exceptions in Main */
 
 /* Layout Footer {{{1 */
 
@@ -1067,6 +1076,10 @@ footer {
         text-align: left;
       }
       /* End Main Micro Typography }}}3 */
+
+      .accordion-trigger {
+        margin-top: 1.25rem;
+      }
 
       table {
         margin: 0 0 0.75em; // margin-bottom sollte 0.8125 sein, optisch scheints zu viel
