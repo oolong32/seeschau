@@ -59,13 +59,14 @@
             {% endspaceless %}
           </p>
           {% endif %}
+          </div>
 
-          {# Termin im gleichen Behälter wie Lehrer #}
-          {% if entry.workshopDate|length %}
-            <p>{{ entry.workshopDate }}</p>
-          {% else %}
-            <p>Der Termin wird in Kürze angekündigt.</p>
-          {% endif %}
+          <div class="workshop-infos">
+            {% if entry.workshopDate|length %}
+              <p>{{ entry.workshopDate }}</p>
+            {% else %}
+              <p>Der Termin wird in Kürze angekündigt.</p>
+            {% endif %}
           </div>
 
           {% if entry.workshopProcedure|length %}
