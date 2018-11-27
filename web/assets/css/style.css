@@ -888,12 +888,11 @@ main th {
   border-bottom: 1px solid #bbd7d1;
 }
 
+/* Exceptions in Main */
 body.team main section.raster div.raster-textfeld h3 {
   margin: 0;
 }
 
-/* End Layout Main }}}1 */
-/* Exceptions in Main */
 .workshops section.raster {
   border-bottom: 1px solid #9b9b9b;
   padding-bottom: 0.5rem;
@@ -901,6 +900,7 @@ body.team main section.raster div.raster-textfeld h3 {
 }
 
 /* End Exceptions in Main */
+/* End Layout Main }}}1 */
 /* Layout Footer {{{1 */
 footer {
   margin-top: 4em;

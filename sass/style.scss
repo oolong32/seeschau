@@ -801,17 +801,18 @@ main {
 
 }
 
+/* Exceptions in Main */
+
 body.team main section.raster div.raster-textfeld h3 { margin: 0; } // Ausnahme für Team
 
-/* End Layout Main }}}1 */
-
-/* Exceptions in Main */
 .workshops section.raster {
   border-bottom: 1px solid $linegray;
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
 }
 /* End Exceptions in Main */
+
+/* End Layout Main }}}1 */
 
 /* Layout Footer {{{1 */
 
