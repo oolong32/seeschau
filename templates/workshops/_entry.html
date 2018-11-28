@@ -77,14 +77,12 @@
           </div>
           {% endif %}
 
-          <div class="workshop-infos">
-          <h4>Preis</h4>
           {% if entry.workshopPrice|length %}
+          <div class="workshop-infos">
+            <h4>Preis</h4>
             {{ entry.workshopPrice }}
-          {% else %}
-            <p>Preis auf Anfrage.</p>
-          {% endif %}
           </div>
+          {% endif %}
 
           <div class="workshop-infos">
           {% if not entry.anmeldungManuell %}
