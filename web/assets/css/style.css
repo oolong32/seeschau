@@ -527,23 +527,6 @@ main {
   /* Calendar Styles {{{2 */
   /* End Calendar Styles }}}2 */
   /* Table Styles {{{2*/
-  /*
-  table {
-    border-collapse: collapse;
-    margin: 0 0 1.5em; // margin-bottom sollte 1.75 sein, optisch scheints zu viel
-    font-variant-numeric: tabular-nums; // gehört eigentlich in Micro-Typo
-  }
-  th, td {
-    border: none;
-    padding: 0.3rem 1.75rem 0 0;
-    text-align: left;
-  }
-
-  th {
-    font-weight: 300; // stimmt das?
-    border: none;
-  }
-  */
   /* End Table Styles }}}2*/
 }
 main h2 {
@@ -900,6 +883,7 @@ main th, main td {
   padding: 0.3rem 0.5rem 0.15rem;
   text-align: left;
   white-space: nobreak;
+  color: red;
 }
 main th {
   color: #99ccff;
