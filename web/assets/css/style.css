@@ -882,7 +882,7 @@ main th, main td {
   border: 1px solid #bbd7d1;
   padding: 0.3rem 0.5rem 0.15rem;
   text-align: left;
-  white-space: nobreak;
+  white-space: nowrap;
   color: red;
 }
 main th {

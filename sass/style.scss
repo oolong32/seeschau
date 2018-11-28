@@ -792,7 +792,7 @@ main {
     border: 1px solid $linegreen; 
     padding: 0.3rem 0.5rem 0.15rem;
     text-align: left;
-    white-space: nobreak; // Danger! Won’t I regret this?
+    white-space: nowrap; // Danger! Won’t I regret this?
     color: red;
   }
 
