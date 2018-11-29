@@ -844,7 +844,7 @@ main section#calendar div.cal-case div.day_cell .all_day {
   background: rgba(214, 186, 255, 0.4);
 }
 main section#calendar div.cal-case div.day_cell .holiday {
-  background: whitesmoke;
+  background: rgba(80, 227, 194, 0.15);
 }
 main section#calendar div.cal-case div.today {
   background: rgba(80, 227, 194, 0.25);
