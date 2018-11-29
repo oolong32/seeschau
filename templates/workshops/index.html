@@ -6,14 +6,6 @@
   {# <h2>{{ entry.title }}</h2> #}
   <h2>Workshops</h2>
 
-  {# (mal sehen, obs das wirklich braucht …)
-  {% if entry.categoryOverview|length %}
-  <section style="width: 46rem; margin: 0 auto; border:none;"> #}  {# of course styles go into stylesheet! #} {#
-    <h3>{{ entry.untertitel }}</h3>
-    {{ entry.categoryOverview }}
-  </section>
-  {% endif %} #}
-
   {% for workshop in workshops %}
   <section class="raster">
 
@@ -65,28 +57,12 @@
               {% endspaceless %}
             </p>
           {% endif %}
-
           </div>
 
+          {% if workshop.period|length %}
           <div class="workshop-infos">
-          <!-- <h4>Termine</h4> -->
-          {% if workshop.workshopDate|length %}
-            {{ workshop.workshopDate }}
-          {% else %}
-            <p>Der Termin wird in Kürze angekündigt.</p>
-          {% endif %}
-          </div>
-
-          {% if workshop.workshopProcedure|length %}
-          <div class="workshop-infos">
-            {{ workshop.workshopProcedure }}
-          </div>
-          {% endif %}
-
-          {% if workshop.workshopPrice|length %}
-          <div class="workshop-infos">
-            <h4>Preis</h4>
-            <p>{{ workshop.workshopPrice }}</p>
+          <!-- <h4>Zeitraum</h4> -->
+            {{ workshop.period }}
           </div>
           {% endif %}
 
@@ -103,6 +79,13 @@
 
         <section class="collapsed">
           {{ workshop.beschrieb }}
+
+          {% if workshop.workshopPrice|length %}
+          <div class="workshop-infos">
+            <h4>Preis</h4>
+            <p>{{ workshop.workshopPrice }}</p>
+          </div>
+          {% endif %}
 
           <p class="accordion-collapse"><span>Weniger Informationen</span></p>
         </section> <!-- End collapsed part of accordion -->

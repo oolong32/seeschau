@@ -9,11 +9,6 @@
     <div class="raster-bildfeld">
       {% if entry.images|length %}
         {% for image in entry.images %}
-          {# bild noch nicht sauber #}
-          {# bild noch nicht sauber #}
-          {# bild noch nicht sauber #}
-          {# bild noch nicht sauber #}
-          {# bild noch nicht sauber #}
         <img src="{{ image.url('cropSquare') }}" alt="{{ entry.title }}" width="100">
         {% endfor %}
       {% else %}
@@ -61,25 +56,16 @@
           {% endif %}
           </div>
 
+          {% if entry.period|length %}
           <div class="workshop-infos">
-          <!-- <h4>Termine</h4> -->
-            {% if entry.workshopDate|length %}
-              {{ entry.workshopDate }}
-            {% else %}
-              <p>Der Termin wird in Kürze angekündigt.</p>
-            {% endif %}
+          <!-- <h4>Zeitraum</h4> -->
+            {{ entry.period }}
           </div>
+          {% endif %}
 
           {% if entry.workshopProcedure|length %}
           <div class="workshop-infos">
             {{ entry.workshopProcedure }}
-          </div>
-          {% endif %}
-
-          {% if entry.workshopPrice|length %}
-          <div class="workshop-infos">
-            <h4>Preis</h4>
-            {{ entry.workshopPrice }}
           </div>
           {% endif %}
 
@@ -97,7 +83,12 @@
         <section class="collapsed">
           {{ entry.beschrieb }}
 
-{# {% include 'includes/termin-link.html' %} #}
+          {% if entry.workshopPrice|length %}
+          <div class="workshop-infos">
+            <h4>Preis</h4>
+            {{ entry.workshopPrice }}
+          </div>
+          {% endif %}
 
           <p class="accordion-collapse"><span>Weniger Informationen</span></p>
         </section> <!-- End collapsed part of accordion -->
