@@ -34,7 +34,6 @@ $(".accordion-trigger").click(function() {
     var index = $(this).parent().index() / 2;
     $(this).parent().parent().accordion("option", "active", index);
     $(this).hide(300);
-    $(this).parent().find('.upper-mail-link').hide(300); // >___<
 });
 
 $(".accordion-collapse").click(function() {
