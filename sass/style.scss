@@ -183,7 +183,7 @@ a.mail-link:before {
   background: $green_a5;
 }
 
-#nav-overlay a {
+#nav-overlay ul a {
   border: none;
 }
 
@@ -1014,10 +1014,10 @@ footer {
       }
       /* End Menü Style }}}3 */
       #social-media-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
     }
     /*
     #nav-footer {

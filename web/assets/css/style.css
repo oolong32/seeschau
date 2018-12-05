@@ -177,7 +177,7 @@ a.mail-link:before {
   background: rgba(80, 227, 194, 0.5);
 }
 
-#nav-overlay a {
+#nav-overlay ul a {
   border: none;
 }
 
