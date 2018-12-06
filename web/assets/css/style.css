@@ -1068,7 +1068,7 @@ body.intro div.container #byline-container {
 
   .noScroll {
     opacity: 0;
-    height: 100%;
+    height: 0;
     overflow: hidden;
   }
 
