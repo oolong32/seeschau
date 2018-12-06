@@ -1072,6 +1072,10 @@ body.intro div.container #byline-container {
     overflow: hidden;
   }
 
+  .block {
+    display: block;
+  }
+
   #nav-overlay {
     overflow-y: scroll;
     width: 100%;
