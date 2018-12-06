@@ -993,10 +993,9 @@ footer {
       right: 0;
       bottom: 0;
       right: 0;
-      height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
+      min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
       // transform: translateY(-100vh);
       transition: all .2s ease-in;
-      background: $white;
       z-index: 9500;
       display: none;
       font-size: 1.875rem;

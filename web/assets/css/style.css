@@ -1070,9 +1070,8 @@ footer.hokuspokusfidibus {
     right: 0;
     bottom: 0;
     right: 0;
-    height: 100vh;
+    min-height: 100vh;
     transition: all 0.2s ease-in;
-    background: white;
     z-index: 9500;
     display: none;
     font-size: 1.875rem;
