@@ -54,6 +54,7 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('hokuspokusfidibus');
   footer.classList.toggle('hokuspokusfidibus');
+  /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {
       e.preventDefault();
@@ -62,5 +63,6 @@ hamburger.addEventListener('click', e => {
     hasNoEventListener = false;
     console.log('attached event listener "touchmove" to overlay');
   }
+  */
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
