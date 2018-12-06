@@ -53,9 +53,8 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('noScroll');
   footer.classList.toggle('noScroll');
-  header.classList.toggle('block');
   if (navOver.classList.contains('visible')) {
-    indow.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }
   // if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
