@@ -1062,6 +1062,7 @@ footer.hokuspokusfidibus {
 
   #nav-overlay {
     -webkit-overflow-scrolling: touch;
+    width: 100%;
     background: white;
     padding: 0;
     position: fixed;
