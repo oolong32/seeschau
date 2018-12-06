@@ -981,6 +981,7 @@ footer {
     /* End Layout Collapsed Header }}}2 */
 
     /* Navigation Overlay {{{2 */
+    /*
     html {
       height  : 100%;
       overflow: hidden;
@@ -989,6 +990,7 @@ footer {
         height  : 100%;
         overflow: auto;
     }
+    */
     #nav-overlay {
       overflow-y: scroll;
       // -webkit-overflow-scrolling: touch;
