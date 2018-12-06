@@ -54,8 +54,6 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('hokuspokusfidibus');
   footer.classList.toggle('hokuspokusfidibus');
-  footer.style.opacity = "0";
-  main.style.opacity = "0";
   /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {

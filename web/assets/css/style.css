@@ -1061,13 +1061,14 @@ footer.hokuspokusfidibus {
   }
 
   #nav-overlay {
+    width: 50%;
     -webkit-overflow-scrolling: touch;
     background: white;
     padding: 0;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    right: 50%;
     bottom: 0;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
