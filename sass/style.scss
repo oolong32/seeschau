@@ -991,14 +991,14 @@ footer {
         height  : 100%;
         overflow: auto;
     }
-    .noScroll {overflow: hidden; display:none; visibility: hidden;} // main & footer, prevent scrolling behind overlay
+    .noScroll { overflow: hidden; } // main & footer, prevent scrolling behind overlay
     #nav-overlay {
       overflow-y: scroll;
       // -webkit-overflow-scrolling: touch;
       min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
       width: 100%;
       background: $white;
-      padding: 0;
+      padding: 0 0 90px;
       position: fixed;
       top: 0;
       left: 0;
