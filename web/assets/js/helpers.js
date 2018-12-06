@@ -53,15 +53,8 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('noScroll');
   footer.classList.toggle('noScroll');
-  /*
-  if (navOver.classList.contains('visible') && hasNoEventListener) {
-    navOver.addEventListener('touchmove', e => {
-      e.preventDefault();
-      console.log('prevent scroll!')
-    }, false);
-    hasNoEventListener = false;
-    console.log('attached event listener "touchmove" to overlay');
+  if (navOver.classList.contains('visible')) {
+    indow.scrollTo(0, 0);
   }
-  */
-  if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
+  // if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
