@@ -1058,6 +1058,8 @@ body.intro div.container #byline-container {
   main.hokuspokusfidibus,
 footer.hokuspokusfidibus {
     display: none;
+    overflow: hidden;
+    visibility: hidden;
   }
 
   #nav-overlay {
