@@ -1067,6 +1067,7 @@ body.intro div.container #byline-container {
   }
 
   .noScroll {
+    height: 100%;
     overflow: hidden;
   }
 
