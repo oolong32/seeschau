@@ -990,7 +990,7 @@ footer {
         overflow: auto;
     }
     #nav-overlay {
-      overflow: auto;
+      overflow: visible;
       // -webkit-overflow-scrolling: touch;
       width: 100%;
       background: $white;

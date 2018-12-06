@@ -1066,7 +1066,7 @@ body.intro div.container #byline-container {
   }
 
   #nav-overlay {
-    overflow: auto;
+    overflow: visible;
     width: 100%;
     background: white;
     padding: 0;
