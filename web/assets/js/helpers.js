@@ -10,7 +10,6 @@ var last_known_scroll_position = 0;
 var ticking = false;
 var shrinkHead = false; /* record status of header, needed when toggling menu overlay */
 var footerVisible = false;
-var hasNoEventListener = true;
 
 // collapse header on scroll
 function shrinkHeader(scroll_pos) {
@@ -52,8 +51,6 @@ window.addEventListener('scroll', e => {
 // toggle class of hamburger, i.e. toggle menu on touch devices
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
-  main.classList.toggle('hokuspokusfidibus');
-  footer.classList.toggle('hokuspokusfidibus');
   /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {

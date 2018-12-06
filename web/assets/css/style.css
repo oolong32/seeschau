@@ -1065,11 +1065,6 @@ body.intro div.container #byline-container {
     overflow: auto;
   }
 
-  main.hokuspokusfidibus,
-footer.hokuspokusfidibus {
-    overflow: hidden;
-  }
-
   #nav-overlay {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
