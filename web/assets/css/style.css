@@ -1066,7 +1066,7 @@ body.intro div.container #byline-container {
   }
 
   #nav-overlay {
-    overflow: scroll;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
     width: 100%;
     background: white;
@@ -1076,7 +1076,6 @@ body.intro div.container #byline-container {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: scroll;
     -webkit-overflow-scrolling: touch;
     min-height: 100vh;
     transition: all 0.2s ease-in;
