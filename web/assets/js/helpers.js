@@ -51,11 +51,15 @@ window.addEventListener('scroll', e => {
 // toggle class of hamburger, i.e. toggle menu on touch devices
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
+  if (navOver.classList.contains('visible') {
+    navOver.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+    }, false);
+  } else {
+    navOver.removeEventListener('touchmove');
+  }
   // main.classList.toggle('hokuspokusfidibus');
   // footer.classList.toggle('hokuspokusfidibus');
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
 
-navOver.addEventListener('touchmove', function(e) {
-  e.preventDefault();
-}, false);
