@@ -1056,7 +1056,6 @@ body.intro div.container #byline-container {
   /* End Layout Collapsed Header }}}2 */
   /* Navigation Overlay {{{2 */
   /*
-  .noScroll {overflow: hidden;} // main & footer, prevent scrolling behind overlay
   html {
     height  : 100%;
     overflow: hidden;
@@ -1065,6 +1064,10 @@ body.intro div.container #byline-container {
   body {
     height: 100%;
     overflow: auto;
+  }
+
+  .noScroll {
+    overflow: hidden;
   }
 
   #nav-overlay {

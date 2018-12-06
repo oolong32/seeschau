@@ -982,7 +982,6 @@ footer {
 
     /* Navigation Overlay {{{2 */
     /*
-    .noScroll {overflow: hidden;} // main & footer, prevent scrolling behind overlay
     html {
       height  : 100%;
       overflow: hidden;
@@ -992,6 +991,7 @@ footer {
         height  : 100%;
         overflow: auto;
     }
+    .noScroll {overflow: hidden;} // main & footer, prevent scrolling behind overlay
     #nav-overlay {
       overflow-y: scroll;
       // -webkit-overflow-scrolling: touch;
