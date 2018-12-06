@@ -1052,6 +1052,7 @@ footer {
     /* Navigation Overlay }}}2 */
 
     /* Layout Main {{{2 */
+    main.hokuspokusfidibus { display: none; } // hide main when overlay-nav visible
     main {
       width: 100%;
       padding: 5rem 1rem 1rem;
