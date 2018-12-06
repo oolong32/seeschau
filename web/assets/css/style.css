@@ -1057,12 +1057,11 @@ body.intro div.container #byline-container {
   /* Navigation Overlay {{{2 */
   main.hokuspokusfidibus,
 footer.hokuspokusfidibus {
-    display: none;
     overflow: hidden;
-    visibility: hidden;
   }
 
   #nav-overlay {
+    -webkit-overflow-scrolling: touch;
     background: white;
     padding: 0;
     position: fixed;

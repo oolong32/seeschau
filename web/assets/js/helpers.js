@@ -54,13 +54,50 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('hokuspokusfidibus');
   footer.classList.toggle('hokuspokusfidibus');
+  /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {
       e.preventDefault();
       console.log('prevent scroll!')
     }, false);
     hasNoEventListener = false;
+    console.log('attached event listener "touchmove" to overlay');
   }
+  */
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
 
+// try fixing scrolling issue (scrolling elements behind overlay)
+var _clientY = null;
+navOver.addEventListener('touchstart', function (event) {
+        if (event.targetTouches.length === 1) {
+            // detect single touch
+            _clientY = event.targetTouches[0].clientY;
+        }
+    }, false);
+
+navOver.addEventListener('touchmove', function (event) {
+    if (event.targetTouches.length === 1) {
+        // detect single touch
+        disableRubberBand(event);
+    }
+}, false);
+
+function disableRubberBand(event) {
+    var clientY = event.targetTouches[0].clientY - _clientY;
+
+    if (navOver.scrollTop === 0 && clientY > 0) {
+        // element is at the top of its scroll
+        event.preventDefault();
+    }
+
+    if (isOverlayTotallyScrolled() && clientY < 0) {
+        //element is at the top of its scroll
+        event.preventDefault();
+    }
+}
+
+function isOverlayTotallyScrolled() {
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
+    return navOver.scrollHeight - navOver.scrollTop <= navOver.clientHeight;
+}
