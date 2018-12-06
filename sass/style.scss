@@ -984,6 +984,7 @@ footer {
     main.hokuspokusfidibus,
     footer.hokuspokusfidibus { display: none; } // hide main & footer when overlay-nav visible
     #nav-overlay {
+      background: $white;
       padding: 0;
       position: fixed;
       top: 0;

@@ -1061,6 +1061,7 @@ footer.hokuspokusfidibus {
   }
 
   #nav-overlay {
+    background: white;
     padding: 0;
     position: fixed;
     top: 0;
