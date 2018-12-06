@@ -1056,6 +1056,7 @@ body.intro div.container #byline-container {
   /* End Layout Collapsed Header }}}2 */
   /* Navigation Overlay {{{2 */
   /*
+  main.noScroll {overflow: hidden;}
   html {
     height  : 100%;
     overflow: hidden;

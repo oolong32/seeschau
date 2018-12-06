@@ -51,6 +51,7 @@ window.addEventListener('scroll', e => {
 // toggle class of hamburger, i.e. toggle menu on touch devices
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
+  main.classList.toggle('noScroll');
   /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {
