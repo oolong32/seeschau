@@ -1125,9 +1125,7 @@ body.intro div.container #byline-container {
   }
   */
   #nav-overlay.visible {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
   }
 
   /* Navigation Overlay }}}2 */

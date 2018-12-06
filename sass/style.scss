@@ -1053,9 +1053,10 @@ footer {
     }
     */
     #nav-overlay.visible {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: block;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
     }
     /* Navigation Overlay }}}2 */
 
