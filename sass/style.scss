@@ -993,6 +993,7 @@ footer {
       overflow-y: scroll;
       // -webkit-overflow-scrolling: touch;
       min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
+      height: 100%;
       width: 100%;
       background: $white;
       padding: 0;
