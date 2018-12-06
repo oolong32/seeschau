@@ -4,6 +4,7 @@ var hamburger = document.querySelector('#hamburger');
 var header = document.querySelector('header');
 var navOver = document.querySelector('#nav-overlay');
 var main = document.querySelector('main');
+var footer = document.querySelector('footer');
 
 var last_known_scroll_position = 0;
 var ticking = false;
@@ -51,5 +52,6 @@ window.addEventListener('scroll', e => {
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('hokuspokusfidibus');
+  footer.classList.toggle('hokuspokusfidibus');
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
