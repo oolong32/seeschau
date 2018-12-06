@@ -1060,11 +1060,12 @@ body.intro div.container #byline-container {
     height  : 100%;
     overflow: hidden;
   }
-  body {
-      height  : 100%;
-      overflow: auto;
-  }
   */
+  body {
+    height: 100%;
+    overflow: auto;
+  }
+
   #nav-overlay {
     overflow-y: scroll;
     min-height: 100vh;
