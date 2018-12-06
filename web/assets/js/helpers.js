@@ -16,7 +16,7 @@ function shrinkHeader(scroll_pos) {
   // subtract scrollposition + window height from document height
   var scroll_progress = document.documentElement.scrollHeight - (last_known_scroll_position + document.documentElement.clientHeight); // 0 wenn completely scrolled to bottom
 
-  if (last_known_scroll_position > 100) {
+  if (last_known_scroll_position > 100 && !navOver.classList.contains('visible')) {
     header.classList.add('shrink');
     shrinkHead = true;
     if (scroll_progress < 430) { // footer is visible 430 = footer height on desktop
