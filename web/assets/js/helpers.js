@@ -51,7 +51,6 @@ window.addEventListener('scroll', e => {
 // toggle class of hamburger, i.e. toggle menu on touch devices
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
-  /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {
       e.preventDefault();
@@ -60,6 +59,5 @@ hamburger.addEventListener('click', e => {
     hasNoEventListener = false;
     console.log('attached event listener "touchmove" to overlay');
   }
-  */
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
