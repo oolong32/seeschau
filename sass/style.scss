@@ -995,7 +995,7 @@ footer {
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
       right: 0;
-      min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
+      min-height: 120vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
       // transform: translateY(-100vh);
       transition: all .2s ease-in;
       z-index: 9500;
