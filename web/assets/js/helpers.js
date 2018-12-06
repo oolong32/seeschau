@@ -52,6 +52,7 @@ window.addEventListener('scroll', e => {
 hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('noScroll');
+  footer.classList.toggle('noScroll');
   /*
   if (navOver.classList.contains('visible') && hasNoEventListener) {
     navOver.addEventListener('touchmove', e => {
