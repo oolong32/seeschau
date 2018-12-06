@@ -981,8 +981,8 @@ footer {
     /* End Layout Collapsed Header }}}2 */
 
     /* Navigation Overlay {{{2 */
-    main.hokuspokusfidibus,
-    footer.hokuspokusfidibus { display: none; overflow: hidden; visibility: hidden; } // hide main & footer when overlay-nav visible
+    // main.hokuspokusfidibus,
+    // footer.hokuspokusfidibus { display: none; overflow: hidden; visibility: hidden; } // hide main & footer when overlay-nav visible
     #nav-overlay {
       background: $white;
       padding: 0;
