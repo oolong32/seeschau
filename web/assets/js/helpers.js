@@ -10,6 +10,7 @@ var last_known_scroll_position = 0;
 var ticking = false;
 var shrinkHead = false; /* record status of header, needed when toggling menu overlay */
 var footerVisible = false;
+var hasNoEventListener = true;
 
 // collapse header on scroll
 function shrinkHeader(scroll_pos) {
@@ -53,12 +54,12 @@ hamburger.addEventListener('click', e => {
   navOver.classList.toggle('visible');
   main.classList.toggle('hokuspokusfidibus');
   footer.classList.toggle('hokuspokusfidibus');
-  if (navOver.classList.contains('visible') {
-    navOver.addEventListener('touchmove', function(e) {
+  if (navOver.classList.contains('visible') && hasNoEventListener) {
+    navOver.addEventListener('touchmove', e => {
       e.preventDefault();
+      console.log('prevent scroll!')
     }, false);
-  } else {
-    navOver.removeEventListener('touchmove');
+    hasNoEventListener = false;
   }
   if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
