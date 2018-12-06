@@ -992,6 +992,7 @@ footer {
     main.hokuspokusfidibus,
     footer.hokuspokusfidibus { overflow: hidden; } // hide main & footer when overlay-nav visible
     #nav-overlay {
+      overflow:scroll;
       -webkit-overflow-scrolling: touch;
       width: 100%;
       background: $white;
