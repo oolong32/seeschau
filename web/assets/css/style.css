@@ -1075,8 +1075,8 @@ body.intro div.container #byline-container {
     overflow-y: scroll;
     width: 100%;
     background: white;
-    padding: 0 0 90px;
-    position: fixed;
+    padding: 0;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
