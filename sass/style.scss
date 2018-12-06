@@ -995,7 +995,7 @@ footer {
     #nav-overlay {
       overflow-y: scroll;
       // -webkit-overflow-scrolling: touch;
-      min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
+      // min-height: 100vh; // zusätzlich wärs gut, scrollen zu unterbinden, solange overlay sichtbar
       width: 100%;
       background: $white;
       padding: 0 0 90px;
@@ -1003,7 +1003,7 @@ footer {
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
+      /*bottom: 0;*/
       // -webkit-overflow-scrolling: touch;
       // transform: translateY(-100vh);
       transition: all .2s ease-in;
