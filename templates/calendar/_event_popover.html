@@ -1,9 +1,9 @@
 {# Der Einblender in der Monatsansicht #}
 <div class="qtip hidden">
-{#	{% if {{ event.calendar|lower| replace({ 'ä': 'ae' }) }} == "ausfaelle" %} #}
+  {% if event.calendar == "Ausfälle" %}
 	<p>Fällt aus.</p>
 	{% else %}
-		{% if event.angebot|length or event.lehrperson|length %}
+		{% if event.angebot|length or event.lehrpersonen|length %}
       {% if event.angebot|length %}
         {% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
         <p><strong><a href="/{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
