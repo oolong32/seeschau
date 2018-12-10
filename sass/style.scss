@@ -1130,8 +1130,12 @@ footer {
           p {
             margin-bottom: 0.125rem;
           }
+          video {
+            width: 100%;
+            height: auto;
+          }
         }
-        video, img {
+        img {
           width: 100%;
           height: auto;
         }
