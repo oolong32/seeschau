@@ -1,35 +1,37 @@
 {# Der Einblender in der Monatsansicht #}
 <div class="qtip hidden">
-	{% if ausfall %}
+	{% if {{ event.calendar|lower| replace({ 'ä': 'ae' }) }} == "ausfaelle" %}
 	<p>Fällt aus.</p>
 	{% else %}
-		{% if event.angebot|length %}
-			{% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
-			<p><strong><a href="/{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
+		{% if event.angebot|length or event.lehrperson|length %}
+      {% if event.angebot|length %}
+        {% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
+        <p><strong><a href="/{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
 
-			{# Dauer #}
-			<p class='event_time'>
-			{% if event.allDay %}
-				Ganztägig
-				{% if event.duration.days > 1 %}
-				    ({{ event.duration.days }} Tage)
-				{% endif %}
-			    {% else %}
-				{% if event.multiDay %}
-				    {% if day.containsDate(event.startDate) %}
-					Beginn {{ event.startDate.format('g:ia') }}
-				    {% elseif day.containsDate(event.endDate) %}
-					Ende {{ event.endDate.format('g:ia') }}
-				    {% else %}
-					Ganztägig
-				    {% endif %}
-				    ({{ event.duration.days }} Tage)
-				{% else %} {# von–bis #}
-				    {{ event.startDate.format('G:i') }}—{{ event.endDate.format('G:i') }} Uhr
-				    {#({{ event.duration.humanReadable }})#}
-				{% endif %}
-			    {% endif %}
-			</p>
+        {# Dauer #}
+        <p class='event_time'>
+        {% if event.allDay %}
+          Ganztägig
+          {% if event.duration.days > 1 %}
+              ({{ event.duration.days }} Tage)
+          {% endif %}
+            {% else %}
+          {% if event.multiDay %}
+              {% if day.containsDate(event.startDate) %}
+            Beginn {{ event.startDate.format('g:ia') }}
+              {% elseif day.containsDate(event.endDate) %}
+            Ende {{ event.endDate.format('g:ia') }}
+              {% else %}
+            Ganztägig
+              {% endif %}
+              ({{ event.duration.days }} Tage)
+          {% else %} {# von–bis #}
+              {{ event.startDate.format('G:i') }}—{{ event.endDate.format('G:i') }} Uhr
+              {#({{ event.duration.humanReadable }})#}
+          {% endif %}
+            {% endif %}
+        </p>
+      {% endif %}
 
 			{# Lehrer #}
 			{% if event.lehrpersonen|length %}
