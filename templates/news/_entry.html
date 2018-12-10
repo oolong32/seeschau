@@ -1,9 +1,8 @@
 {% extends "_layout.html" %}
 {% block content %}
   <h2>News</h2>
-<!--
   <section class="news" >
-{% for instagramdata in craft.picPuller.media_recent({'user_id' : 1,  'use_stale_cache' : true, 'limit': 6}) %}
+{% for instagramdata in craft.picPuller.media_recent({'user_id' : 143,  'use_stale_cache' : true, 'limit': 6}) %}
     <div class="news-item">
 {# {% if loop.first %}
       <p>Status: {{ instagramdata.status }}</p>
@@ -36,9 +35,9 @@
 {% endfor %}
 	{# ev. muss "user_id" angepasst werden #}
   </section>
--->
 
 {# fake content #}
+{#
 <section class="news">
   	<div class="news-item">
 		<img src="/assets/_pic/tempAssets/bergsegen.jpg" alt="">
@@ -79,6 +78,7 @@
 	</div>
 	<div id="more-news"><p>Mehr Posts laden</p></div>
   </section>
+#}
 {# bis hier fake #}
 
   <h2>Videos</h2>
