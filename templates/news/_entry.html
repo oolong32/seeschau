@@ -25,8 +25,8 @@
       <p><img src="{{instagramdata.low_resolution}}"></p>
     {% endif %}
       <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
-      <h3>{{instagramdata.caption|length > 42 ? instagramdata.caption|slice(0, 42) ~ " …" : instagramdata.caption }}</h3>
-      <p><a href="#">Mehr erfahren</a></p>
+      <h3>{{instagramdata.caption|length > 52 ? instagramdata.caption|slice(0, 52) ~ " …" : instagramdata.caption }}</h3>
+      <p><a href="{{ instagramdata.link }}">Mehr erfahren</a></p>
     {% else %}
         <p class="date error">Error Type: {{ instagramdata.error_type }}</p>
         <h3 class="error">Error Message: {{ instagramdata.error_message }}</p>
