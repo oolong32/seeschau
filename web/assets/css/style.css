@@ -802,7 +802,7 @@ main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
   background: rgba(80, 227, 194, 0.75);
 }
 main section#calendar div.cal-case div.day_cell div.event span.calendar-color.ausfaelle {
-  background: rgba(217, 45, 29, 0.3);
+  background: rgba(217, 45, 129, 0.3);
 }
 main section#calendar div.cal-case div.day_cell div.event a.trigger {
   color: black;
