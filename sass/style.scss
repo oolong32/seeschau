@@ -446,6 +446,10 @@ main {
     grid-column-gap: 2.25rem;
     grid-row-gap: 2.5rem;
     div.news-item {
+      video {
+        width: 320px;
+        height: 320px;
+      }
       h3 {
         font-size: 2rem;
         line-height: 1.2;

@@ -558,6 +558,10 @@ main section.news {
   grid-column-gap: 2.25rem;
   grid-row-gap: 2.5rem;
 }
+main section.news div.news-item video {
+  width: 320px;
+  height: 320px;
+}
 main section.news div.news-item h3 {
   font-size: 2rem;
   line-height: 1.2;

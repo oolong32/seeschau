@@ -13,7 +13,7 @@
     {% if instagramdata.status == 'true' %}
       {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
     {% if instagramdata.video_low_resolution != '' %}
-      <video width="320" height="320" controls>
+      <video {#width="320" height="320" #}controls>
         <source src="{{ instagramdata.video_low_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
