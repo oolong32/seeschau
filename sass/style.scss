@@ -12,6 +12,7 @@ $green_a25: rgba(80, 227, 194, .25);
 $green_a5: rgba(80, 227, 194, .5);
 $green_a75: rgba(80, 227, 194, .75);
 $green: rgba(80, 227, 194, 1);
+$red: rgba(223, 57, 16, .3);
 $lavender: rgba(214, 186, 255, .4);
 $lavender_75: rgba(214, 186, 255, .75);
 $linegray: rgba(155, 155, 155, 1);
@@ -701,6 +702,9 @@ main {
             position: relative;
             top: 0.1rem;
             background: $green_a75;
+          }
+          span.calendar-color.ausfaelle {
+            background: $red;
           }
           a.trigger {
             color: $black;
