@@ -446,7 +446,7 @@ main {
     grid-column-gap: 2.25rem;
     grid-row-gap: 2.5rem;
     div.news-item {
-      video {
+      img, video {
         width: 320px;
         height: 320px;
       }
@@ -1130,7 +1130,7 @@ footer {
           p {
             margin-bottom: 0.125rem;
           }
-          video {
+          img, video {
             width: 100%;
             height: auto;
           }

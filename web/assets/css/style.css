@@ -558,7 +558,7 @@ main section.news {
   grid-column-gap: 2.25rem;
   grid-row-gap: 2.5rem;
 }
-main section.news div.news-item video {
+main section.news div.news-item img, main section.news div.news-item video {
   width: 320px;
   height: 320px;
 }
@@ -1211,7 +1211,7 @@ main p.accordion-collapse {
   main section.news div.news-item p {
     margin-bottom: 0.125rem;
   }
-  main section.news div.news-item video {
+  main section.news div.news-item img, main section.news div.news-item video {
     width: 100%;
     height: auto;
   }
