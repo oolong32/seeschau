@@ -848,6 +848,9 @@ main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
 main section#calendar div.cal-case div.day_cell div.event div.hidden {
   visibility: hidden;
 }
+main section#calendar div.cal-case div.day_cell div.event.ausfaelle {
+  text-decoration: line-through;
+}
 main section#calendar div.cal-case div.day_cell .all_day {
   background: rgba(214, 186, 255, 0.4);
 }

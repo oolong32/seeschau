@@ -752,6 +752,9 @@ main {
           div.hidden { visibility: hidden; }
           /* End Q-Tip }}}4 */
         }
+        div.event.ausfaelle {
+          text-decoration: line-through;
+        }
         .all_day { background: $lavender; }
         .holiday { background: $green_a15; }
         /* End Single Event in Calendar }}}3 */

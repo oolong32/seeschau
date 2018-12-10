@@ -28,7 +28,7 @@
 {% endif %}
 
 {% if not ausfall %}
-<div class="event tips{{ classes }}"{# style #} data-toggle="popover">
+<div class="event tips{{ classes }} {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"{# style #} data-toggle="popover">
     {% if event.multiDay %}
         <a class="trigger" href="">
             {% autoescape false %}
