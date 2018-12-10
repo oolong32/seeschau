@@ -14,7 +14,7 @@
       {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
     {% if instagramdata.video_low_resolution != '' %}
       <video {#width="320" height="320" #}controls>
-        <source src="{{ instagramdata.video_low_resolution }}" type="video/mp4">
+        <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       {#
@@ -22,7 +22,7 @@
       <p>{{ instagramdata.video_low_resolution }}</p>
       #}
     {% else %}
-      <p><img src="{{instagramdata.low_resolution}}"></p>
+      <p><img src="{{instagramdata.standard_resolution}}"></p>
     {% endif %}
       <p class="date">{{ instagramdata.created_time|date('d. F Y') }}</p>
       <h3>{{instagramdata.caption|length > 52 ? instagramdata.caption|slice(0, 52) ~ " …" : instagramdata.caption }}</h3>
