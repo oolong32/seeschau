@@ -1,6 +1,6 @@
 {# Der Einblender in der Monatsansicht #}
 <div class="qtip hidden">
-	{% if {{ event.calendar|lower| replace({ 'ä': 'ae' }) }} == "ausfaelle" %}
+{#	{% if {{ event.calendar|lower| replace({ 'ä': 'ae' }) }} == "ausfaelle" %} #}
 	<p>Fällt aus.</p>
 	{% else %}
 		{% if event.angebot|length or event.lehrperson|length %}
