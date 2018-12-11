@@ -18,11 +18,7 @@
         <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      {#
-      <p>This is a video; not an image.</p>
-      <p>{{ instagramdata.video_low_resolution }}</p>
-      #}
-      {% set hasNoVideo = false %} {# we know, there’s videos in the feed #}
+      {% set hasNoVideo = false %} {# we know now that there are videos in the feed #}
     {% else %}
       <p><img src="{{instagramdata.standard_resolution}}"></p>
     {% endif %}
