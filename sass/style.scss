@@ -739,6 +739,12 @@ main {
             box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.50);
             position: relative;
             padding: 0.25rem 0.5rem;
+            svg.close-popover {
+              cursor: pointer;
+              position: absolute;
+              top: -7px;
+              right: -7px;
+            }
             p {
               margin-bottom: 0.25rem;
             }

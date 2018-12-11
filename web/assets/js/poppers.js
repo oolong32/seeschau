@@ -32,7 +32,14 @@ for (cell of cells) {
 function showInfo (event, element) {
   event.preventDefault(); // link darf nirgendwo hinführen :-)
   let sibling = element.nextElementSibling; // ist das genug stabil?
-  sibling.classList.toggle('hidden');
-  // Element oben rechts ins Fenster setzen
-  // Event Listener, wenn click: fenster zu, event-listener löschen.
+  sibling.classList.toggle('hidden'); // sibling ist das popover
+  let closeButton =  sibling.querySelector('.close-popover');
+  if (!closeButton.classList.contains('check')) {
+    closeButton.addEventListener('click', function(e) {
+      console.log('clicked');
+      closeButton.classList.add('check');
+      closeButton.parentElement.classList.toggle('hidden');
+      console.log(e.target);
+    });
+  }
 }
