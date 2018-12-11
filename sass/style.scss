@@ -189,7 +189,7 @@ a.mail-link:before {
   border: none;
 }
 
-#social-media-buttons a {
+a.social-media-link {
   text-decoration: none;
   border: transparent;
   border: 0;
@@ -197,10 +197,10 @@ a.mail-link:before {
   outline: 0;
 }
 
-#social-media-buttons a:hover svg use {
+a.social-media-link:hover svg use {
   fill: $green_a75;
 }
-#social-media-buttons a:hover svg path {
+a.social-media-link:hover svg path {
   stroke: $green_a75;
   fill: $green_a75;
 }
