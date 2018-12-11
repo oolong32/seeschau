@@ -88,7 +88,7 @@
     {% for videoEntry in videos %}
     <div class="video-item">
       {% set video = videoEntry.video %}
-      {{ video.embed({ width: 500, height: 267 }) }}
+      {{ video.embed({ width: 500, height: 267, playsinline: true, autoplay: true }) }} {# funktioniert nicht, what? #}
 <p>{{ video.getEmbed() }}</p>
     </div>
     {% endfor %}

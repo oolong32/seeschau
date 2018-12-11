@@ -195,6 +195,14 @@ a.mail-link:before {
   outline: 0;
 }
 
+#social-media-buttons a:hover svg use {
+  fill: $green_a75;
+}
+#social-media-buttons a:hover svg path {
+  stroke: $green_a75;
+  fill: $green_a75;
+}
+
 /* End Links }}}1 */
 
 /* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
@@ -847,7 +855,7 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 1.5rem;
-    svg { }
+    svg:first-child { margin-right: 0.5rem; }
   }
   /* End Footer Social Media Buttons */
 
