@@ -3,6 +3,7 @@
   <h2>News</h2>
   <section class="news" >
 {% for instagramdata in craft.picPuller.media_recent({'user_id' : 143,  'use_stale_cache' : true, 'limit': 6}) %}
+{% set hasNoVideo = true %} {# Zum prüfen, ob bereits ein Video im Feed steht #}
     <div class="news-item">
 {# {% if loop.first %}
       <p>Status: {{ instagramdata.status }}</p>
@@ -10,10 +11,10 @@
       <p>Error Message: {{ instagramdata.error_message }}</p>
     {% endif %}
 #}
-    {% if instagramdata.status == 'true' %}
+    {% if instagramdata.status == "true" %}
       {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
-    {% if instagramdata.video_standard_resolution != '' %}
-      <video {#width="320" height="320" #}controls poster="{{ instagramdata.standard_resolution }}">
+    {% if instagramdata.video_standard_resolution != "" %}
+    <video controls poster="{{ instagramdata.standard_resolution }}" {{ hasNoVideo ? "autoplay muted" : "<!-- no autoplay -->" }}>
         <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -21,6 +22,7 @@
       <p>This is a video; not an image.</p>
       <p>{{ instagramdata.video_low_resolution }}</p>
       #}
+      {% set hasNoVideo = false %} {# we know, there’s videos in the feed #}
     {% else %}
       <p><img src="{{instagramdata.standard_resolution}}"></p>
     {% endif %}
