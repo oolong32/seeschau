@@ -183,7 +183,7 @@ a.mail-link:before {
 }
 
 #social-media-buttons a {
-  border: none;
+  border: 0;
   border-bottom: none !important;
   text-decoration: none;
   outline: 0;
