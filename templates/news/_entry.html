@@ -14,7 +14,8 @@
     {% if instagramdata.status == "true" %}
       {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
     {% if instagramdata.video_standard_resolution != "" %}
-    <video controls poster="{{ instagramdata.standard_resolution }}" {{ hasNoVideo ? "autoplay muted playsinline" : "" }}>
+      {#<video controls poster="{{ instagramdata.standard_resolution }}" {{ hasNoVideo ? "autoplay muted playsinline" : "" }}>#}
+    <video controls poster="{{ instagramdata.standard_resolution }}" autoplay muted playsinline preload="auto" }}>
         <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -88,6 +89,7 @@
     <div class="video-item">
       {% set video = videoEntry.video %}
       {{ video.embed({ width: 500, height: 267 }) }}
+<p>{{ video.getEmbed() }}</p>
     </div>
     {% endfor %}
 
