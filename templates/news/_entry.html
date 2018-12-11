@@ -14,7 +14,7 @@
     {% if instagramdata.status == "true" %}
       {#<p style="display:none">Loop Index: {{ loop.index }}</p>#}
     {% if instagramdata.video_standard_resolution != "" %}
-    <video controls poster="{{ instagramdata.standard_resolution }}" {{ hasNoVideo ? "autoplay muted" : "<!-- no autoplay -->" }}>
+    <video controls poster="{{ instagramdata.standard_resolution }}" {{ hasNoVideo ? "autoplay muted" : "" }}>
         <source src="{{ instagramdata.video_standard_resolution }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
