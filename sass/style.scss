@@ -190,9 +190,10 @@ a.mail-link:before {
 }
 
 #social-media-buttons a {
-  border: 0;
-  border-bottom: none !important;
   text-decoration: none;
+  border: transparent;
+  border: 0;
+  border-bottom: 0 !important;
   outline: 0;
 }
 
