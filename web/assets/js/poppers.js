@@ -33,4 +33,6 @@ function showInfo (event, element) {
   event.preventDefault(); // link darf nirgendwo hinführen :-)
   let sibling = element.nextElementSibling; // ist das genug stabil?
   sibling.classList.toggle('hidden');
+  // Element oben rechts ins Fenster setzen
+  // Event Listener, wenn click: fenster zu, event-listener löschen.
 }
