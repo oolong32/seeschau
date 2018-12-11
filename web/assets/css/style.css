@@ -182,6 +182,23 @@ a.mail-link:before {
   border: none;
 }
 
+a.social-media-link {
+  text-decoration: none;
+  border: transparent;
+  border: 0;
+  border-bottom: 0 !important;
+  outline: 0;
+}
+
+a.social-media-link:hover svg use {
+  fill: rgba(80, 227, 194, 0.75);
+}
+
+a.social-media-link:hover svg path {
+  stroke: rgba(80, 227, 194, 0.75);
+  fill: rgba(80, 227, 194, 0.75);
+}
+
 /* End Links }}}1 */
 /* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
 /* Tests {{{1 */
@@ -820,6 +837,12 @@ main section#calendar div.cal-case div.day_cell div.event div.qtip {
   position: relative;
   padding: 0.25rem 0.5rem;
 }
+main section#calendar div.cal-case div.day_cell div.event div.qtip svg.close-popover {
+  cursor: pointer;
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
 main section#calendar div.cal-case div.day_cell div.event div.qtip p {
   margin-bottom: 0.25rem;
 }
@@ -925,6 +948,9 @@ footer #social-media-buttons {
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
+}
+footer #social-media-buttons svg:first-child {
+  margin-right: 0.5rem;
 }
 footer #infos {
   display: flex;
@@ -1405,6 +1431,10 @@ main section.anreise-infos {
   }
 
   /* positioning of #overlay-footer in overlay-styles */
+  #social-media-icons svg:first-of-type {
+    margin-right: 0.5rem;
+  }
+
   /* End Layout Mobile Footer }}}2*/
 }
 /* End Mobile Styles }}}1 */
