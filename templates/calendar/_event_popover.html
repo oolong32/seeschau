@@ -14,8 +14,6 @@
 
   {% if event.calendar == "Ausfälle" %}
 	<p>Fällt aus.</p>
-  {% else if event.calendar == "Workshops" %}
-  <p>Dies ist ein Workshop</p>
 	{% else %}
 		{% if event.angebot|length or event.lehrpersonen|length %}
       {% if event.angebot|length %}
@@ -47,6 +45,11 @@
         </p>
       {% endif %}
 
+      {% if event.calendar == "Workshops" and event.extTeachers|length %}
+        <p>Hier wären ext. Lehrer</p>
+        {# externe in array schreiben, unten rein-mergen int-array|merge(ext-array[i])#}
+      {% endif %}
+      
 			{# Lehrer #}
 			{% if event.lehrpersonen|length %}
 				{% if event.lehrpersonen|length > 1 %}

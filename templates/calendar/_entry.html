@@ -101,11 +101,14 @@
               {% include "calendar/_holidayEvent.html" %}
             {% endif %}
           {% endfor %}
-        {% else if event.calendar == "Workshops" %}
-          {% include "calenar/_workshopEvent.html" %}
         {% else %}
           {% for event in day.events %}
+          {# {% if event.calendar == "Workshops" %}
+            ist das nötig?
+              {% include "calendar/_workshopEvent.html" %}
+            {% else %} #}
             {% include "calendar/_event.html" %}
+          {# {% endif %} #}
           {% endfor %}
         {% endif %}
 
