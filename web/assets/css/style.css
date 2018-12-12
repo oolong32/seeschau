@@ -841,8 +841,8 @@ main section#calendar div.cal-case div.day_cell div.event div.qtip {
 main section#calendar div.cal-case div.day_cell div.event div.qtip svg.close-popover {
   cursor: pointer;
   position: absolute;
-  top: -7px;
-  right: -7px;
+  top: -8px;
+  right: -8px;
 }
 main section#calendar div.cal-case div.day_cell div.event div.qtip p {
   margin-bottom: 0.25rem;
