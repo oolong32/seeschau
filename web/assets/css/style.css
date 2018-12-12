@@ -797,6 +797,7 @@ main section#calendar div.cal-case div.weekday-mobile {
 }
 main section#calendar div.cal-case div.day_cell {
   /* Single Event in Calendar {{{3 */
+  /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
   /* End Single Event in Calendar }}}3 */
 }
 main section#calendar div.cal-case div.day_cell div.date {
@@ -875,7 +876,7 @@ main section#calendar div.cal-case div.day_cell div.event div.hidden {
 main section#calendar div.cal-case div.day_cell div.event.ausfaelle {
   text-decoration: line-through;
 }
-main section#calendar div.cal-case div.day_cell .all_day {
+main section#calendar div.cal-case div.day_cell .workshops {
   background: rgba(214, 186, 255, 0.4);
 }
 main section#calendar div.cal-case div.day_cell .holiday {

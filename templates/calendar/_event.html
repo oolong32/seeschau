@@ -29,14 +29,17 @@
 
 {% if not ausfall %}
 <div class="event tips{{ classes }} {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"{# style #} data-toggle="popover">
-    {% if event.multiDay %}
+    {# if event.multiDay #}
+    {% if event.calendar == "Workshops" %} {# kein grüner Tolggen #}
         <a class="trigger" href="">
             {% autoescape false %}
-                {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}
+                {#{{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}#}
+                {{ event.title }}
             {% endautoescape %}
         </a>
     {% else %}
-        {% if not event.allDay %}
+        {# if not event.allDay #}
+        {% if event.calendar != "Workshops" %}
             <span class="calendar-color {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"></span>{# styled in Stylesheet #}
         {% endif %}
         <a class="trigger" href="" {% if event.allDay %}{# Gibt es diesen Fall? #}{% endif %}>

@@ -73,17 +73,16 @@
         {% if month.containsDate(day.date) %}
         {# Tage des Monats ohne jene des vorhergehenden/nachfolgenden Monats #}
         <div class="day_cell{{ day.date.isToday ? " today" }}">
-      <div class="date{{ day.eventCount ? " has_events" }}">
-        {{ day.date.format('j') }} {# Datum, der wievielte #}
-          {#</a>#}
-      </div>
+          <div class="date{{ day.eventCount ? " has_events" }}">
+            {{ day.date.format('j') }} {# Datum, der wievielte #}
+          </div>
         {% else %}
         <div class="day_cell out_of_range"> {# vorhergehender monat und beginn folgemonat #}
-      <div class="date">
-        <span class="num">
-            {{ day.date.format('j') }}
-        </span>
-      </div>
+          <div class="date">
+            <span class="num">
+                {{ day.date.format('j') }}
+            </span>
+          </div> {# note to myself: closing div missing, what!? #}
         {% endif %}
 
         {# are there events in the holiday-calendar' #}
@@ -112,10 +111,10 @@
           {% endfor %}
         {% endif %}
 
-        </div>
-        </div>
-    {% endfor %}
-  {% endfor %}
+        </div> {# closes day_cell #}
+      </div> {# closes cal-case #}
+    {% endfor %} {# end day in week #}
+  {% endfor %} {# end week in month #}
 </section>
 
 {% endblock %}
