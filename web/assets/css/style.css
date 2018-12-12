@@ -322,9 +322,9 @@ body.intro div.container #seeschau-container {
   transform: scale(1.7);
 }
 body.intro div.container #byline-container {
-  margin-top: 2em;
+  margin-top: 1em;
   color: white;
-  font-size: 2.5rem;
+  font-size: 3.7rem;
   font-weight: 500;
   letter-spacing: 0.53rem;
 }
