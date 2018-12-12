@@ -260,7 +260,7 @@ body.intro div.container ul.img li {
   bottom: 0;
   right: 0;
   opacity: 0;
-  animation: blendy 65s linear infinite 0s;
+  animation: blendy 39s linear infinite 0s;
 }
 body.intro div.container ul.img li:nth-child(1) {
   z-index: 14;
@@ -272,7 +272,7 @@ body.intro div.container ul.img li:nth-child(1) {
 }
 body.intro div.container ul.img li:nth-child(2) {
   z-index: 13;
-  animation-delay: 5s;
+  animation-delay: 3s;
   background: url("../_pic/introBackgrounds/ginko@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -280,7 +280,7 @@ body.intro div.container ul.img li:nth-child(2) {
 }
 body.intro div.container ul.img li:nth-child(3) {
   z-index: 12;
-  animation-delay: 10s;
+  animation-delay: 6s;
   background: url("../_pic/introBackgrounds/saal@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -288,7 +288,7 @@ body.intro div.container ul.img li:nth-child(3) {
 }
 body.intro div.container ul.img li:nth-child(4) {
   z-index: 11;
-  animation-delay: 15s;
+  animation-delay: 9s;
   background: url("../_pic/introBackgrounds/gebaeude@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -296,7 +296,7 @@ body.intro div.container ul.img li:nth-child(4) {
 }
 body.intro div.container ul.img li:nth-child(5) {
   z-index: 10;
-  animation-delay: 20s;
+  animation-delay: 12s;
   background: url("../_pic/introBackgrounds/wasser@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -304,7 +304,7 @@ body.intro div.container ul.img li:nth-child(5) {
 }
 body.intro div.container ul.img li:nth-child(6) {
   z-index: 9;
-  animation-delay: 25s;
+  animation-delay: 15s;
   background: url("../_pic/introBackgrounds/tatamiRaum@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -312,7 +312,7 @@ body.intro div.container ul.img li:nth-child(6) {
 }
 body.intro div.container ul.img li:nth-child(7) {
   z-index: 8;
-  animation-delay: 30s;
+  animation-delay: 18s;
   background: url("../_pic/introBackgrounds/laub@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -320,7 +320,7 @@ body.intro div.container ul.img li:nth-child(7) {
 }
 body.intro div.container ul.img li:nth-child(8) {
   z-index: 7;
-  animation-delay: 35s;
+  animation-delay: 21s;
   background: url("../_pic/introBackgrounds/blumenschale@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -328,7 +328,7 @@ body.intro div.container ul.img li:nth-child(8) {
 }
 body.intro div.container ul.img li:nth-child(9) {
   z-index: 6;
-  animation-delay: 40s;
+  animation-delay: 24s;
   background: url("../_pic/introBackgrounds/tatamiReflexion@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -336,7 +336,7 @@ body.intro div.container ul.img li:nth-child(9) {
 }
 body.intro div.container ul.img li:nth-child(10) {
   z-index: 5;
-  animation-delay: 45s;
+  animation-delay: 27s;
   background: url("../_pic/introBackgrounds/patio@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -344,7 +344,7 @@ body.intro div.container ul.img li:nth-child(10) {
 }
 body.intro div.container ul.img li:nth-child(11) {
   z-index: 4;
-  animation-delay: 50s;
+  animation-delay: 30s;
   background: url("../_pic/introBackgrounds/schattenMauer@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -352,7 +352,7 @@ body.intro div.container ul.img li:nth-child(11) {
 }
 body.intro div.container ul.img li:nth-child(12) {
   z-index: 3;
-  animation-delay: 55s;
+  animation-delay: 33s;
   background: url("../_pic/introBackgrounds/blatt@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
@@ -360,14 +360,14 @@ body.intro div.container ul.img li:nth-child(12) {
 }
 body.intro div.container ul.img li:nth-child(13) {
   z-index: 2;
-  animation-delay: 60s;
+  animation-delay: 36s;
   background: url("../_pic/introBackgrounds/mammutbaumkrone@1x.jpg") no-repeat center center fixed;
   background-size: cover;
   background-origin: border-box;
   background-position: bottom;
 }
 body.intro div.container #seeschau-container {
-  transform: scale(2);
+  transform: scale(1.7);
 }
 body.intro div.container #byline-container {
   margin-top: 2em;
