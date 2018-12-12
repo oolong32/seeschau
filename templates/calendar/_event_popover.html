@@ -13,21 +13,21 @@
   </svg>
 
   {% if event.calendar == "Ausfälle" %}
-	<p>Fällt aus.</p>
+    <p>Fällt aus.</p>
 	{% else %}
 		{% if event.angebot|length or event.lehrpersonen|length %}
       {% if event.angebot|length %}
         {% set url = event.angebot[0].url|split('\/') %} {# Mit Kalendereintrag verbundenes Angebot #}
         <p><strong><a href="/{{ url[3] }}#{{ url[4] }}">{{ event.angebot[0].title }}</a></strong></p>
 
-        {# Dauer #}
+        {# Duration #}
         <p class='event_time'>
         {% if event.allDay %}
           Ganztägig
           {% if event.duration.days > 1 %}
               ({{ event.duration.days }} Tage)
           {% endif %}
-            {% else %}
+        {% else %}
           {% if event.multiDay %}
               {% if day.containsDate(event.startDate) %}
             Beginn {{ event.startDate.format('g:ia') }}
@@ -41,30 +41,45 @@
               {{ event.startDate.format('G:i') }}—{{ event.endDate.format('G:i') }} Uhr
               {#({{ event.duration.humanReadable }})#}
           {% endif %}
-            {% endif %}
+        {% endif %}
         </p>
       {% endif %}
+      {# End Duration #}
+
+      {% set teacherNames = [] %}
+      {% set teacherLinks = [] %} 
 
       {% if event.calendar == "Workshops" and event.extTeachers|length %}
-        <p>Hier wären ext. Lehrer</p>
-        {# externe in array schreiben, unten rein-mergen int-array|merge(ext-array[i])#}
+        {% for teacher in event.extTeachers %}
+          {% set teacherNames = teacherNames|merge([teacher.tname]) %}
+          {% set teacherLinks = teacherLinks|merge([teacher.tlink]) %}
+        {% endfor %}
+      {% endif %}
+
+      {% if event.lehrpersonen|length %}
+        {% for teacher in event.lehrpersonen %}
+          {% set teacherNames = teacherNames|merge([teacher.title]) %}
+          {% set teacherLinks = teacherLinks|merge([teacher.url]) %}
+        {% endfor %}
       {% endif %}
       
 			{# Lehrer #}
-			{% if event.lehrpersonen|length %}
-				{% if event.lehrpersonen|length > 1 %}
+			{% if teacherNames|length %}
+				{% if teacherNames|length > 1 %}
 					<ul>
-					{% for lehrperson in event.lehrpersonen %}
-						<li><a href="{{ lehrperson.url }}">{{ lehrperson }}</a></li>
+					{% for i in 0..(teacherNames|length - 1) %}
+						<li>{% if teacherLinks[i]|length %}<a href="{{ teacherLinks[i] }}">{% endif %}{{ teacherNames[i] }}{% if teacherLinks[i]|length %}</a>{% endif %}</li>
 					{% endfor %}
 					</ul>
 				{% else %}
-					<p><a href="{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>
+          {#<p><a href="{{ event.lehrpersonen[0].url }}">{{ event.lehrpersonen[0] }}</a></p>#}
+						<p>{% if teacherLinks[0]|length %}<a href="{{ teacherLinks[0] }}">{% endif %}{{ teacherNames[0] }}{% if teacherLinks[0]|length %}</a>{% endif %}</p>
 				{% endif %}
 			{% endif %}
 
 		{% else %}
-			<p>Noch Keine Informationen zu diesem Termin.</p> {# d.h. Kalendereintrag wurde nicht mit Angebot verbdunen, sollte ev. obligatorisch sein. #}
+      {# weder link zu angebot noch lehrer #}
+			<p>Noch Keine Informationen zu diesem Termin.</p>
 		{% endif %}
 	{% endif %}
 
