@@ -1,0 +1,49 @@
+{# Einzelner Event in der Monatsansicht #}
+{% set classes = "" %}
+{% set classes = classes ~ (event.allDay ? " all_day") %}
+{% if event.multiDay %}
+    {% set classes = classes ~ " multi_day" %}
+    {% set classes = classes ~ (day.containsDate(event.startDate) ? " first_day") %}
+    {% set classes = classes ~ (day.containsDate(event.endDate) ? " last_day") %}
+{% endif %}
+
+{#
+{% set style = "" %}
+{% if event.multiDay or event.allDay %}
+    {% set style %}
+        style="background-color: {{ event.calendar.lighterColor }} !important;
+               border-color: {{ event.calendar.color }} !important;"
+    {% endset %}
+{% endif %}
+#}
+
+{# Prüfen, ob ein wiederholt stattfindender Event heute ausfällt #}
+{% set ausfall = false %}
+{% if event.repeating %}
+  {% for exception in event.exceptions %}
+    {% if day.date.day == exception.date.day %}
+      {% set ausfall = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if not ausfall %}
+<div class="event tips{{ classes }} {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"{# style #} data-toggle="popover">
+    {% if event.multiDay %}
+        <a class="trigger" href="">
+            {% autoescape false %}
+                {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}
+            {% endautoescape %}
+        </a>
+    {% else %}
+        {% if not event.allDay %}
+            <span class="calendar-color {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"></span>{# styled in Stylesheet #}
+        {% endif %}
+        <a class="trigger" href="" {% if event.allDay %}{# Gibt es diesen Fall? #}{% endif %}>
+            {{ event.title }}
+        </a>
+    {% endif %}
+
+    {% include "calendar/_event_popover.html" %}
+</div>
+{% endif %}
