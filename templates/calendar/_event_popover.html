@@ -14,6 +14,8 @@
 
   {% if event.calendar == "Ausfälle" %}
 	<p>Fällt aus.</p>
+  {% else if event.calendar == "Workshops" %}
+  <p>Dies ist ein Workshop</p>
 	{% else %}
 		{% if event.angebot|length or event.lehrpersonen|length %}
       {% if event.angebot|length %}
