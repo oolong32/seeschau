@@ -36,10 +36,10 @@ function showInfo (event, element) {
   let closeButton =  sibling.querySelector('.close-popover');
   if (!closeButton.classList.contains('check')) {
     closeButton.addEventListener('click', function(e) {
-      console.log('clicked');
+      // console.log('clicked');
       closeButton.classList.add('check');
       closeButton.parentElement.classList.toggle('hidden');
-      console.log(e.target);
+      // console.log(e.target);
     });
   }
 }
