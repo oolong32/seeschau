@@ -36,14 +36,14 @@
   {# Popover #}
   {# Wie ist das auf Mobile? Worst Case Szenario: deaktivieren und einblenden #}
   {% if hausmarke == 'calendar' %}
-    <script src="/assets/js/thirdparty/popper.js?2"></script>
+    <script src="/assets/js/thirdparty/popper.js"></script>
     <script src="/assets/js/thirdparty/tooltip.js"></script>
     <script src="/assets/js/poppers.js"></script>
   {% elseif hausmarke == 'yoga' or hausmarke == 'music-and-voice' or hausmarke == 'team' or hausmarke == 'workshops' %}
   {# Accordion #}
     <script src="/assets/js/thirdparty/jquery.min.js"></script>
     <script src="/assets/js/thirdparty/jquery-ui.min.js"></script>
-    <script src="/assets/js/accordion.js"></script> 
+    <script src="/assets/js/accordion.js?v=1.0"></script> 
   {% endif %}
 
   <script>console.log('{{ hausmarke }}');</script>
