@@ -62,5 +62,5 @@ hamburger.addEventListener('click', e => {
 // mute all videos
 window.onload = function () {
     var element = document.getElementById('video');
-    element.muted = "muted";
+    element.muted = "true";
 }
