@@ -58,3 +58,9 @@ hamburger.addEventListener('click', e => {
   }
   // if (!shrinkHead) { header.classList.toggle('shrink'); } // only toggle shrinked header if still expanded
 }); 
+
+// mute all videos
+window.onload = function () {
+    var element = document.getElementById('video');
+    element.muted = "muted";
+}
