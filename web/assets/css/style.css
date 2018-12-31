@@ -19,7 +19,7 @@ body {
   font-variant-numeric: proportional-nums;
 }
 
-h2, h3, h4, h5, h6 {
+th, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
@@ -921,7 +921,7 @@ main th, main td {
   white-space: nowrap;
 }
 main th {
-  color: #99ccff;
+  color: black;
   border-bottom: 1px solid #bbd7d1;
 }
 
