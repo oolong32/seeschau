@@ -44,7 +44,7 @@ body {
   font-variant-numeric: proportional-nums;
 }
 
-h2, h3, h4, h5, h6 { font-weight: 600;}
+th, h2, h3, h4, h5, h6 { font-weight: 600;}
 
 header , footer{
   #masthead {
@@ -832,7 +832,8 @@ main {
   }
 
   th {
-    color: hsl(210, 100%, 80%);
+    //color: hsl(210, 100%, 80%);
+    color: $black;
     border-bottom: 1px solid $linegreen; 
   }
 
