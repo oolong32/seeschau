@@ -59,6 +59,12 @@
           {% endif %}
           </div>
 
+          {% if workshop.special|length %}
+          <div class="workshop-infos">
+            <p>{{ entry.special }}</p>
+          </div>
+          {% endif %}
+
           {% if workshop.period|length %}
           <div class="workshop-infos">
           <!-- <h4>Zeitraum</h4> -->
