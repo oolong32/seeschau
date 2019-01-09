@@ -1,0 +1,17 @@
+{# 404 Page #}
+{% extends "_layout.html" %}
+
+{% block content %}
+	<h2>404</h2>
+
+  <section>
+    <h3>Seite nicht gefunden</h3>
+    {% set info = craft.entries().section("info").first() %}
+    
+    <p>Vielleicht finden Sie das Gesuchte unter folgenden Links.</p>
+
+    {% include "includes/nav.html" %}
+
+    <p>Telefonisch sind wir Montags bis Freitags unter der Nummer <a href="tel:{{ info.tel|replace({' ': ''}) }}"><span class="nowrap">{{ info.tel }}</span></a> zu erreichen, oder Sie kontaktieren uns per Mail: <a href="mailto:{{ info.mail }}">{{ info.mail }}</a></p>
+  </section>
+{% endblock %}
