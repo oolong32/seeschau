@@ -27,9 +27,9 @@
             {% endautoescape %}
         </a>
     {% else %}
-        {% if not event.allDay %}
+        {#{% if not event.allDay %}#} {# wir machen mal einen Tolggen, auch wenn es ganztägig ist, was? #}
             <span class="calendar-color {{ event.calendar|lower| replace({ 'ä': 'ae' }) }}"></span>{# styled in Stylesheet #}
-        {% endif %}
+        {#{% endif %}#}
         <a class="trigger" href="" {% if event.allDay %}{# Gibt es diesen Fall? #}{% endif %}>
             {{ event.title }}
         </a>
