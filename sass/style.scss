@@ -779,7 +779,7 @@ main {
           text-decoration: line-through;
         }
         .workshops { background: $lavender; } /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
-        .multi_day.ferien-events { background: $lavender; } /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
+        .all_day.ferien-events, .multi_day.ferien-events { background: $lavender; } /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
         .holiday { background: $green_a15; }
         /* End Single Event in Calendar }}}3 */
 

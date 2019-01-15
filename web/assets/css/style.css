@@ -880,7 +880,7 @@ main section#calendar div.cal-case div.day_cell div.event.ausfaelle {
 main section#calendar div.cal-case div.day_cell .workshops {
   background: rgba(214, 186, 255, 0.4);
 }
-main section#calendar div.cal-case div.day_cell .multi_day.ferien-events {
+main section#calendar div.cal-case div.day_cell .all_day.ferien-events, main section#calendar div.cal-case div.day_cell .multi_day.ferien-events {
   background: rgba(214, 186, 255, 0.4);
 }
 main section#calendar div.cal-case div.day_cell .holiday {
