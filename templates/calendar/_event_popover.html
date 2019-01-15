@@ -16,7 +16,12 @@
     <p>Fällt aus.</p>
 	{% else %}
 
-		{% if event.angebot|length or event.lehrpersonen|length %} {# ist das überhaupt nötig??? #}
+    {% set has_teacher = false %}
+      {% if event.lehrpersonen|length or event.extTeachers|length  %}
+    {% set has_teacher = true %}
+  {% endif %}
+
+		{% if event.angebot|length or has_teacher %} {# ist das überhaupt nötig??? #}
 
       {# Mit Eintrag verbundenes Angebot #}
       {% if event.angebot|length %}
@@ -55,11 +60,13 @@
       {% set teacherNames = [] %}
       {% set teacherLinks = [] %} 
 
-      {% if event.calendar == "Workshops" and event.extTeachers|length %}
-        {% for teacher in event.extTeachers %}
-          {% set teacherNames = teacherNames|merge([teacher.tname]) %}
-          {% set teacherLinks = teacherLinks|merge([teacher.tlink]) %}
-        {% endfor %}
+      {% if event.calendar == "Workshops" or event.calendar == "Ferien-Events" %}
+        {% if event.extTeachers|length %}
+          {% for teacher in event.extTeachers %}
+            {% set teacherNames = teacherNames|merge([teacher.tname]) %}
+            {% set teacherLinks = teacher.tlink ? teacherLinks|merge([teacher.tlink]) : teacherLinks|merge("") %}
+          {% endfor %}
+        {% endif %}
       {% endif %}
 
       {% if event.lehrpersonen|length %}

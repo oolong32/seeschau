@@ -98,9 +98,12 @@
           {% for event in day.events %}
             {% if event.calendar == "Ferien" %}
               {% include "calendar/_holidayEvent.html" %}
+            {% elseif event.calendar == "Ferien-Events" %}
+              {% include "calendar/_holidaySpecial.html" %}
             {% endif %}
           {% endfor %}
-        {% else %}
+
+        {% else %} {# keine Ferien #}
           {% for event in day.events %}
           {# {% if event.calendar == "Workshops" %}
             ist das nötig?
