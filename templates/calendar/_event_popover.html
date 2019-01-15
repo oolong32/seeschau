@@ -64,7 +64,7 @@
         {% if event.extTeachers|length %}
           {% for teacher in event.extTeachers %}
             {% set teacherNames = teacherNames|merge([teacher.tname]) %}
-            {% set teacherLinks = teacher.tlink ? teacherLinks|merge([teacher.tlink]) : teacherLinks|merge("") %}
+            {% set teacherLinks = teacherLinks|merge([teacher.tlink]) %}
           {% endfor %}
         {% endif %}
       {% endif %}
