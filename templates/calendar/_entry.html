@@ -90,6 +90,7 @@
         {% for event in day.events %}
           {% if event.calendar == "Ferien" %}
             {% set holidays = true %}
+            <!-- Der heutige Eintrag stammt aus dem {{ event.calendar }}-Kalender -->
           {% endif %}
         {% endfor %}
         {# end holiday check #}
