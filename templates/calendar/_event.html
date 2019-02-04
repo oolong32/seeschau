@@ -25,8 +25,9 @@
   {% for exception in event.exceptions %}
     {% if day.date.day == exception.date.day %}
       {% set ausfall = true %}
-      <!--  Heute wäre {{ event.title}}, fällt aber aus.
-      Grund: Heute ({{ day.date.day }}) ist gleich Ausfalldatum ({{ exception.date.day }}).
+      <!--  Heute wäre {{ event.title}}, fällt aber aus. <br>
+      Grund: Heute ({{ day.date.day }}) ist gleich Ausfalldatum ({{ exception.date.day }}). <br>
+      Gut wäre natürlich, die Monate ({{ day.date.month }}) und ({{ exception.date.month }}) zu vergleichen.
       -->
     {% endif %}
   {% endfor %}
