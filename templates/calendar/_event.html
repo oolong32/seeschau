@@ -24,11 +24,13 @@
 {% if event.repeating %}
   {% for exception in event.exceptions %}
     {% if day.date.day == exception.date.day %}
-      {% set ausfall = true %}
-      <!--  Heute wäre {{ event.title}}, fällt aber aus. <br>
-      Grund: Heute ({{ day.date.day }}) ist gleich Ausfalldatum ({{ exception.date.day }}). <br>
-      Gut wäre natürlich, die Monate ({{ day.date.month }}) und ({{ exception.date.month }}) zu vergleichen.
-      -->
+      {% if day.date.month == exception.date.month %}
+        {% set ausfall = true %}
+        <!--  {{ event.title}} fällt aus. <br>
+        Grund: Heute (der {{ day.date.day }}.) ist gleich Ausfalltag ({{ exception.date.day }}).
+        UND: Dieser Monat ({{ day.date.month }}) ist gleich Monat des Ausfalltages ({{ exception.date.month }}). 
+        -->
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endif %}
