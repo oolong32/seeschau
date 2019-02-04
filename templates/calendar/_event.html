@@ -17,6 +17,8 @@
 {% endif %}
 #}
 
+<!-- Ab hier Titel/Link Event -->
+
 {# Prüfen, ob ein wiederholt stattfindender Event heute ausfällt #}
 {% set ausfall = false %}
 {% if event.repeating %}
@@ -50,3 +52,5 @@
     {% include "calendar/_event_popover.html" %}
 </div>
 {% endif %}
+
+<!-- Bis hier Titel/Link Event -->
