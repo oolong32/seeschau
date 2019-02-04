@@ -88,7 +88,6 @@
         {# are there events in the holiday-calendar' #}
         {% set holidays = false %}
         {% for event in day.events %}
-            <!-- Der heutige Eintrag stammt aus dem {{ event.calendar }}-Kalender -->
           {% if event.calendar == "Ferien" %}
             {% set holidays = true %}
           {% endif %}
@@ -106,6 +105,7 @@
 
         {% else %} {# keine Ferien #}
           {% for event in day.events %}
+            <!-- Der nächste Eintrag stammt aus dem {{ event.calendar }}-Kalender -->
           {# {% if event.calendar == "Workshops" %}
             ist das nötig?
               {% include "calendar/_workshopEvent.html" %}
