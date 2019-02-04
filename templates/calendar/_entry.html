@@ -74,6 +74,7 @@
         {# Tage des Monats ohne jene des vorhergehenden/nachfolgenden Monats #}
         <div class="day_cell{{ day.date.isToday ? " today" }}">
           <div class="date{{ day.eventCount ? " has_events" }}">
+            <!-- Der heutige Eintrag stammt aus dem {{ event.calendar }}-Kalender -->
             {{ day.date.format('j') }} {# Datum, der wievielte #}
           </div>
         {% else %}
@@ -90,7 +91,6 @@
         {% for event in day.events %}
           {% if event.calendar == "Ferien" %}
             {% set holidays = true %}
-            <!-- Der heutige Eintrag stammt aus dem {{ event.calendar }}-Kalender -->
           {% endif %}
         {% endfor %}
         {# end holiday check #}
