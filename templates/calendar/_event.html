@@ -25,6 +25,7 @@
   {% for exception in event.exceptions %}
     {% if day.date.day == exception.date.day %}
       {% set ausfall = true %}
+      <!--  Heute wäre {{ event.title}}, fällt aber aus.
     {% endif %}
   {% endfor %}
 {% endif %}
