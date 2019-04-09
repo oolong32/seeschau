@@ -987,7 +987,7 @@ footer #masthead h1, footer #masthead p {
   line-height: 1;
 }
 footer #masthead h1 {
-  font-size: 6.25rem;
+  font-size: 6.5rem;
   order: 2;
   /* Starts below, higher number means higher up on Y-Axis */
 }
@@ -1423,17 +1423,14 @@ main section.anreise-infos {
   }
   footer #masthead h1,
 #overlay-footer #masthead h1 {
-    font-size: 2.625rem;
-    font-family: "WF-031942-010448-002217";
+    font-size: 2.45rem;
     line-height: 1;
     margin-bottom: 0;
   }
   footer #masthead p,
 #overlay-footer #masthead p {
-    color: white;
-    font-size: 0.8125rem;
-    letter-spacing: 0.125rem;
-    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.175rem;
   }
 
   /* positioning of #overlay-footer in overlay-styles */
