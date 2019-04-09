@@ -8,7 +8,8 @@
     "craftcms/redactor": "2.1.6",
     "ether/simplemap": "v3.3.4",
     "jmx2/pic-puller": "3.0.13.2",
-    "dukt/videos": "2.0.4"
+    "dukt/videos": "2.0.4",
+    "dolphiq/sitemap": "1.0.9"
   },
   "autoload": {
     "psr-4": {
