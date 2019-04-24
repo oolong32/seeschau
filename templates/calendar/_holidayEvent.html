@@ -10,7 +10,7 @@
 <div class="holiday event tips{{ classes }}" data-toggle="popover">
   {% autoescape false %}
     <a class="trigger" href="">
-  {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? "Ferien" : "&nbsp;"|raw }}
+  {{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? "Ferien/Feiertag" : "&nbsp;"|raw }}
 {#{{ day.containsDate(event.startDate) or day.containsDate(event.endDate) ? event.title : "&nbsp;"|raw }}#}
     </a>
   {% endautoescape %}
