@@ -96,6 +96,10 @@
 		{% endif %}
 	{% endif %}
 
+{% if event.anmerkungen|length %}
+  <h4 id="heading-anmerkungen">Anmerkungen</h4>
+  <p class="anmerkungen">{{ event.anmerkungen }}</p>
+{% endif %}
 
 {#
     <div class="content">

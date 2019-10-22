@@ -849,6 +849,17 @@ main section#calendar div.cal-case div.day_cell div.event div.qtip svg.close-pop
 main section#calendar div.cal-case div.day_cell div.event div.qtip p {
   margin-bottom: 0.25rem;
 }
+main section#calendar div.cal-case div.day_cell div.event div.qtip h4#heading-anmerkungen {
+  padding: 0 0.25rem;
+  background: rgba(80, 227, 194, 0.2);
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip p.anmerkungen {
+  line-height: 1.3;
+  margin: 0.5rem 0 0.25rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip ul {
+  margin-bottom: 1rem;
+}
 main section#calendar div.cal-case div.day_cell div.event div.qtip:after, main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
   bottom: 100%;
   left: 50%;
