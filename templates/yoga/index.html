@@ -22,18 +22,35 @@
     <h3>{{ section.title }}</h3>
     <h4>{{ section.untertitel }}</h4>
 
-    {% if section.lehrpersonen|length %}
-    <p class="teacher"> Mit
-      {% for lehrer in section.lehrpersonen %}
-	{% if loop.first %}
-	  <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-	{% elseif not loop.last %}
-	  , <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-	{% else %}
-	  und <a href="{{ lehrer.url }}">{{ lehrer.title }}</a>
-	{% endif %}
+    {# externe mit internen Lehrern zusammenführen #}
+    {% if section.lehrpersonen|length == 0 and section.extTeachers|length == 0 %}
+      <p>Die Lehrer für diesen Workshop werden in Kürze angekündigt.</p>
+    {% else %}
+      {% set teachernames = [] %}
+      {% set teacherurls = [] %}
+      {# Externe Lehrer #}
+      {% for extTeacher in section.extTeachers %}
+        {% set teachernames = teachernames|merge([extTeacher.tname]) %}
+        {% set teacherurls = teacherurls|merge([extTeacher.tlink]) %}
       {% endfor %}
-    </p>
+      {# Interne Lehrer #}
+      {% for teacher in section.lehrpersonen %}
+        {% set teachernames = teachernames|merge([teacher.title]) %}
+        {% set teacherurls = teacherurls|merge([teacher.url]) %}
+      {% endfor %}
+
+      {# Lehrer auflisten, wenn es mehr als einer ist, mit «und» oder mit Kommata verbinden. #}
+      <p>Mit
+        {% spaceless %}
+          {% for i in 0..(teachernames|length - 1) %}
+            {% if loop.first %}{# span zusammen mit spaceless verhindert unnötige Leerzeichen vor Komma #}
+              <span>{% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}</span>{% elseif not loop.last %}<span>{{- ", " }}</span>{% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+            {% else %}
+              und {% if teacherurls[i]|length %}<a href="{{ teacherurls[i] }}">{% endif %}{{ teachernames[i] }}{% if teacherurls[i]|length %}</a>{% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endspaceless %}
+      </p>
     {% endif %}
 
     {% if section.visibleText|length %} {# Show first Paragraph of Text #}
