@@ -580,10 +580,21 @@ main section.news div.news-item img, main section.news div.news-item video {
   height: 320px;
   background: white;
 }
+main section.news div.news-item img {
+  height: auto;
+}
 main section.news div.news-item h3 {
   font-size: 2rem;
   line-height: 1.2;
   font-weight: 500;
+}
+main section.news div.news-item p.first-child {
+  /* contains img */
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 main section.news div.news-item p {
   margin-bottom: 0.5rem;
@@ -1259,6 +1270,7 @@ main p.accordion-collapse {
   }
   main section.news div.news-item p {
     margin-bottom: 0.125rem;
+    height: auto;
   }
   main section.news div.news-item img, main section.news div.news-item video {
     width: 100%;
