@@ -463,18 +463,26 @@ main {
     grid-column-gap: 2.25rem;
     grid-row-gap: 2.5rem;
     div.news-item {
-      img, video {
+      p.first-child { /* enthält img */
+         /* edit 4.3.2020: verhindern, dass hochformative
+            Bilder gestaucht werden. */
+         height: 320px;
+         overflow: hidden;
+         display: flex;
+         flex-wrap: wrap;
+         align-content: center;
+         /* edit 4.3.2020 – bis hier */
+       }
+      p { margin-bottom: 0.5rem; }
+     img, video {
         width: 320px;
-        height: 320px;
+        height: auto;
         background: $white;
       }
       h3 {
         font-size: 2rem;
         line-height: 1.2;
         font-weight: 500;
-      }
-      p {
-        margin-bottom: 0.5rem;
       }
     }
   }
@@ -1170,6 +1178,7 @@ footer {
           }
           p {
             margin-bottom: 0.125rem;
+            height: auto;
           }
           img, video {
             width: 100%;
