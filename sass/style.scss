@@ -464,22 +464,27 @@ main {
     grid-row-gap: 2.5rem;
     div.news-item {
       p.first-child { /* enthält img */
-         /* edit 4.3.2020: verhindern, dass hochformative
-            Bilder gestaucht werden. */
-         height: 320px;
-         overflow: hidden;
-         display: flex;
-         flex-wrap: wrap;
-         align-content: center;
-         /* edit 4.3.2020 – bis hier */
-       }
+        /* edit 4.3.2020: verhindern, dass hochformative
+           Bilder gestaucht werden. */
+        height: 320px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        /* edit 4.3.2020 – bis hier */
+      }
       p { margin-bottom: 0.5rem; }
-     img, video {
+      img  {
         width: 320px;
         height: auto;
         background: $white;
       }
-      video { min-height: 320px;} // prevent bad things from happening
+      video { 
+        width: 320px; 
+        height: 320px; // prevent bad things from happening
+        margin-bottom: 0.5rem; // same as p:first-child
+        background: black;
+      }
       h3 {
         font-size: 2rem;
         line-height: 1.2;
