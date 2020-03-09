@@ -589,10 +589,16 @@ main section.news div.news-item p.first-child {
 main section.news div.news-item p {
   margin-bottom: 0.5rem;
 }
-main section.news div.news-item img, main section.news div.news-item video {
+main section.news div.news-item img {
   width: 320px;
   height: auto;
   background: white;
+}
+main section.news div.news-item video {
+  width: 320px;
+  height: 320px;
+  margin-bottom: 0.5rem;
+  background: black;
 }
 main section.news div.news-item h3 {
   font-size: 2rem;
