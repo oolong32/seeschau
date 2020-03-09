@@ -1,0 +1,1484 @@
+@charset "UTF-8";
+@import url("./fonts.css");
+/* Variables {{{1 */
+/* Variables }}}1 */
+/* ——————————————————————————————————  Micro Typography ————————————————————————————————————— */
+/* Text Formatting {{{1 */
+html, * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PFBagueSansPro", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.68;
+  font-variant-numeric: proportional-nums;
+}
+
+th, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+header #masthead h1, header #masthead p, footer #masthead h1, footer #masthead p {
+  line-height: 1;
+  color: white;
+}
+header #masthead h1, footer #masthead h1 {
+  font-family: "WF-031942-010448-002219", "PFBagueSansPro", sans-serif;
+  font-weight: normal;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+}
+header #masthead p, footer #masthead p {
+  font-weight: 500;
+  line-height: 1.3;
+  font-size: 2.25rem;
+  letter-spacing: 0.65rem;
+}
+
+header nav ul li {
+  font-size: 1.25rem;
+}
+
+main {
+  font-size: 1.25rem;
+  line-height: 1.68;
+}
+main h2 {
+  font-size: 6.25rem;
+  font-family: "WF-031942-010448-002219", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+main h3 {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 400;
+}
+main p.teacher-quote {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+main p, main ul {
+  margin-bottom: 1.75rem;
+}
+main section.contact #abo-preise {
+  font-variant-numeric: tabular-nums;
+}
+main section#calendar {
+  font-size: 0.9375rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* End Text Formatting }}}1 */
+/* List Styles {{{1 */
+main ul li {
+  margin-left: 0.6rem;
+  text-indent: -0.6rem;
+}
+main ul li:before {
+  content: "· ";
+}
+
+/* End List Styles }}}1 */
+/* Link Styles {{{1 */
+h1 a {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: black;
+  padding: 0;
+}
+
+h1 a:hover {
+  background: none;
+  border-bottom: none;
+}
+
+header nav ul li a {
+  border-bottom: none;
+}
+
+header nav ul li a:hover {
+  font-weight: 900;
+  background: transparent;
+  border: none;
+}
+
+header nav ul li.active a {
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: solid rgba(80, 227, 194, 0.25) 0.1875rem;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  border-bottom: solid rgba(80, 227, 194, 0.75) 0.1875rem;
+}
+
+a.arrow-left-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-left-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_left.svg");
+}
+
+a.arrow-right-before:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+a.arrow-right-after:after {
+  padding-left: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+.sign-up p a:before,
+a.mail-link:before {
+  padding-right: 0.25rem;
+  content: url("/assets/_pic/arrow_right.svg");
+}
+
+.button a {
+  background: rgba(80, 227, 194, 0.2);
+  display: inline-block;
+  padding: 0 0.25rem;
+  border: none;
+}
+
+.button a:hover,
+.button a:active,
+.button a:focus {
+  background: rgba(80, 227, 194, 0.5);
+}
+
+#nav-overlay ul a {
+  border: none;
+}
+
+a.social-media-link {
+  text-decoration: none;
+  border: transparent;
+  border: 0;
+  border-bottom: 0 !important;
+  outline: 0;
+}
+
+a.social-media-link:hover svg use {
+  fill: rgba(80, 227, 194, 0.75);
+}
+
+a.social-media-link:hover svg path {
+  stroke: rgba(80, 227, 194, 0.75);
+  fill: rgba(80, 227, 194, 0.75);
+}
+
+/* End Links }}}1 */
+/* ——————————————————————————————————  Macro Typography ————————————————————————————————————— */
+/* Tests {{{1 */
+.test {
+  border: 1px solid lawngreen;
+}
+
+/* End Tests }}}1 */
+/* Intro Page {{{1 */
+.intro h1 {
+  display: none;
+}
+
+@keyframes blendy {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: ease-in;
+  }
+  7.7% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  13% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body.intro div.container {
+  width: 100vw;
+  height: 100vh;
+  /* center items on page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertikale */
+  align-items: center;
+  /* Horizontale*/
+  /* End Background Images }}}2 */
+}
+body.intro div.container ul.img {
+  z-index: -3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  /* Background Images {{{2 */
+}
+body.intro div.container ul.img li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  animation: blendy 65s linear infinite 0s;
+}
+body.intro div.container ul.img li:nth-child(1) {
+  z-index: 14;
+  animation-delay: 0s;
+  background: url("../_pic/introBackgrounds/fassadeJungfernrebe@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(2) {
+  z-index: 13;
+  animation-delay: 5s;
+  background: url("../_pic/introBackgrounds/ginko@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(3) {
+  z-index: 12;
+  animation-delay: 10s;
+  background: url("../_pic/introBackgrounds/saal@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(4) {
+  z-index: 11;
+  animation-delay: 15s;
+  background: url("../_pic/introBackgrounds/gebaeude@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(5) {
+  z-index: 10;
+  animation-delay: 20s;
+  background: url("../_pic/introBackgrounds/wasser@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(6) {
+  z-index: 9;
+  animation-delay: 25s;
+  background: url("../_pic/introBackgrounds/tatamiRaum@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(7) {
+  z-index: 8;
+  animation-delay: 30s;
+  background: url("../_pic/introBackgrounds/laub@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(8) {
+  z-index: 7;
+  animation-delay: 35s;
+  background: url("../_pic/introBackgrounds/blumenschale@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(9) {
+  z-index: 6;
+  animation-delay: 40s;
+  background: url("../_pic/introBackgrounds/tatamiReflexion@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(10) {
+  z-index: 5;
+  animation-delay: 45s;
+  background: url("../_pic/introBackgrounds/patio@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(11) {
+  z-index: 4;
+  animation-delay: 50s;
+  background: url("../_pic/introBackgrounds/schattenMauer@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(12) {
+  z-index: 3;
+  animation-delay: 55s;
+  background: url("../_pic/introBackgrounds/blatt@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container ul.img li:nth-child(13) {
+  z-index: 2;
+  animation-delay: 60s;
+  background: url("../_pic/introBackgrounds/mammutbaumkrone@1x.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-origin: border-box;
+  background-position: bottom;
+}
+body.intro div.container #seeschau-container {
+  transform: scale(2);
+}
+body.intro div.container #byline-container {
+  margin-top: 2em;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.53rem;
+}
+body.intro div.container svg {
+  background: transparent;
+  fill: white;
+}
+
+/* End Intro Page }}}1 */
+/* Layout Header {{{1 */
+nav#nav-overlay {
+  display: none;
+}
+
+header {
+  background: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+header #hamburger {
+  display: none;
+}
+header #masthead {
+  height: 28rem;
+  /* Variable wud b nice <—————————————————————————————————————————*/
+  /* collapse-transition */
+  transition: all 0.3s ease-out;
+  /* end collapse-transition */
+  padding: 1.5rem 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+header #masthead h1, header #masthead p {
+  margin: 0;
+  /* collapse transition */
+  transition: all 0.3s linear;
+  /* end collapse transition */
+}
+header nav {
+  padding: 0.5rem 2rem;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header nav ul li a {
+  text-align: center;
+}
+header nav ul li a:after {
+  display: block;
+  content: attr(title);
+  font-weight: 900;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+header.shrink {
+  /* collapsed header */
+}
+header.shrink #masthead {
+  min-height: 0;
+  height: 7.8rem;
+  /* Variable wud b nice <———————————————————————————————————— */
+  width: 100%;
+  padding: 0 0 0 2rem;
+  overflow: hidden;
+  /* children have no influence on height */
+}
+header.shrink h1, header.shrink p {
+  opacity: 0;
+  transform: translateY(-200px);
+}
+
+header.mini #masthead {
+  height: 0;
+}
+
+/* End Layout Header }}}1 */
+/* Background Images per Page {{{1 */
+#masthead {
+  background-image: url("../_pic/mastheadBackgrounds/fassadeJungfernrebe@1x.jpg");
+  background-position: bottom;
+}
+
+.team header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoTop@1x.jpg");
+  background-position: center;
+}
+
+.team #nav-overlay #masthead,
+.team footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/ginkoBottom@1x.jpg");
+}
+
+.workshops #nav-overlay #masthead,
+.workshops header #masthead,
+.workshops footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/mammutbaumkrone@1x.jpg");
+  background-position: center;
+}
+
+.yoga #nav-overlay #masthead,
+.yoga #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/tatamiRaum@1x.jpg");
+  background-position: center;
+}
+
+.calendar header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/patio@1x.jpg");
+  background-position: bottom;
+}
+
+.calendar #nav-overlay #masthead,
+.calendar footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/steingarten@1x.jpg");
+}
+
+.info header #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserDunkel@1x.jpg");
+  background-position: center;
+}
+
+.info #nav-overlay #masthead,
+.info footer #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/wasserHell@1x.jpg");
+}
+
+.music-and-voice #nav-overlay #masthead,
+.music-and-voice #masthead {
+  background-image: url("../_pic/mastheadBackgrounds/instrumente@1x.jpg");
+  background-position: center;
+}
+
+/*
+../_pic/mastheadBackgrounds/blaetterSchattenTextil@1x.png 
+../_pic/mastheadBackgrounds/tatamiRaum@1x.png
+*/
+/* End Background Images per Page }}}1 */
+/* Layout Main {{{1 */
+main {
+  width: 65rem;
+  margin: 0 auto;
+  padding: 30.5rem 0 0;
+  /* Sections allgemein {{{2 */
+  /* End Sections Allgemein }}}2 */
+  /* News Page {{{2 */
+  /* News Sections {{{3 */
+  /* End News Sections }}}3 */
+  /* Video Sections {{{3 */
+  /* End Video Sections }}}3 */
+  /* End News Page }}}2 */
+  /* Accordion {{{2 */
+  /* Accordion Sections {{{3 */
+  /* End Accordion Sections }}}3 */
+  /* Accordion Trigger {{{3 */
+  /* End Accordion Trigger }}}3 */
+  /* End Accordion }}}2 */
+  /* Grid for Team & Workshops {{{2 */
+  /* End Grid for Team & Workshops }}}2 */
+  /* Einspaltige Layouts (Kontakt, Angebote {{{2 */
+  /* End Einspaltige Layouts (Kontakt, Angebote) }}}2 */
+  /* Calendar Styles {{{2 */
+  /* End Calendar Styles }}}2 */
+  /* Table Styles {{{2*/
+  /* End Table Styles }}}2*/
+}
+main h2 {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+main a.anchor {
+  /* Fix jump to anchor relative to header/masthead */
+  display: block;
+  position: relative;
+  top: -13rem;
+  visibility: hidden;
+}
+main section {
+  background: white;
+  outline: none;
+  border-bottom: solid 1px #9b9b9b;
+  padding-bottom: 2.5rem;
+  margin: 0 auto;
+}
+main section h3 {
+  margin: 0 0 1.75rem 0;
+}
+main section.news {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.5rem;
+}
+main section.news div.news-item p.first-child {
+  /* enthält img */
+  /* edit 4.3.2020: verhindern, dass hochformative
+     Bilder gestaucht werden. */
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  /* edit 4.3.2020 – bis hier */
+}
+main section.news div.news-item p {
+  margin-bottom: 0.5rem;
+}
+main section.news div.news-item img, main section.news div.news-item video {
+  width: 320px;
+  height: auto;
+  background: white;
+}
+main section.news div.news-item video {
+  min-height: 320px;
+}
+main section.news div.news-item h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+main section.videos {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2.25rem;
+  grid-row-gap: 2.5rem;
+}
+main section.videos div.video-item {
+  position: relative;
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+}
+main section.videos div.video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main section.videos div.video-item img {
+  width: 100%;
+  height: auto;
+}
+main section.videos div.video-item div.video-placeholder {
+  height: 282px;
+  width: 502px;
+  background: red;
+}
+main div#more-news {
+  grid-column: 1/-1;
+  justify-self: center;
+  background: rgba(80, 227, 194, 0.2);
+  margin: 0;
+  padding: 0 0.25rem;
+}
+main div#more-news p {
+  line-height: 1.3;
+  margin: 0;
+}
+main div#more-news p:before {
+  content: url("/assets/_pic/plus.svg");
+  padding-right: 0.25rem;
+}
+main section.visible {
+  border: none;
+  border-top: 1px solid #9b9b9b;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 1.75rem;
+  /* Visible Workshop Infos {{{4 */
+  /* End Visible Workshop Infos }}}4 */
+}
+main section.visible .workshop-infos {
+  margin-bottom: 1.75rem;
+}
+main section.visible .workshop-infos p {
+  margin-bottom: 0;
+}
+main section.visible:first-child {
+  border: none;
+  padding-top: 0;
+}
+main section.collapsed {
+  border: none;
+  padding-bottom: 0;
+}
+main .accordion-trigger,
+main .accordion-collapse {
+  text-align: center;
+}
+main .accordion-trigger span,
+main .accordion-collapse span {
+  display: inline-block;
+  padding: 0 0.5rem;
+  background: rgba(80, 227, 194, 0.2);
+  cursor: pointer;
+  user-select: none;
+}
+main .accordion-trigger span:hover,
+main .accordion-collapse span:hover {
+  background: rgba(80, 227, 194, 0.5);
+}
+main .accordion-trigger span:before {
+  content: url("/assets/_pic/plus.svg");
+  padding-right: 0.25rem;
+}
+main .accordion-collapse span:before {
+  content: url("/assets/_pic/minus.svg");
+  padding-right: 0.25rem;
+}
+main section.raster {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-column-gap: 2rem;
+  border: none;
+}
+main section.raster .raster-bildfeld {
+  grid-column: 1/2;
+  grid-row: 2;
+}
+main section.raster .raster-bildfeld img {
+  width: 320px;
+  height: auto;
+}
+main section.raster div.raster-textfeld {
+  grid-column: 2/3;
+  grid-row: 2;
+}
+main section.raster div.raster-textfeld section {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+main section.raster div.raster-textfeld section .accordion-trigger {
+  text-align: left;
+}
+main section.raster div.raster-textfeld section .accordion-collapse {
+  text-align: left;
+}
+main section.raster:nth-child(odd) {
+  grid-template-columns: 1fr 320px;
+}
+main section.raster:nth-child(odd) .raster-bildfeld {
+  grid-column: 2/3;
+}
+main section.raster:nth-child(odd) div.raster-textfeld {
+  grid-column: 1/2;
+}
+main section.raster:nth-child(odd) div.raster-textfeld.foo {
+  grid-column: 1/-1;
+}
+main section.intro-text {
+  width: 46rem;
+  padding-bottom: 0;
+  margin-bottom: 1.75rem;
+}
+main section.contact,
+main section.anreise-infos,
+main section.abo-infos,
+main section.angebote {
+  width: 46rem;
+  /* schmaler als Seiten mit Bildern */
+  margin: 0 auto;
+}
+main section.contact {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+main section#map iframe {
+  width: 100%;
+}
+main section.abo-infos {
+  padding-bottom: 0;
+}
+main section.abo-infos:last-child {
+  border: none;
+}
+main .abo-infos > h4 {
+  margin-top: 1.25rem;
+}
+main section#cal-head {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+  background: transparent;
+}
+main section#cal-head h3 {
+  line-height: 1;
+  order: 2;
+  display: inline-block;
+  margin: 0;
+}
+main section#cal-head #prev-month {
+  order: 1;
+}
+main section#cal-head #next-month {
+  order: 3;
+}
+main section#calendar {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, auto);
+}
+main section#calendar div.cal-case {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-right: 1px solid #bbd7d1;
+  border-bottom: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case div.weekday {
+  visibility: hidden;
+  display: none;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+main section#calendar div.cal-case div.weekday-mobile {
+  display: none;
+}
+main section#calendar div.cal-case div.day_cell {
+  /* Single Event in Calendar {{{3 */
+  /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
+  /* galt ursprünglich auch für .all_day, geändert weil workshops nicht zwingend ganztätig sind*/
+  /* End Single Event in Calendar }}}3 */
+}
+main section#calendar div.cal-case div.day_cell div.date {
+  padding: 0.25rem 0.5rem;
+  text-align: right;
+}
+main section#calendar div.cal-case div.day_cell div.event {
+  padding: 0 0.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  /* Q-Tip {{{4 */
+  /* End Q-Tip }}}4 */
+}
+main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.4375rem;
+  position: relative;
+  top: 0.1rem;
+  background: rgba(80, 227, 194, 0.75);
+}
+main section#calendar div.cal-case div.day_cell div.event span.calendar-color.ausfaelle {
+  background: rgba(217, 45, 129, 0.3);
+}
+main section#calendar div.cal-case div.day_cell div.event a.trigger {
+  color: black;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip {
+  width: 10.5rem;
+  border: 1px solid #50e3c2;
+  background: white;
+  visibility: visible;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 0.25rem 0.5rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip svg.close-popover {
+  cursor: pointer;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip p {
+  margin-bottom: 0.25rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip h4#heading-anmerkungen {
+  padding: 0 0.25rem;
+  background: rgba(80, 227, 194, 0.2);
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip p.anmerkungen {
+  line-height: 1.3;
+  margin: 0.5rem 0 0.25rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip ul {
+  margin-bottom: 1rem;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:after, main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:after {
+  border-color: transparent;
+  border-bottom-color: white;
+  border-width: 12px;
+  margin-left: -12px;
+}
+main section#calendar div.cal-case div.day_cell div.event div.qtip:before {
+  border-color: transparent;
+  border-bottom-color: #50e3c2;
+  border-width: 13px;
+  margin-left: -13px;
+}
+main section#calendar div.cal-case div.day_cell div.event div.hidden {
+  visibility: hidden;
+}
+main section#calendar div.cal-case div.day_cell div.event.ausfaelle {
+  text-decoration: line-through;
+}
+main section#calendar div.cal-case div.day_cell .workshops {
+  background: rgba(214, 186, 255, 0.4);
+}
+main section#calendar div.cal-case div.day_cell .all_day.ferien-events, main section#calendar div.cal-case div.day_cell .multi_day.ferien-events {
+  background: rgba(214, 186, 255, 0.4);
+}
+main section#calendar div.cal-case div.day_cell .holiday {
+  background: rgba(80, 227, 194, 0.15);
+}
+main section#calendar div.cal-case div.today {
+  background: rgba(80, 227, 194, 0.25);
+}
+main section#calendar div.cal-case div.today .all_day {
+  background: rgba(214, 186, 255, 0.75);
+}
+main section#calendar div.cal-case div.today div.event span.calendar-color {
+  background: #50e3c2;
+}
+main section#calendar div.cal-case div.out_of_range {
+  background: rgba(80, 227, 194, 0.05);
+}
+main section#calendar div.cal-case div.out_of_range div.event a.trigger {
+  color: #666;
+}
+main section#calendar div.cal-case:nth-child(7n+1) {
+  border-left: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case:nth-child(-n+7) {
+  grid-template-rows: 2.5rem auto;
+  border-top: 1px solid #bbd7d1;
+}
+main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
+  visibility: visible;
+  display: block;
+  border-bottom: 1px solid #bbd7d1;
+}
+main table {
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  font-variant-numeric: tabular-nums;
+}
+main th, main td {
+  border: 1px solid #bbd7d1;
+  padding: 0.3rem 0.5rem 0.15rem;
+  text-align: left;
+  white-space: nowrap;
+}
+main th {
+  color: black;
+  border-bottom: 1px solid #bbd7d1;
+}
+
+/* Exceptions in Main */
+body.team main section.raster div.raster-textfeld h3 {
+  margin: 0;
+}
+
+.workshops section.raster {
+  border-bottom: 1px solid #9b9b9b;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* End Exceptions in Main */
+/* End Layout Main }}}1 */
+/* Layout Footer {{{1 */
+footer {
+  margin-top: 4em;
+  z-index: 9750;
+  /* Footer Social Media Buttons */
+  /* End Footer Social Media Buttons */
+  /* Footer Info Container */
+}
+footer #social-media-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+footer #social-media-buttons svg:first-child {
+  margin-right: 0.5rem;
+}
+footer #infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Footer Info Items */
+}
+footer #infos p {
+  white-space: nowrap;
+  margin-right: 1em;
+}
+footer #infos p:last-child {
+  margin-right: 0;
+}
+footer #masthead {
+  /* Background-Image and Logotype in Footer */
+  height: 28rem;
+  margin-top: 1rem;
+  padding: 1.5rem 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: flex-start;
+  /* Text on Footer Image */
+}
+footer #masthead h1, footer #masthead p {
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+footer #masthead h1 {
+  font-size: 6.5rem;
+  order: 2;
+  /* Starts below, higher number means higher up on Y-Axis */
+}
+
+/* End Layout Footer }}}1 */
+/* Masthead Styles Header & Footer {{{1 */
+#masthead {
+  background-origin: border-box;
+  background-size: cover;
+}
+#masthead a {
+  text-decoration: none;
+  color: white;
+}
+
+/* End Masthead Styles Global }}}1 */
+/* ——————————————————— Laptop- & Mobile-Styles —————————————————— */
+/* Latop-Styles {{{1 */
+@media (max-width: 1440px) {
+  /* Header & Footer {{{2 */
+  header #masthead,
+footer #masthead {
+    height: 19.5rem;
+  }
+  header #masthead h1,
+footer #masthead h1 {
+    font-size: 5rem;
+  }
+  header #masthead p,
+footer #masthead p {
+    font-size: 1.85rem;
+    line-height: 1.3;
+    letter-spacing: 0.45rem;
+  }
+
+  /* End Header & Footer }}}2 */
+  /* Main {{{2 */
+  main {
+    padding: 22.5rem 0 0;
+  }
+  main h2 {
+    font-size: 5rem;
+  }
+
+  /* End Main }}}2 */
+}
+/* Latop-Styles }}}1 */
+/* Mobile Styles {{{1 */
+@media (max-width: 600px) {
+  /* Intro-Animation {{{2 */
+  body.intro div.container #seeschau-container,
+body.intro div.container #byline-container {
+    position: relative;
+    top: -2.5rem;
+  }
+  body.intro div.container #seeschau-container {
+    transform: scale(0.5);
+    white-space: nowrap;
+  }
+  body.intro div.container #byline-container {
+    margin-top: 0;
+  }
+  body.intro div.container #byline-container p {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+
+  /* End Intro-Animation }}}2 */
+  /* Layout Header {{{2 */
+  header nav {
+    display: none;
+  }
+  header #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 1rem;
+  }
+  header #masthead h1 {
+    font-size: 2.45rem;
+  }
+  header #masthead p {
+    font-size: 1rem;
+    line-height: 1.35;
+    letter-spacing: 0.175rem;
+  }
+  header #hamburger {
+    position: absolute;
+    display: block;
+    top: 1rem;
+    right: 1rem;
+    transform: scale(0.75);
+    transform-origin: top right;
+    transition: all 0.3s ease-in;
+  }
+  header #hamburger:hover {
+    transform: scale(1.1);
+  }
+
+  /* End Layout Header }}}2 */
+  /* Layout Collapsed Header {{{2 */
+  header.shrink #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 1rem;
+  }
+  header.shrink h1, header.shrink p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* End Layout Collapsed Header }}}2 */
+  /* Navigation Overlay {{{2 */
+  /*
+  html {
+    height  : 100%;
+    overflow: hidden;
+  }
+  */
+  body {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .noScroll {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  #nav-overlay {
+    overflow-y: scroll;
+    width: 100%;
+    background: white;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    transition: all 0.2s ease-in;
+    z-index: 9500;
+    display: none;
+    font-size: 1.875rem;
+    line-height: 1.5;
+    animation: foo 0.2s ease-in;
+    /* Menü Style {{{3 */
+    /* End Menü Style }}}3 */
+  }
+  #nav-overlay ul {
+    margin: 6rem 0 0;
+    padding: 0 1rem 0 1rem;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+  #nav-overlay #social-media-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  /*
+  #nav-footer {
+    div#infos {
+      margin: 1.5rem 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 2rem;
+      grid-template-rows: repeat(4, 1.875rem);
+      grid-auto-flow: column;
+    }
+  }
+  #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+    h1 {
+      font-size: 2.625rem;
+      font-family: $francisGradientLeft; 
+    }
+    p {
+      font-size: 0.8125rem;
+      letter-spacing: 0.125rem;
+    }
+  }
+  */
+  #nav-overlay.visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Navigation Overlay }}}2 */
+  /* Layout Main {{{2 */
+  main {
+    width: 100%;
+    padding: 5rem 1rem 1rem;
+    /* Main Micro Typography {{{3 */
+    /* End Main Micro Typography }}}3 */
+    /* Mobile News Page {{{3 */
+    /* Mobile News Page }}}3 */
+    /* Mobile Calendar Layout {{{3 */
+    /* End Mobile Calendar Layout }}}3 */
+    /* Mobile Single Column Pages {{{3 */
+    /* End Mobile Single Column Pages }}}3 */
+    /* Mobile Two Column Pages {{{3 */
+    /* End Two Single Column Pages }}}3 */
+  }
+  main h2 {
+    font-size: 2.625rem;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0 0 0.8125rem 0;
+  }
+  main h2:not(:first-of-type) {
+    margin-top: 1.75rem;
+  }
+  main section h3, main p.teacher-quote {
+    font-size: 1.25rem;
+    margin-bottom: 0.8125rem;
+  }
+  main section.contact h3,
+main section.abo-infos h3,
+main section.angebote h3 {
+    margin-bottom: 0.8125rem;
+  }
+  main h4, main p, main ul, main ol, main table {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+  main p, main p.teacher-quote ul {
+    margin-bottom: 0.8125rem;
+  }
+  main p.accordion-trigger,
+main p.accordion-collapse {
+    text-align: left;
+  }
+  main .accordion-trigger {
+    margin-top: 1.25rem;
+  }
+  main table {
+    margin: 0 0 0.75em;
+  }
+  main th, main td {
+    font-size: 0.8125rem;
+    padding: 0.2rem 0.3rem 0.1rem;
+  }
+  main section.news {
+    width: 100%;
+    margin-bottom: 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+  }
+  main section.news div.news-item:nth-child(n+4) {
+    display: none;
+  }
+  main section.news div.news-item h3 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  main section.news div.news-item p {
+    margin-bottom: 0.125rem;
+    height: auto;
+  }
+  main section.news div.news-item img, main section.news div.news-item video {
+    width: 100%;
+    height: auto;
+  }
+  main section.news img {
+    width: 100%;
+    height: auto;
+  }
+  main section.videos {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2.25rem;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  main div#more-news {
+    grid-column: 1/-1;
+    justify-self: center;
+    background: rgba(80, 227, 194, 0.2);
+    margin: 0;
+    padding: 0 0.25rem;
+  }
+  main div#more-news p {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 0;
+  }
+  main section#cal-head {
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  main section#cal-head h3 {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    order: 1;
+  }
+  main section#cal-head #prev-month, main section#cal-head #next-month {
+    font-size: 0.9375rem;
+  }
+  main section#cal-head #prev-month {
+    order: 2;
+  }
+  main section#cal-head #next-month {
+    order: 3;
+  }
+  main section#calendar {
+    display: block;
+    border-left: 1px solid #bbd7d1;
+    border-top: 1px solid #bbd7d1;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  main section#calendar div.cal-case div.weekday,
+main section#calendar div.cal-case:nth-child(-n+7) div.weekday {
+    display: none;
+  }
+  main section#calendar div.cal-case:nth-child(7n+1) {
+    border-left: none;
+    border-top: none;
+  }
+  main section#calendar div.cal-case:nth-child(-n+7) {
+    border-top: none;
+    grid-template-rows: auto;
+  }
+  main section#calendar div.cal-case {
+    grid-template-columns: 2.25rem 1fr;
+    grid-template-rows: auto;
+  }
+  main section#calendar div.cal-case div.weekday-mobile {
+    display: block;
+    grid-column: 1/2;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+    border-right: 1px solid #bbd7d1;
+    padding: 0.25rem 0.3rem;
+  }
+  main section#calendar div.cal-case div.day_cell {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-gap: 0 0.5rem;
+    min-height: auto;
+    height: auto;
+    padding: 0.25rem 0 0.15rem 0.3rem;
+  }
+  main section#calendar div.cal-case div.day_cell div.date {
+    padding: 0;
+    grid-column: 1/2;
+  }
+  main section#calendar div.cal-case div.day_cell div.event {
+    grid-column: 2/3;
+  }
+  main section#calendar div.cal-case div.day_cell div.event span.calendar-color {
+    position: relative;
+    left: -0.25rem;
+  }
+  main section#calendar div.cal-case div.day_cell div.event div.qtip {
+    width: auto;
+  }
+  main section#calendar div.cal-case:nth-child(n) {
+    min-height: 0;
+    height: auto;
+  }
+  main a.anchor {
+    top: -6rem;
+  }
+  main section {
+    margin-bottom: 0.8125rem;
+    padding: 0;
+  }
+  main section.visible {
+    padding-top: 0.8125rem;
+  }
+  main section.intro-text {
+    margin-bottom: 0.8125rem;
+  }
+  main section.intro-text,
+main section.contact,
+main section.angebote,
+main section.abo-infos,
+main section.anreise-infos {
+    width: 100%;
+  }
+  main section.raster {
+    display: block;
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    /* Visible Workshop Infos {{{4 */
+    /* End Visible Workshop Infos }}}4 */
+  }
+  main section.raster .raster-bildfeld {
+    margin-bottom: 0.5rem;
+  }
+  main section.raster .raster-bildfeld img {
+    width: 100%;
+  }
+  main section.raster .workshop-infos {
+    margin-bottom: 0.8125rem;
+  }
+  main section.raster .workshop-infos p {
+    margin-bottom: 0;
+  }
+
+  section.abo-infos > h4 {
+    margin-top: 0.8125rem;
+  }
+
+  /* End Layout Mobile Main }}}2 */
+  /* Layout Mobile Footer {{{2 */
+  footer,
+#overlay-footer {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  footer div#infos,
+#overlay-footer div#infos {
+    margin: 1rem 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 2rem;
+    grid-template-rows: repeat(4, 2rem);
+    grid-auto-flow: column;
+    font-size: 15px;
+  }
+  footer #masthead,
+#overlay-footer #masthead {
+    height: 4.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  footer #masthead h1,
+#overlay-footer #masthead h1 {
+    font-size: 2.45rem;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  footer #masthead p,
+#overlay-footer #masthead p {
+    font-size: 1rem;
+    letter-spacing: 0.175rem;
+  }
+
+  /* positioning of #overlay-footer in overlay-styles */
+  #social-media-icons svg:first-of-type {
+    margin-right: 0.5rem;
+  }
+
+  /* End Layout Mobile Footer }}}2*/
+}
+/* End Mobile Styles }}}1 */
+/* Keyframes Nav-Overlay {{{1 */
+@keyframes foo {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* End Keyframes Nav-Overlay }}}1 */
+/* The End */
+
+/*# sourceMappingURL=styles.css.map */

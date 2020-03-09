@@ -479,6 +479,7 @@ main {
         height: auto;
         background: $white;
       }
+      video { min-height: 320px;} // prevent bad things from happening
       h3 {
         font-size: 2rem;
         line-height: 1.2;
