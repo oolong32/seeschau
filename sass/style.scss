@@ -473,7 +473,7 @@ main {
         align-content: center;
         /* edit 4.3.2020 – bis hier */
       }
-      p { margin-bottom: 0.5rem; }
+      p { margin-bottom: 0.5rem; max-height: 320px; overflow: hidden; }
       img  {
         width: 320px;
         height: auto;

@@ -588,6 +588,8 @@ main section.news div.news-item p.first-child {
 }
 main section.news div.news-item p {
   margin-bottom: 0.5rem;
+  max-height: 320px;
+  overflow: hidden;
 }
 main section.news div.news-item img {
   width: 320px;
