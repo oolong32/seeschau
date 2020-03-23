@@ -588,8 +588,10 @@ main section.news div.news-item p.first-child {
 }
 main section.news div.news-item p {
   margin-bottom: 0.5rem;
+  /* edit 23.3.2020 – ab hier */
   max-height: 320px;
   overflow: hidden;
+  /* edit 23.3.2020 – bis hier */
 }
 main section.news div.news-item img {
   width: 320px;
