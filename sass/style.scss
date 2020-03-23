@@ -485,6 +485,8 @@ main {
       }
       p {
         margin-bottom: 0.5rem;
+        max-height: 320px;
+        overflow: hidden;
       }
     }
   }
