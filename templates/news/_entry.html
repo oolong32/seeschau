@@ -93,22 +93,10 @@
         <p>{{ video.getEmbed() }}</p>
       </div>
       {% endfor %} 
+      {#
       <p class="accordion-trigger" style="grid-column: 1/-1;"><span>Mehr Videos anzeigen</span></p>
-    </section> <!-- End visible part of accordion -->
-
-    <section class="videos collapsed">
-      {% set collapsedVideos = craft.entries.section('videos').type('collapsedVideos').limit(4) %}
-      {% for collapsedVideoEntry in collapsedVideos %}
-      <div class="video-item">
-        {% set collapsedVideo = collapsedVideoEntry.video %}
-        {{ collapsedVideo.embed({ width: 500, height: 267 }) }} {# funktioniert nicht, what? #}
-        <p>{{ collapsedVideo.getEmbed() }}</p>
-      </div>
-      {% endfor %} 
-      {# 
-      <p class="accordion-collapse" style="grid-column: 1/-1;"><span>Weniger Videos anzeigen</span></p>
       #}
-    </section> <!-- End collapsed part of accordion -->
+    </section> <!-- End visible part of accordion -->
 
   </div> <!-- End Accordion -->
 
