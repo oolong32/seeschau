@@ -85,7 +85,7 @@
   <div class="accordion">
 
     <section class="videos visible">
-      {% set videos = craft.entries.section('videos').type('videos').limit(4) %}
+      {% set videos = craft.entries.section('videos').type('videos').limit(6) %}
       {% for videoEntry in videos %}
       <div class="video-item">
         {% set video = videoEntry.video %}
@@ -105,7 +105,9 @@
         <p>{{ collapsedVideo.getEmbed() }}</p>
       </div>
       {% endfor %} 
+      {# 
       <p class="accordion-collapse" style="grid-column: 1/-1;"><span>Weniger Videos anzeigen</span></p>
+      #}
     </section> <!-- End collapsed part of accordion -->
 
   </div> <!-- End Accordion -->
