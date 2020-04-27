@@ -85,7 +85,7 @@
   <div class="accordion">
 
     <section class="videos visible">
-      {% set videos = craft.entries.section('videos').type('videos').limit(6) %}
+      {% set videos = craft.entries.section('videos').with(['videos']).limit(null) %}
       {% for videoEntry in videos %}
       <div class="video-item">
         {% set video = videoEntry.video %}
@@ -93,30 +93,9 @@
         <p>{{ video.getEmbed() }}</p>
       </div>
       {% endfor %} 
-      {#
       <p class="accordion-trigger" style="grid-column: 1/-1;"><span>Mehr Videos anzeigen</span></p>
-      #}
     </section> <!-- End visible part of accordion -->
 
   </div> <!-- End Accordion -->
 
-{# Fake content #}
-{#
-  <section class="videos">
-	<div class="video-item">
-		<img src="/assets/_pic/tempAssets/mantra.jpg" alt="">
-  </div>
-	<div class="video-item">
-		<img src="/assets/_pic/tempAssets/stretch.jpg" alt="">
-	</div>
-	<div class="video-item">
-		<img src="/assets/_pic/tempAssets/see.jpg" alt="">
-	</div>
-	<div class="video-item">
-		<img src="/assets/_pic/tempAssets/wiese.jpg" alt="">
-	</div>
-	<div id="more-news"><p>Mehr Videos laden</p></div>
-  </section>
-#}
-{# Fake content #}
 {% endblock %}
