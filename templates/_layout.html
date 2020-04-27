@@ -44,6 +44,9 @@
     <script src="/assets/js/thirdparty/jquery.min.js"></script>
     <script src="/assets/js/thirdparty/jquery-ui.min.js"></script>
     <script src="/assets/js/accordion.js?v=1.0"></script> 
+    {% if hausmarke == 'news' %}
+      <script src="/assets/js/moreVideos.js"></script>
+    {% endif %}
   {% endif %}
 
   <script>console.log('{{ hausmarke }}');</script>

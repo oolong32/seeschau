@@ -677,10 +677,12 @@ main section.collapsed {
   border: none;
   padding-bottom: 0;
 }
+main #video-button,
 main .accordion-trigger,
 main .accordion-collapse {
   text-align: center;
 }
+main #video-button span,
 main .accordion-trigger span,
 main .accordion-collapse span {
   display: inline-block;
@@ -689,10 +691,12 @@ main .accordion-collapse span {
   cursor: pointer;
   user-select: none;
 }
+main #video-button span:hover,
 main .accordion-trigger span:hover,
 main .accordion-collapse span:hover {
   background: rgba(80, 227, 194, 0.5);
 }
+main #video-button span:before,
 main .accordion-trigger span:before {
   content: url("/assets/_pic/plus.svg");
   padding-right: 0.25rem;
@@ -1251,11 +1255,13 @@ main section.angebote h3 {
   main p, main p.teacher-quote ul {
     margin-bottom: 0.8125rem;
   }
-  main p.accordion-trigger,
+  main p#video-button,
+main p.accordion-trigger,
 main p.accordion-collapse {
     text-align: left;
   }
-  main .accordion-trigger {
+  main #video-button,
+main .accordion-trigger {
     margin-top: 1.25rem;
   }
   main table {
