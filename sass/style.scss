@@ -577,6 +577,7 @@ main {
   /* End Accordion Sections }}}3 */
 
   /* Accordion Trigger {{{3 */
+  #hide-video-button,
   #video-button,
   .accordion-trigger,
   .accordion-collapse { // better be a button
@@ -595,6 +596,7 @@ main {
    content: url("/assets/_pic/plus.svg"); 
    padding-right: 0.25rem;
   }
+  #hide-video-button span:before,
   .accordion-collapse span:before {
    content: url("/assets/_pic/minus.svg"); 
    padding-right: 0.25rem;
@@ -1158,6 +1160,7 @@ footer {
       p, p.teacher-quote ul {
         margin-bottom: 0.8125rem;
       }
+      p#hide-video-button
       p#video-button,
       p.accordion-trigger,
       p.accordion-collapse {
@@ -1165,6 +1168,7 @@ footer {
       }
       /* End Main Micro Typography }}}3 */
 
+      #hide-video-button
       #video-button,
       .accordion-trigger {
         margin-top: 1.25rem;
