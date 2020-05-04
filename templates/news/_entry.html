@@ -85,7 +85,7 @@
   <div class="accordion">
 
     <section class="videos visible">
-      {% set videos = craft.entries.section('videos').with(['videos']).limit(null) %}
+      {% set videos = craft.entries.section('videos').with(['videos']).limit(10) %}
       {% for videoEntry in videos %}
       <div class="video-item">
         {% set video = videoEntry.video %}
