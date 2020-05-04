@@ -462,6 +462,11 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2.25rem;
     grid-row-gap: 2.5rem;
+    div.news-item:nth-child(n+7) {
+      // we load more insta-stuff than neccessary and hide
+      // everything from the 7th one up
+      display: none;
+    }
     div.news-item {
       p.first-child { /* enthält img */
         /* edit 4.3.2020: verhindern, dass hochformative

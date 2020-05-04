@@ -575,6 +575,9 @@ main section.news {
   grid-column-gap: 2.25rem;
   grid-row-gap: 2.5rem;
 }
+main section.news div.news-item:nth-child(n+7) {
+  display: none;
+}
 main section.news div.news-item p.first-child {
   /* enthält img */
   /* edit 4.3.2020: verhindern, dass hochformative
@@ -677,11 +680,13 @@ main section.collapsed {
   border: none;
   padding-bottom: 0;
 }
+main #hide-video-button,
 main #video-button,
 main .accordion-trigger,
 main .accordion-collapse {
   text-align: center;
 }
+main #hide-video-button span,
 main #video-button span,
 main .accordion-trigger span,
 main .accordion-collapse span {
@@ -691,6 +696,7 @@ main .accordion-collapse span {
   cursor: pointer;
   user-select: none;
 }
+main #hide-video-button span:hover,
 main #video-button span:hover,
 main .accordion-trigger span:hover,
 main .accordion-collapse span:hover {
@@ -701,6 +707,7 @@ main .accordion-trigger span:before {
   content: url("/assets/_pic/plus.svg");
   padding-right: 0.25rem;
 }
+main #hide-video-button span:before,
 main .accordion-collapse span:before {
   content: url("/assets/_pic/minus.svg");
   padding-right: 0.25rem;
@@ -1255,12 +1262,12 @@ main section.angebote h3 {
   main p, main p.teacher-quote ul {
     margin-bottom: 0.8125rem;
   }
-  main p#video-button,
+  main p#hide-video-button p#video-button,
 main p.accordion-trigger,
 main p.accordion-collapse {
     text-align: left;
   }
-  main #video-button,
+  main #hide-video-button #video-button,
 main .accordion-trigger {
     margin-top: 1.25rem;
   }

@@ -3,7 +3,7 @@
   <h2>News</h2>
   <section class="news" >
 {% set hasNoVideo = true %} {# Zum prüfen, ob bereits ein Video im Feed steht #}
-{% for instagramdata in craft.picPuller.media_recent({'user_id' : 143,  'use_stale_cache' : true, 'limit': 6}) %}
+{% for instagramdata in craft.picPuller.media_recent({'user_id' : 143,  'use_stale_cache' : true, 'limit': 9}) %}
     <div class="news-item">
 {# {% if loop.first %}
       <p>Status: {{ instagramdata.status }}</p>
