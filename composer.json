@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "3.0.25",
+    "craftcms/cms": "3.5.19.1",
     "vlucas/phpdotenv": "^2.4.0",
     "solspace/craft3-calendar": "2.0.6",
     "facebook/graph-sdk": "^5.6",
